@@ -5,5 +5,5 @@
     "author": "boernsen2",
     "factorio_version": "1.1",
     "dependencies": ["base"],
-    "description": "Plays and prints announcements when sitting in a train and approaching a station/final station or being interrupted."
+    "description": "Prints and/or plays announcements when sitting in a train and approaching a station or being interrupted."
 }

@@ -100,9 +100,9 @@ add_to_data_lua()
     code_names_array+=("${name_prefix}random")
     gui_names_array+=("<Random>")
 
-    # add "None" to code names array (for settings.lua)
-    code_names_array+=("none")
-    gui_names_array+=("<None>")
+    # add "Off" to code names array (for settings.lua)
+    code_names_array+=("off")
+    gui_names_array+=("<Off>")
 }
 
 edit_settings_lua()
@@ -123,19 +123,39 @@ edit_locale_cfg()
     sed -i '/\[string-mod-setting\]/,$d' ${LOCALE_CFG}
     echo "[string-mod-setting]" >> ${LOCALE_CFG}
     
+    for i in "${!INTERRUPTIONS_CODE_NAMES[@]}"; do
+        echo "train_announcements_interruption_announcement_sound-${INTERRUPTIONS_CODE_NAMES[$i]}=${INTERRUPTIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
+
     for i in "${!JINGLE_CODE_NAMES[@]}"; do
+        echo "train_announcements_interruption_jingle_sound-${JINGLE_CODE_NAMES[$i]}=${JINGLE_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_station_jingle_sound-${JINGLE_CODE_NAMES[$i]}=${JINGLE_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_final_station_jingle_sound-${JINGLE_CODE_NAMES[$i]}=${JINGLE_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_interruption_jingle_sound-${JINGLE_CODE_NAMES[$i]}=${JINGLE_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done
     
     for i in "${!ANNOUNCEMENT_CODE_NAMES[@]}"; do
         echo "train_announcements_station_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station01_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station02_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station03_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station04_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station05_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station06_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station07_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station08_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station09_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station10_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station11_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station12_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station13_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station14_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station15_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station16_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station17_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station18_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station19_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_station20_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_final_station_announcement_sound-${ANNOUNCEMENT_CODE_NAMES[$i]}=${ANNOUNCEMENT_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
-
-    for i in "${!INTERRUPTIONS_CODE_NAMES[@]}"; do
-        echo "train_announcements_interruption_announcement_sound-${INTERRUPTIONS_CODE_NAMES[$i]}=${INTERRUPTIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
 }
 
