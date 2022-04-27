@@ -1,9 +1,9 @@
 {
     "name": "TrainAnnouncements",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "title": "Train announcements",
     "author": "boernsen2",
     "factorio_version": "1.1",
     "dependencies": ["base"],
-    "description": "Prints and/or plays announcements when sitting in a train and approaching a station or being interrupted."
+    "description": "Prints and/or plays announcements when sitting in a train and approaching a station or being interrupted.\n\nNote that the announcement sounds are static and configurable, but there is NO text-to-speech. Text announcements however take the actual station names into account. You can add your own announcement sounds (e.g. from a recording or any free text-to-speech service such as https://freetts.com) by adding them as *.ogg file to the corresponding sub-folder and then run the script update_sounds.sh. After that they should be available in the mod settings. After updating the sounds, you might need to disable the mod, restart and then re-enable the mod if Factorio complains about missing mod settings."
 }

@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2022-04-27
+  Info:
+    - Initial release
+  Locale:
+    - English available
+  License:
+    - MIT License for non-sound files
+    - CC BY-NC 3.0 for sound files
+    - For more details see included file LICENSE
+  Sounds:
+    - Some basic jingles, station announcement and interruption announcement sounds
+    - More sounds can be added locally using the included script update_sounds.sh

@@ -220,53 +220,56 @@ function needs_station_announcement(player)
 end
 
 function get_announcement_for_player(player)
-    local sounds = nil
+    local announcement = nil
     if needs_interruption_announcement(player)
     then
-        sounds = {}
-        sounds["jingle sound"] = get_mod_setting(player, "train_announcements_interruption_announcement_jingle_sound")
-        sounds["sound"] = get_mod_setting(player, "train_announcements_interruption_announcement_sound")
-        sounds["description"] = "interruption"
+        announcement = {}
+        announcement["jingle sound"] = get_mod_setting(player, "train_announcements_interruption_jingle_sound")
+        announcement["sound"] = get_mod_setting(player, "train_announcements_interruption_announcement_sound")
+        announcement["description"] = "interruption"
     elseif needs_station_announcement(player)
     then
         -- use #xx or final station setting if possible
-        sounds = {}
+        announcement = {}
         local train = get_train_for_player(player)
         if train and train.valid
         then
             if is_approaching_final_station(train)
             then
-                sounds["jingle sound"] = get_mod_setting(player, "train_announcements_final_station_announcement_jingle_sound")
-                sounds["sound"] = get_mod_setting(player, "train_announcements_final_station_announcement_sound")
-                sounds["description"] = "final station"
+                announcement["jingle sound"] = get_mod_setting(player, "train_announcements_final_station_jingle_sound")
+                announcement["sound"] = get_mod_setting(player, "train_announcements_final_station_announcement_sound")
+                announcement["description"] = "final station"
             else
                 local stationNumber = get_number_of_approaching_station(train)
                 if stationNumber
                 then
                     local stationNumberStr = pad_left(tostring(stationNumber), 2, "0")
-                    sounds["jingle sound"] = get_mod_setting(player, "train_announcements_station_jingle_sound")
-                    sounds["sound"] = get_mod_setting(player, "train_announcements_station" .. stationNumberStr .. "_announcement_sound")
-                    sounds["description"] = "station" .. tostring(stationNumber)
+                    announcement["jingle sound"] = get_mod_setting(player, "train_announcements_station_jingle_sound")
+                    announcement["sound"] = get_mod_setting(player, "train_announcements_station" .. stationNumberStr .. "_announcement_sound")
+                    announcement["description"] = "station" .. tostring(stationNumber)
                 end
             end
         end
         
         -- fall back to defaults if necessary
-        if not sounds["jingle sound"] or not game.is_valid_sound_path(sounds["jingle sound"])
+        if not announcement["sound"] or not game.is_valid_sound_path(announcement["sound"])
         then
-            sounds["jingle sound"] = get_mod_setting(player, "train_announcements_station_jingle_sound")
+            announcement["sound"] = get_mod_setting(player, "train_announcements_station_announcement_sound")
         end
-        if not sounds["sound"] or not game.is_valid_sound_path(sounds["sound"])
-        then
-            sounds["sound"] = get_mod_setting(player, "train_announcements_station_announcement_sound")
-        end
-        if not sounds["description"] or sounds["description"] == ""
+        if not announcement["description"] or announcement["description"] == ""
         then
 --             game.print("ERROR: sound type was not given")
-            sounds["description"] = "station"
+            announcement["description"] = "station"
         end
     end
-    return sounds
+
+    -- fall back to defaults if necessary
+    if announcement and ( not announcement["jingle sound"] or not game.is_valid_sound_path(announcement["jingle sound"]) )
+    then
+        announcement["jingle sound"] = get_mod_setting(player, "train_announcements_default_jingle_sound")
+    end
+
+    return announcement
 end
 
 function update_train_states_for_player(player)
@@ -291,6 +294,18 @@ function get_next_station_name_for_player(player)
     end
 end
 
+function corrected_train_stop_name(str)
+    -- Source: https://wiki.factorio.com/Rich_text
+    -- If the name contains symbols it looks like: [item=copper-plate]
+    -- Therefore, replace this so that it looks like: [img=item/copper-plate]
+    if not string.find(str,"=")
+    then
+        return str
+    else
+        return string.gsub(string.gsub(str, "=", "/"), "%[", "[img=")
+    end
+end
+
 function print_message_to_player(player, announcement_description, announcement_sound)
     local print_message_enabled = get_mod_setting(player, "train_announcements_print_announcement_message_enabled")
     if not announcement_description or not print_message_enabled
@@ -301,10 +316,12 @@ function print_message_to_player(player, announcement_description, announcement_
         player.print({"announcement-text.interruption"})
     elseif announcement_description == "final station"
     then
-        player.print({"announcement-text.final_station", get_next_station_name_for_player(player)})
+        local station_name = get_next_station_name_for_player(player)
+        player.print({"announcement-text.final_station", corrected_train_stop_name(station_name)})
     elseif string.sub(announcement_description, 1, 7) == "station"
     then
-        player.print({"announcement-text.station", get_next_station_name_for_player(player), string.sub(announcement_description, 8)})
+        local station_name = get_next_station_name_for_player(player)
+        player.print({"announcement-text.station", corrected_train_stop_name(station_name), string.sub(announcement_description, 8)})
     else
         --unknown announcement_description
 --         game.print("ERROR: unknown sound description")
