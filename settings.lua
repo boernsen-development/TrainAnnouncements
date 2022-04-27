@@ -91,7 +91,7 @@ data:extend({
     name = "train_announcements_station_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1l"
   },
   {
@@ -99,7 +99,7 @@ data:extend({
     name = "train_announcements_station01_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1m"
   },
   {
@@ -107,7 +107,7 @@ data:extend({
     name = "train_announcements_station02_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1n"
   },
   {
@@ -115,7 +115,7 @@ data:extend({
     name = "train_announcements_station03_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1o"
   },
   {
@@ -123,7 +123,7 @@ data:extend({
     name = "train_announcements_station04_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1p"
   },
   {
@@ -131,7 +131,7 @@ data:extend({
     name = "train_announcements_station05_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1q"
   },
   {
@@ -139,7 +139,7 @@ data:extend({
     name = "train_announcements_station06_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1r"
   },
   {
@@ -147,7 +147,7 @@ data:extend({
     name = "train_announcements_station07_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1s"
   },
   {
@@ -155,7 +155,7 @@ data:extend({
     name = "train_announcements_station08_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1t"
   },
   {
@@ -163,7 +163,7 @@ data:extend({
     name = "train_announcements_station09_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1u"
   },
   {
@@ -171,7 +171,7 @@ data:extend({
     name = "train_announcements_station10_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1v"
   },
   {
@@ -179,7 +179,7 @@ data:extend({
     name = "train_announcements_station11_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1w"
   },
   {
@@ -187,7 +187,7 @@ data:extend({
     name = "train_announcements_station12_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1x"
   },
   {
@@ -195,7 +195,7 @@ data:extend({
     name = "train_announcements_station13_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1y"
   },
   {
@@ -203,7 +203,7 @@ data:extend({
     name = "train_announcements_station14_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "1z"
   },
   {
@@ -211,7 +211,7 @@ data:extend({
     name = "train_announcements_station15_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2a"
   },
   {
@@ -219,7 +219,7 @@ data:extend({
     name = "train_announcements_station16_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2b"
   },
   {
@@ -227,7 +227,7 @@ data:extend({
     name = "train_announcements_station17_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2c"
   },
   {
@@ -235,7 +235,7 @@ data:extend({
     name = "train_announcements_station18_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2d"
   },
   {
@@ -243,7 +243,7 @@ data:extend({
     name = "train_announcements_station19_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2e"
   },
   {
@@ -251,7 +251,7 @@ data:extend({
     name = "train_announcements_station20_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2f"
   },
   {
@@ -259,7 +259,7 @@ data:extend({
     name = "train_announcements_final_station_announcement_sound",
     setting_type = "runtime-per-user",
     default_value = "off",
-    allowed_values = {"station_boehl_iggelheim", "station_guildford", "station_worplesdon", "station_changing", "station_random", "off"},
+    allowed_values = {"station_boehl_iggelheim", "station_coal_outpost", "station_copper_outpost", "station_fuel_station", "station_guildford", "station_iron_outpost", "station_main_base", "station_oil_outpost", "station_outpost", "station_science_labs", "station_steel_outpost", "station_stone_outpost", "station_uranium_outpost", "station_worplesdon", "station_changing", "station_random", "off"},
     order = "2g"
   },
 })

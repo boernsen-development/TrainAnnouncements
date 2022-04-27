@@ -12,8 +12,8 @@
 SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 JINGLES_SUB_DIR=sounds/jingles
 JINGLES_DIR=${SCRIPT_DIR}/${JINGLES_SUB_DIR}
-ANNOUNCEMENTS_SUB_DIR=sounds/stations
-ANNOUNCEMENTS_DIR=${SCRIPT_DIR}/${ANNOUNCEMENTS_SUB_DIR}
+STATIONS_SUB_DIR=sounds/stations
+STATIONS_DIR=${SCRIPT_DIR}/${STATIONS_SUB_DIR}
 INTERRUPTIONS_SUB_DIR=sounds/interruptions
 INTERRUPTIONS_DIR=${SCRIPT_DIR}/${INTERRUPTIONS_SUB_DIR}
 MOD_NAME=__TrainAnnouncements__
@@ -32,6 +32,17 @@ declare -a STATIONS_CODE_NAMES
 declare -a STATIONS_GUI_NAMES
 declare -a INTERRUPTIONS_CODE_NAMES
 declare -a INTERRUPTIONS_GUI_NAMES
+
+print_array()
+{
+    local description=${1}
+    local -n array=${2}
+    
+    echo "${description}: ${#array[@]}"
+    for i in "${!array[@]}"; do
+        echo "${array[$i]}"
+    done     
+}
 
 add_to_data_lua()
 {
@@ -219,11 +230,20 @@ echo "data:extend({" >> ${DATA_LUA}
 
 # write actual .ogg files to data.lua
 add_to_data_lua ${JINGLES_DIR} jingle_ ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES
-add_to_data_lua ${ANNOUNCEMENTS_DIR} station_ ${ANNOUNCEMENTS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
+add_to_data_lua ${STATIONS_DIR} station_ ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
 add_to_data_lua ${INTERRUPTIONS_DIR} interruption_ ${INTERRUPTIONS_SUB_DIR} INTERRUPTIONS_CODE_NAMES INTERRUPTIONS_GUI_NAMES
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
+
+# Echo sounds
+echo ""
+print_array "Jingles" JINGLES_GUI_NAMES
+echo ""
+print_array "Stations" STATIONS_GUI_NAMES
+echo ""
+print_array "Interruptions" INTERRUPTIONS_GUI_NAMES
+echo ""
 
 # edit settings.lua
 echo "Editing ${SETTINGS_LUA}..."
