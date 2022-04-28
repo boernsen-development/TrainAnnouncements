@@ -4,7 +4,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 function deploy {
     # deploy without .git folder and without this file
-    zip -FSr $1 $2 -x '*.git*' '*deploy.sh' '*~*'
+    zip -FSr $1 $2 -x '*.git*' '*.sh*' '*~*' -i 'update_sounds.sh'
 }
 
 cd ..

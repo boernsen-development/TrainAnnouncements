@@ -1,86 +1,51 @@
-function pad_left(str, len, char)
-    if char == nil
+-- TODO check what happens when mod is modified and then updated (check with SendSpidertronToTheWest)
+-- TODO add checkbox to enable/disable printing of number in schedule
+-- TODO get station name from schedule, so that temporary is possible as well (https://lua-api.factorio.com/latest/Concepts.html#TrainScheduleRecord)
+-- TODO change final station to wait condition: "passenger_not_present" or "inactivity" with ticks > 216000 (1h) (https://lua-api.factorio.com/latest/Concepts.html#WaitCondition)
+-- TODO reduce sounds to UK female
+-- TODO reduce pattern settings
+-- TODO add accouncement for waiting at signal (https://lua-api.factorio.com/latest/defines.html#defines.train_state)
+-- TODO add accouncement for state change no_path/wait_signal -> on_the_path
+-- TODO add accouncement for state change manual_control -> on_the_path
+-- TODO allow lua regex expression as patterns (e.g. "regex()")
+-- TODO add thumbnail.png
+-- TODO add script convert_mp3_to_ogg.sh
+
+local util = require("util")
+
+function print_message_to_player(player, announcement_description, announcement_sound)
+    local print_message_enabled = util.get_mod_setting_for_player(player, "train_announcements_print_announcement_message_enabled")
+    if not announcement_description or not print_message_enabled
     then
-        char = ' '
-    end
-    return string.rep(char, len - #str) .. str
-end
-
-function index_of(elem, list)
-    local current_index = nil
-    for i,e in ipairs(list) do
-        if e == elem then
-            current_index = i
-            break
-        end
-    end
-    return current_index
-end
-
-function seconds_to_ticks(seconds)
-    return math.floor(seconds * 60)
-end
-
-function train_state_to_string(state)
-    if state
+        return
+    elseif announcement_description == "interruption"
     then
-        if state == defines.train_state.path_lost
-        then
-            return "path_lost"
-        elseif state == defines.train_state.no_path
-        then
-            return "no_path"
-        elseif state == defines.train_state.arrive_signal
-        then
-            return "arrive_signal"
-        elseif state == defines.train_state.wait_signal
-        then
-            return "wait_signal"
-        elseif state == defines.train_state.arrive_station
-        then
-            return "arrive_station"
-        elseif state == defines.train_state.wait_station
-        then
-            return "wait_station"
-        else
-            return tostring(state)
-        end
+        player.print({"announcement-text.interruption"})
+    elseif announcement_description == "final station"
+    then
+        local station_name = util.get_next_station_name_for_player(player)
+        player.print({"announcement-text.final_station", util.corrected_train_stop_name(station_name)})
+    elseif string.sub(announcement_description, 1, 7) == "station"
+    then
+        local station_name = util.get_next_station_name_for_player(player)
+        player.print({"announcement-text.station", util.corrected_train_stop_name(station_name), string.sub(announcement_description, 8)})
     else
-        return "nil"
+        --unknown announcement_description
+--         game.print("ERROR: unknown sound description")
     end
 end
 
-function get_mod_setting(player, name)
-    if player and player.mod_settings and player.mod_settings[name]
-    then
---         game.print("INFO: Getting mod setting " .. name .. " with value " .. player.mod_settings[name].value)
-        return player.mod_settings[name].value
-    else
---         game.print("ERROR: cannot find mod setting " .. name .. " for player " .. player.name)
-        return nil
-    end
-end
-
-function get_train_for_player(player)
-    if player.vehicle and player.vehicle.valid and player.vehicle.train and player.vehicle.train.valid
-    then
-        return player.vehicle.train
-    else
-        return nil
-    end
-end
-
-function get_rails_to_next_stop(train)
-    if train.path_end_stop and train.path
-    then
-        return train.path.size - train.path.current
-    else
-        return nil
+function play_sound_for_player(player, sound)
+--     game.print(game.tick .. "play: " .. sound)
+    local volume = util.get_mod_setting_for_player(player, "train_announcements_volume")
+    local play_sound_enabled = util.get_mod_setting_for_player(player, "train_announcements_play_announcement_sound_enabled")
+    if volume and volume > 0 and play_sound_enabled then
+        player.play_sound({path = sound, volume_modifier = volume, override_sound_type = "alert"})
     end
 end
 
 function schedule_announcement(player, sound, tick)
-    local player_index = index_of(player, global.pending_players)
+    local player_index = util.index_of(player, global.pending_players)
     if player_index and player_index > 0
     then
 --         game.print("ERROR: announcement already scheduled for player " .. player.name)
@@ -95,7 +60,7 @@ function schedule_announcement(player, sound, tick)
 end
 
 function reset_pending_announcement(player)
-    local player_index = index_of(player, global.pending_players)
+    local player_index = util.index_of(player, global.pending_players)
     if player_index and player_index > 0
     then
 --         local size_before = #(global.pending_players)
@@ -108,7 +73,7 @@ function reset_pending_announcement(player)
 end
 
 function get_and_remove_pending_announcement(player)
-    local player_index = index_of(player, global.pending_players)
+    local player_index = util.index_of(player, global.pending_players)
     local announcement_sound = nil
     if player_index and player_index > 0
     then
@@ -124,7 +89,7 @@ function get_and_remove_pending_announcement(player)
 end
 
 function has_pending_announcement_on_tick(player, tick)
-    local player_index = index_of(player, global.pending_players)
+    local player_index = util.index_of(player, global.pending_players)
     if player_index and player_index > 0
     then
         local announcement_tick = global.pending_announcement_tick_for_players[player_index]
@@ -142,13 +107,13 @@ function has_pending_announcement_on_tick(player, tick)
 end
 
 function check_and_set_minimum_ticks_between_announcements(player)
-    local minSecondsBetweenAnnouncements = get_mod_setting(player, "train_announcements_minimum_seconds_between_announcements")
+    local minSecondsBetweenAnnouncements = util.get_global_mod_setting("train_announcements_minimum_seconds_between_announcements")
     if not minSecondsBetweenAnnouncements
     then
         minSecondsBetweenAnnouncements = 0.0
     end
     
-    if global.previous_announcement_tick_for_players[player.name] == nil or game.tick >= global.previous_announcement_tick_for_players[player.name] + seconds_to_ticks(minSecondsBetweenAnnouncements)
+    if global.previous_announcement_tick_for_players[player.name] == nil or game.tick >= global.previous_announcement_tick_for_players[player.name] + util.seconds_to_ticks(minSecondsBetweenAnnouncements)
     then
         global.previous_announcement_tick_for_players[player.name] = game.tick
         return true
@@ -158,65 +123,46 @@ function check_and_set_minimum_ticks_between_announcements(player)
     end
 end
 
-function play_sound_for_player(player, sound)
---     game.print(game.tick .. "play: " .. sound)
-    local volume = get_mod_setting(player, "train_announcements_volume")
-    local play_sound_enabled = get_mod_setting(player, "train_announcements_play_announcement_sound_enabled")
-    if volume and volume > 0 and play_sound_enabled then
-        player.play_sound({path = sound, volume_modifier = volume, override_sound_type = "alert"})
-    end
-end
-
-function is_approaching_final_station(train)
-    if train.path_end_stop and train.path_end_stop.backer_name and train.schedule and train.schedule.current and train.schedule.records
-    then
-        local lower_station_name = string.lower(train.path_end_stop.backer_name)
-        return string.find(lower_station_name, "final")
-            or string.find(lower_station_name, "1000km")
-            or string.find(lower_station_name, "endstation")
-            or train.schedule.current == #(train.schedule.records)
-    else
-        return nil
-    end
-end
-
-function get_number_of_approaching_station(train)
-    if train.schedule and train.schedule.current and train.schedule.records
-    then
-        return train.schedule.current
-    else
-        return nil
-    end
-end
-
 function train_is_on_announcement_distance(train, player)
-    local required_rails_to_next_stop = get_mod_setting(player, "train_announcements_number_of_rails_before_station")
-    local actual_rails_to_next_stop = get_rails_to_next_stop(train)
+    local required_rails_to_next_stop = util.get_global_mod_setting("train_announcements_number_of_rails_before_station")
+    local actual_rails_to_next_stop = util.get_number_of_rails_to_next_stop(train)
     return actual_rails_to_next_stop and required_rails_to_next_stop and required_rails_to_next_stop > 0 and actual_rails_to_next_stop == required_rails_to_next_stop
 end
 
-function train_has_lost_path(train)
-    if train.state and train.state == defines.train_state.path_lost
-    then
-        return true
-    else
-        return false
-    end
-end
-
-function has_entered_no_path_train_state(player)
+function has_entered_train_state_no_path(player)
     return global.current_train_state_for_players[player.name] == defines.train_state.no_path and 
            global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name]
            
 end
 
 function needs_interruption_announcement(player)
-    return has_entered_no_path_train_state(player)
+    return has_entered_train_state_no_path(player)
 end
 
 function needs_station_announcement(player)
-    local train = get_train_for_player(player)
+    local train = util.get_train_for_player(player)
     return train and train.valid and train_is_on_announcement_distance(train, player)
+end
+
+function get_station_sound_with_matching_name_pattern(player, stationName)
+    for i = 1,50,1 
+    do 
+        local padded_number = util.pad_left_string(tostring(i),2,0)
+        local name_pattern = util.get_global_mod_setting("train_announcements_station" .. padded_number .. "_name_pattern")
+        if name_pattern and string.len(name_pattern) > 0 and string.len(string.gsub(name_pattern, "%s+", "")) > 0
+        then
+            if string.find(stationName, name_pattern, 1, true)
+            then
+--                 game.print(game.tick .. "found match of " .. name_pattern .. " in " .. stationName)
+                return util.get_global_mod_setting("train_announcements_station" .. padded_number .. "_announcement_sound")
+            else
+--                 game.print(game.tick .. "no match of pattern: " .. name_pattern)
+            end
+        else
+--             game.print(game.tick .. "name pattern not found at all in settings")
+        end
+    end
+    return nil
 end
 
 function get_announcement_for_player(player)
@@ -224,28 +170,28 @@ function get_announcement_for_player(player)
     if needs_interruption_announcement(player)
     then
         announcement = {}
-        announcement["jingle sound"] = get_mod_setting(player, "train_announcements_interruption_jingle_sound")
-        announcement["sound"] = get_mod_setting(player, "train_announcements_interruption_announcement_sound")
+        announcement["jingle sound"] = util.get_global_mod_setting("train_announcements_interruption_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_interruption_announcement_sound")
         announcement["description"] = "interruption"
     elseif needs_station_announcement(player)
     then
-        -- use #xx or final station setting if possible
         announcement = {}
-        local train = get_train_for_player(player)
+        local train = util.get_train_for_player(player)
         if train and train.valid
         then
-            if is_approaching_final_station(train)
+            if util.is_approaching_final_station(train)
             then
-                announcement["jingle sound"] = get_mod_setting(player, "train_announcements_final_station_jingle_sound")
-                announcement["sound"] = get_mod_setting(player, "train_announcements_final_station_announcement_sound")
+                announcement["jingle sound"] = util.get_global_mod_setting("train_announcements_final_station_jingle_sound")
+                announcement["sound"] = util.get_global_mod_setting("train_announcements_final_station_announcement_sound")
                 announcement["description"] = "final station"
             else
-                local stationNumber = get_number_of_approaching_station(train)
-                if stationNumber
+                local stationNumber = util.get_number_of_approaching_station_in_schedule(train)
+                local stationName = util.get_next_station_name_for_player(player)
+                if stationNumber and stationName
                 then
-                    local stationNumberStr = pad_left(tostring(stationNumber), 2, "0")
-                    announcement["jingle sound"] = get_mod_setting(player, "train_announcements_station_jingle_sound")
-                    announcement["sound"] = get_mod_setting(player, "train_announcements_station" .. stationNumberStr .. "_announcement_sound")
+                    local stationNumberStr = util.pad_left_string(tostring(stationNumber), 2, "0")
+                    announcement["jingle sound"] = util.get_global_mod_setting("train_announcements_station_jingle_sound")
+                    announcement["sound"] = get_station_sound_with_matching_name_pattern(player, stationName)
                     announcement["description"] = "station" .. tostring(stationNumber)
                 end
             end
@@ -254,7 +200,7 @@ function get_announcement_for_player(player)
         -- fall back to defaults if necessary
         if not announcement["sound"] or not game.is_valid_sound_path(announcement["sound"])
         then
-            announcement["sound"] = get_mod_setting(player, "train_announcements_station_announcement_sound")
+            announcement["sound"] = util.get_global_mod_setting("train_announcements_station_announcement_sound")
         end
         if not announcement["description"] or announcement["description"] == ""
         then
@@ -266,7 +212,7 @@ function get_announcement_for_player(player)
     -- fall back to defaults if necessary
     if announcement and ( not announcement["jingle sound"] or not game.is_valid_sound_path(announcement["jingle sound"]) )
     then
-        announcement["jingle sound"] = get_mod_setting(player, "train_announcements_default_jingle_sound")
+        announcement["jingle sound"] = util.get_global_mod_setting("train_announcements_default_jingle_sound")
     end
 
     return announcement
@@ -275,56 +221,12 @@ end
 function update_train_states_for_player(player)
     global.previous_train_state_for_players[player.name] = global.current_train_state_for_players[player.name]
     
-    local train = get_train_for_player(player)
+    local train = util.get_train_for_player(player)
     if train and train.valid
     then
         global.current_train_state_for_players[player.name] = train.state
     else
         global.current_train_state_for_players[player.name] = nil
-    end
-end
-
-function get_next_station_name_for_player(player)
-    local train = get_train_for_player(player)
-    if train and train.path_end_stop and train.path_end_stop.backer_name
-    then
-        return train.path_end_stop.backer_name
-    else
-        return ""
-    end
-end
-
-function corrected_train_stop_name(str)
-    -- Source: https://wiki.factorio.com/Rich_text
-    -- If the name contains symbols it looks like: [item=copper-plate]
-    -- Therefore, replace this so that it looks like: [img=item/copper-plate]
-    if not string.find(str,"=")
-    then
-        return str
-    else
-        return string.gsub(string.gsub(str, "=", "/"), "%[", "[img=")
-    end
-end
-
-function print_message_to_player(player, announcement_description, announcement_sound)
-    local print_message_enabled = get_mod_setting(player, "train_announcements_print_announcement_message_enabled")
-    if not announcement_description or not print_message_enabled
-    then
-        return
-    elseif announcement_description == "interruption"
-    then
-        player.print({"announcement-text.interruption"})
-    elseif announcement_description == "final station"
-    then
-        local station_name = get_next_station_name_for_player(player)
-        player.print({"announcement-text.final_station", corrected_train_stop_name(station_name)})
-    elseif string.sub(announcement_description, 1, 7) == "station"
-    then
-        local station_name = get_next_station_name_for_player(player)
-        player.print({"announcement-text.station", corrected_train_stop_name(station_name), string.sub(announcement_description, 8)})
-    else
-        --unknown announcement_description
---         game.print("ERROR: unknown sound description")
     end
 end
 
@@ -348,10 +250,10 @@ function process_player(player)
         if announcement_jingle_sound and game.is_valid_sound_path(announcement_jingle_sound)
         then
             play_sound_for_player(player, announcement_jingle_sound)
-            local seconds_between_jingle_and_announcement = get_mod_setting(player, "train_announcements_seconds_between_jingle_and_announcement")
+            local seconds_between_jingle_and_announcement = util.get_global_mod_setting("train_announcements_seconds_between_jingle_and_announcement")
             if announcement_sound and game.is_valid_sound_path(announcement_sound) and seconds_between_jingle_and_announcement
             then
-                schedule_announcement(player, announcement_sound, game.tick + seconds_to_ticks(seconds_between_jingle_and_announcement))
+                schedule_announcement(player, announcement_sound, game.tick + util.seconds_to_ticks(seconds_between_jingle_and_announcement))
             else
 --                 game.print("WARNING: announcement config invalid (announcement_sound=" .. announcement_sound .. ")")
             end

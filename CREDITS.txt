@@ -6,3 +6,5 @@ This mod uses the following sounds or modified versions from freesound.org:
 "SWT to London Waterloo Calling at.wav" by planetfrog ( https://freesound.org/people/planetfrog/sounds/83296/ ) licensed under CC0 1.0
 "Announcement-03.wav" by gollamar ( https://freesound.org/people/gollamar/sounds/273232/ ) licensed under CC BY 3.0
 "Stockholm's Tunnelbana jingle.wav" by klankbeeld ( https://freesound.org/people/klankbeeld/sounds/587168/ ) licensed under CC BY 4.0
+
+This mod also uses text-to-speech conversions from https://freetts.com

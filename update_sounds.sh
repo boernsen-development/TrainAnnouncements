@@ -11,12 +11,14 @@
 
 SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 JINGLES_SUB_DIR=sounds/jingles
-JINGLES_DIR=${SCRIPT_DIR}/${JINGLES_SUB_DIR}
+JINGLES_FULL_DIR=${SCRIPT_DIR}/${JINGLES_SUB_DIR}
 STATIONS_SUB_DIR=sounds/stations
-STATIONS_DIR=${SCRIPT_DIR}/${STATIONS_SUB_DIR}
+STATIONS_FULL_DIR=${SCRIPT_DIR}/${STATIONS_SUB_DIR}
 INTERRUPTIONS_SUB_DIR=sounds/interruptions
-INTERRUPTIONS_DIR=${SCRIPT_DIR}/${INTERRUPTIONS_SUB_DIR}
+INTERRUPTIONS_FULL_DIR=${SCRIPT_DIR}/${INTERRUPTIONS_SUB_DIR}
 MOD_NAME=__TrainAnnouncements__
+STATION_START_NUMBER=1
+STATION_START_NUMBER=50
 
 DATETIME=$(date +%Y%d%m_%H%M%S)
 DATA_LUA=${SCRIPT_DIR}/data.lua
@@ -44,7 +46,7 @@ print_array()
     done     
 }
 
-add_to_data_lua()
+add_to_data_lua_and_arrays()
 {
     local dir=${1}
     local name_prefix=${2}
@@ -54,23 +56,31 @@ add_to_data_lua()
     
     #echo "Processing directory $dir"
 
-    for file in $dir/*.ogg
+    files=$(find $dir -type f -iname "*.ogg" | sort)
+    local IFS=$'\n'
+    for file in $files
     do
-        file_name=${file##*/}
+        file_name=${file:${#dir}+1}
         gui_name=${file_name%.ogg}
         gui_name_lowercase=${gui_name,,}
         
+        #echo "\n"
         #echo "Processing file $file_name"
+        #echo "Gui name $gui_name"
+        #echo "Lower case $gui_name_lowercase"
 
         # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
         # ${parameter//pattern/string}
         code_name=$name_prefix${gui_name_lowercase//[![:alpha:]]/_}
         
+        #echo "Code name $code_name"
+
         # store code_name in code_names_array (for settings.lua)
         code_names_array+=("${code_name}")
         gui_names_array+=("${gui_name}")
 
         # write data.lua
+        #echo "data.lua.filename $MOD_NAME/$sub_dir/$file_name"
         echo "  {" >> ${DATA_LUA}
         echo "    type = \"sound\"," >> ${DATA_LUA}
         echo "    name = \"$code_name\"," >> ${DATA_LUA}
@@ -86,9 +96,9 @@ add_to_data_lua()
     echo "    type = \"sound\"," >> ${DATA_LUA}
     echo "    name = \"${name_prefix}changing\"," >> ${DATA_LUA}
     echo "    variations = {" >> ${DATA_LUA}
-    for file in $dir/*.ogg
+    for file in $files
     do
-        file_name=${file##*/}
+        file_name=${file:${#dir}+1}
         echo "      {filename = \"$MOD_NAME/$sub_dir/$file_name\"}," >> ${DATA_LUA}
     done
     echo "    }," >> ${DATA_LUA}
@@ -104,9 +114,9 @@ add_to_data_lua()
     echo "    type = \"sound\"," >> ${DATA_LUA}
     echo "    name = \"${name_prefix}random\"," >> ${DATA_LUA}
     echo "    variations = {" >> ${DATA_LUA}
-    for file in $dir/*.ogg
+    for file in $files
     do
-        file_name=${file##*/}
+        file_name=${file:${#dir}+1}
         echo "      {filename = \"$MOD_NAME/$sub_dir/$file_name\"}," >> ${DATA_LUA}
     done
     echo "    }," >> ${DATA_LUA}
@@ -135,6 +145,11 @@ edit_settings_lua()
     sed -i "/$search_string/c\\$joined" ${SETTINGS_LUA}
 }
 
+fix_settings_lua_order()
+{
+    perl -pi -n -e 'BEGIN{$A=1;} s/(order = \").*(\")/$1."0"x(3-length($A)).$A++.$2/ge' ${SETTINGS_LUA}
+}
+
 edit_locale_cfg()
 {
     sed -i '/\[string-mod-setting\]/,$d' ${LOCALE_CFG}
@@ -153,26 +168,10 @@ edit_locale_cfg()
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
         echo "train_announcements_station_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station01_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station02_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station03_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station04_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station05_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station06_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station07_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station08_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station09_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station10_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station11_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station12_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station13_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station14_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station15_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station16_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station17_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station18_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station19_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_station20_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        for j in $(seq -w $STATION_START_NUMBER $STATION_END_NUMBER)
+        do
+            echo "train_announcements_station${j}_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        done
         echo "train_announcements_final_station_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
 }
@@ -229,9 +228,9 @@ echo "Writing ${DATA_LUA}..."
 echo "data:extend({" >> ${DATA_LUA}
 
 # write actual .ogg files to data.lua
-add_to_data_lua ${JINGLES_DIR} jingle_ ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES
-add_to_data_lua ${STATIONS_DIR} station_ ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
-add_to_data_lua ${INTERRUPTIONS_DIR} interruption_ ${INTERRUPTIONS_SUB_DIR} INTERRUPTIONS_CODE_NAMES INTERRUPTIONS_GUI_NAMES
+add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} jingle_ ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES
+add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} station_ ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
+add_to_data_lua_and_arrays ${INTERRUPTIONS_FULL_DIR} interruption_ ${INTERRUPTIONS_SUB_DIR} INTERRUPTIONS_CODE_NAMES INTERRUPTIONS_GUI_NAMES
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
@@ -241,6 +240,7 @@ echo ""
 print_array "Jingles" JINGLES_GUI_NAMES
 echo ""
 print_array "Stations" STATIONS_GUI_NAMES
+print_array "Stations code names" STATIONS_CODE_NAMES
 echo ""
 print_array "Interruptions" INTERRUPTIONS_GUI_NAMES
 echo ""
@@ -250,6 +250,7 @@ echo "Editing ${SETTINGS_LUA}..."
 edit_settings_lua "allowed_values = {\"jingle_" JINGLES_CODE_NAMES
 edit_settings_lua "allowed_values = {\"station_" STATIONS_CODE_NAMES
 edit_settings_lua "allowed_values = {\"interruption_" INTERRUPTIONS_CODE_NAMES
+fix_settings_lua_order
 
 # edit locale.cfg
 echo "Editing ${LOCALE_CFG}..."
