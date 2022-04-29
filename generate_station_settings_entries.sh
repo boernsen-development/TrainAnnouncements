@@ -28,8 +28,8 @@ echo ""
 
 # for i in $(seq -w $start $end)
 # do
-#     echo "train_announcements_station${i}_name_pattern=#${i} pattern"
-#     echo "train_announcements_station${i}_announcement_sound=#${i} announcement sound"
+#     echo "train_announcements_station${i}_name_pattern=#${i} pattern [img=info]"
+#     echo "train_announcements_station${i}_announcement_sound=#${i} announcement sound [img=info]"
 # done
 
 echo ""
