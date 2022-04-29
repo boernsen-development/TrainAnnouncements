@@ -1,5 +1,7 @@
--- TODO change final station to wait condition: "passenger_not_present" or "inactivity" with ticks > 108000 (30min) (https://lua-api.factorio.com/latest/Concepts.html#WaitCondition)
 -- TODO reduce sounds to UK female
+-- TODO add separate announcement "Please mind the gap between the train and the platform." (https://invidio.xamh.de/watch?v=IaLzd6JAW6o&autoplay=0&continue=0&dark_mode=true&listen=0&local=1&loop=0&nojs=0&player_style=youtube&quality=hd720&thin_mode=false)
+-- TODO add separate announcement "Please remember to collect all your personal belongings when leaving the train." (https://invidio.xamh.de/watch?v=Ft19PwjfVvs&autoplay=0&continue=0&dark_mode=true&listen=0&local=1&loop=0&nojs=0&player_style=youtube&quality=hd720&thin_mode=false)
+-- TODO add separate announcement "You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare." (https://invidio.xamh.de/watch?v=Ft19PwjfVvs&autoplay=0&continue=0&dark_mode=true&listen=0&local=1&loop=0&nojs=0&player_style=youtube&quality=hd720&thin_mode=false)
 -- TODO reduce pattern settings
 -- TODO add "blocked tracks" accouncement for state change ? -> wait_signal (https://lua-api.factorio.com/latest/defines.html#defines.train_state)
 -- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path

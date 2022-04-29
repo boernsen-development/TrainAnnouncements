@@ -91,14 +91,27 @@ function util.get_number_of_rails_to_next_stop(train)
     end
 end
 
+function util.is_final_wait_condition(wait_condition)
+    local half_an_hour_ticks = 108000
+    return wait_condition.type and ( wait_condition.type == "passenger_not_present" or (wait_condition.type == "inactivity" and wait_condition.ticks and wait_condition.ticks >= half_an_hour_ticks) )
+end
+
+function util.is_final_wait_conditions(wait_conditions)
+    local all_are_final = true
+    for _,wait_condition in pairs(wait_conditions) do
+        if not util.is_final_wait_condition(wait_condition)
+        then
+            all_are_final = false
+            break
+        end
+    end
+    return all_are_final
+end
+
 function util.is_approaching_final_station(train)
-    if train.path_end_stop and train.path_end_stop.backer_name and train.schedule and train.schedule.current and train.schedule.records
+    if train.schedule and train.schedule.current and train.schedule.records and train.schedule.records[train.schedule.current] and train.schedule.records[train.schedule.current].wait_conditions
     then
-        local lower_station_name = string.lower(train.path_end_stop.backer_name)
-        return string.find(lower_station_name, "final")
-            or string.find(lower_station_name, "1000km")
-            or string.find(lower_station_name, "endstation")
-            or train.schedule.current == #(train.schedule.records)
+        return util.is_final_wait_conditions(train.schedule.records[train.schedule.current].wait_conditions)
     else
         return nil
     end
