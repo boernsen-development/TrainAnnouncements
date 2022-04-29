@@ -7,8 +7,8 @@ Date: 2022-04-29
     - English available
   License:
     - MIT License for non-sound files
-    - CC BY-NC 3.0 for sound files
+    - CC BY-NC 3.0 for sound and icon files
     - For more details see the included LICENSE file
   Sounds:
-    - Some basic jingles, station announcement and interruption announcement sounds
+    - Some basic jingles, station announcement and "No path" announcement sounds
     - If only playing in single player, more sounds can be added manually using the included script update_sounds.sh. See mod description for details.

@@ -90,7 +90,7 @@ data:extend({
     name = "train_announcements_no_path_announcement_sound",
     setting_type = "runtime-global",
     default_value = "no_path_en_gb_c_female_the_train_has_no_path",
-    allowed_values = {"no_path_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_no_path", "no_path_en_gb_c_female_please_mind_the_gap", "no_path_en_gb_c_female_please_remember_to_collect_personal_belongings", "no_path_en_gb_c_female_the_train_has_no_path", "no_path_en_gb_c_female_you_must_buy_a_ticket", "no_path_real_ice_train_delay_message", "no_path_changing", "no_path_random", "off"},
+    allowed_values = {"no_path_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_no_path", "no_path_en_gb_c_female_the_train_has_no_path", "no_path_real_ice_train_delay_message", "no_path_changing", "no_path_random", "off"},
     order = "012"
   },
   {

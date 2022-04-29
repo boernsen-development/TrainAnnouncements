@@ -335,32 +335,8 @@ data:extend({
   },
   {
     type = "sound",
-    name = "no_path_en_gb_c_female_please_mind_the_gap",
-    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Please mind the gap.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "no_path_en_gb_c_female_please_remember_to_collect_personal_belongings",
-    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Please remember to collect personal belongings.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
     name = "no_path_en_gb_c_female_the_train_has_no_path",
     filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "no_path_en_gb_c_female_you_must_buy_a_ticket",
-    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/You must buy a ticket.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
@@ -378,10 +354,7 @@ data:extend({
     name = "no_path_changing",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Please mind the gap.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Please remember to collect personal belongings.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/You must buy a ticket.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg"},
     },
     category = "alert",
@@ -393,10 +366,7 @@ data:extend({
     name = "no_path_random",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Please mind the gap.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Please remember to collect personal belongings.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/You must buy a ticket.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg"},
     },
     category = "alert",
