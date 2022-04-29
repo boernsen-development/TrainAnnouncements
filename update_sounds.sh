@@ -16,6 +16,8 @@ STATIONS_SUB_DIR=sounds/stations
 STATIONS_FULL_DIR=${SCRIPT_DIR}/${STATIONS_SUB_DIR}
 NO_PATH_SUB_DIR=sounds/no_path
 NO_PATH_FULL_DIR=${SCRIPT_DIR}/${NO_PATH_SUB_DIR}
+DESTINATION_FULL_SUB_DIR=sounds/destination_full
+DESTINATION_FULL_FULL_DIR=${SCRIPT_DIR}/${DESTINATION_FULL_SUB_DIR}
 MOD_NAME=__TrainAnnouncements__
 STATION_START_NUMBER=1
 STATION_START_NUMBER=50
@@ -34,6 +36,8 @@ declare -a STATIONS_CODE_NAMES
 declare -a STATIONS_GUI_NAMES
 declare -a NO_PATH_CODE_NAMES
 declare -a NO_PATH_GUI_NAMES
+declare -a DESTINATION_FULL_CODE_NAMES
+declare -a DESTINATION_FULL_GUI_NAMES
 
 print_array()
 {
@@ -159,11 +163,16 @@ edit_locale_cfg()
         echo "train_announcements_no_path_announcement_sound-${NO_PATH_CODE_NAMES[$i]}=${NO_PATH_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
 
+    for i in "${!DESTINATION_FULL_CODE_NAMES[@]}"; do
+        echo "train_announcements_destination_full_announcement_sound-${DESTINATION_FULL_CODE_NAMES[$i]}=${DESTINATION_FULL_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
+
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_final_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_destination_full_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
@@ -217,7 +226,7 @@ backup_move ${DATA_LUA} ${DATA_LUA_BACKUP}
 backup_copy ${SETTINGS_LUA} ${SETTINGS_LUA_BACKUP}
 backup_copy ${LOCALE_CFG} ${LOCALE_CFG_BACKUP}
 
-#check_file_exists ${DATA_LUA_BACKUP}
+check_file_exists ${DATA_LUA_BACKUP}
 check_file_exists ${SETTINGS_LUA_BACKUP}
 check_file_exists ${LOCALE_CFG_BACKUP}
 check_file_does_not_exist ${DATA_LUA}
@@ -231,6 +240,7 @@ echo "data:extend({" >> ${DATA_LUA}
 add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} jingle_ ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES
 add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} station_ ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
 add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} no_path_ ${NO_PATH_SUB_DIR} NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES
+add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} destination_full_ ${DESTINATION_FULL_SUB_DIR} DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
@@ -243,12 +253,15 @@ print_array "Stations" STATIONS_GUI_NAMES
 echo ""
 print_array "No path" NO_PATH_GUI_NAMES
 echo ""
+print_array "Destination full" DESTINATION_FULL_GUI_NAMES
+echo ""
 
 # edit settings.lua
 echo "Editing ${SETTINGS_LUA}..."
 edit_settings_lua "allowed_values = {\"jingle_" JINGLES_CODE_NAMES
 edit_settings_lua "allowed_values = {\"station_" STATIONS_CODE_NAMES
 edit_settings_lua "allowed_values = {\"no_path_" NO_PATH_CODE_NAMES
+edit_settings_lua "allowed_values = {\"destination_full_" DESTINATION_FULL_CODE_NAMES
 fix_settings_lua_order
 
 # edit locale.cfg

@@ -1,7 +1,6 @@
 -- TODO add "blocked tracks" accouncement for state change ? -> wait_signal (https://lua-api.factorio.com/latest/defines.html#defines.train_state)
 -- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path
 -- TODO add "good journey" accouncement for state change manual_control(+speed=0) -> on_the_path
--- TODO add "destination full" accouncement for state ? -> destination_full
 -- TODO add separate announcement "Please mind the gap between the train and the platform."
 -- TODO add separate announcement "Please remember to collect all your personal belongings when leaving the train."
 -- TODO add separate announcement "You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare."
@@ -46,6 +45,9 @@ function print_message_to_player(player, announcement, announcement_sound)
     if announcement_description == "no_path"
     then
         player.print({"announcement-text.no_path"})
+    elseif announcement_description == "destination_full"
+    then
+        player.print({"announcement-text.destination_full"})
     elseif announcement_description == "station" or announcement_description == "final_station"
     then
         local station_name = util.get_next_station_name_for_player(player)
@@ -165,6 +167,16 @@ function has_entered_train_state_no_path(player)
            
 end
 
+function has_entered_train_state_destination_full(player)
+    return global.current_train_state_for_players[player.name] == defines.train_state.destination_full and 
+           global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name]
+           
+end
+
+function needs_destination_full_announcement(player)
+    return has_entered_train_state_destination_full(player)
+end
+
 function needs_no_path_announcement(player)
     return has_entered_train_state_no_path(player)
 end
@@ -203,6 +215,12 @@ function get_announcement_for_player(player)
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_no_path_jingle_sound")
         announcement["sound"] = util.get_global_mod_setting("train_announcements_no_path_announcement_sound")
         announcement["description"] = "no_path"
+    elseif needs_destination_full_announcement(player)
+    then
+        announcement = {}
+        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_destination_full_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_destination_full_announcement_sound")
+        announcement["description"] = "destination_full"
     elseif needs_station_announcement(player)
     then
         announcement = {}

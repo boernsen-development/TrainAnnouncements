@@ -373,4 +373,42 @@ data:extend({
     allow_random_repeat = true,
     audible_distance_modifier = 1e20
   },
+  {
+    type = "sound",
+    name = "destination_full_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_full_destination",
+    filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "destination_full_en_gb_c_female_destination_is_full",
+    filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Destination is full.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "destination_full_changing",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Destination is full.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "destination_full_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Destination is full.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
 })
