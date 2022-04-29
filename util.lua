@@ -53,7 +53,7 @@ function util.train_state_to_string(state)
     end
 end
 
-function util.get_mod_setting_for_player(player, name)
+function util.get_players_mod_setting(player, name)
     if player and player.mod_settings and player.mod_settings[name]
     then
 --          game.print("INFO: Getting mod setting " .. name .. " with value " .. player.mod_settings[name].value)
@@ -108,6 +108,16 @@ function util.get_number_of_approaching_station_in_schedule(train)
     if train.schedule and train.schedule.current and train.schedule.records
     then
         return train.schedule.current
+    else
+        return nil
+    end
+end
+
+
+function util.get_number_of_stations_in_schedule(train)
+    if train.schedule and train.schedule.records
+    then
+        return #(train.schedule.records)
     else
         return nil
     end

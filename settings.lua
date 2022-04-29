@@ -1,14 +1,14 @@
 data:extend({
   {
     type = "bool-setting",
-    name = "train_announcements_print_announcement_message_enabled",
+    name = "train_announcements_print_announcement_messages_enabled",
     setting_type = "runtime-per-user",
     default_value = true,
     order = "001"
   },
   {
     type = "bool-setting",
-    name = "train_announcements_play_announcement_sound_enabled",
+    name = "train_announcements_play_announcement_sounds_enabled",
     setting_type = "runtime-per-user",
     default_value = true,
     order = "002"
@@ -23,12 +23,27 @@ data:extend({
     order = "003"
   },
   {
+    type = "int-setting",
+    name = "train_announcements_number_of_rails_before_station",
+    setting_type = "runtime-global",
+    minimum_value = 1,
+    default_value = 250,
+    order = "004"
+  },
+  {
     type = "double-setting",
     name = "train_announcements_minimum_seconds_between_announcements",
     setting_type = "runtime-global",
     minimum_value = 0.0,
     default_value = 4.0,
-    order = "004"
+    order = "005"
+  },
+  {
+    type = "bool-setting",
+    name = "train_announcements_print_station_number_enabled",
+    setting_type = "runtime-global",
+    default_value = false,
+    order = "006"
   },
   {
     type = "double-setting",
@@ -36,7 +51,7 @@ data:extend({
     setting_type = "runtime-global",
     minimum_value = 0.1,
     default_value = 2.0,
-    order = "005"
+    order = "007"
   },
   {
     type = "string-setting",
@@ -44,27 +59,11 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "jingle_airport",
     allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
-    order = "006"
-  },
-  {
-    type = "string-setting",
-    name = "train_announcements_station_jingle_sound",
-    setting_type = "runtime-global",
-    default_value = "off",
-    allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
-    order = "007"
-  },
-  {
-    type = "string-setting",
-    name = "train_announcements_final_station_jingle_sound",
-    setting_type = "runtime-global",
-    default_value = "off",
-    allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
     order = "008"
   },
   {
     type = "string-setting",
-    name = "train_announcements_interruption_jingle_sound",
+    name = "train_announcements_override_station_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
@@ -72,31 +71,31 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_interruption_announcement_sound",
+    name = "train_announcements_override_final_station_jingle_sound",
     setting_type = "runtime-global",
-    default_value = "interruption_en_gb_standard_a_female_train_has_no_path",
-    allowed_values = {"interruption_en_gb_standard_a_female_train_has_no_path", "interruption_en_gb_standard_b_male_train_has_no_path", "interruption_real_ice_train_delay_message", "interruption_changing", "interruption_random", "off"},
+    default_value = "off",
+    allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
     order = "010"
   },
   {
-    type = "int-setting",
-    name = "train_announcements_number_of_rails_before_station",
+    type = "string-setting",
+    name = "train_announcements_override_interruption_jingle_sound",
     setting_type = "runtime-global",
-    minimum_value = 1,
-    default_value = 250,
+    default_value = "off",
+    allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
     order = "011"
   },
   {
     type = "string-setting",
-    name = "train_announcements_station_announcement_sound",
+    name = "train_announcements_interruption_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "off",
-    allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
+    default_value = "interruption_en_gb_standard_a_female_train_has_no_path",
+    allowed_values = {"interruption_en_gb_standard_a_female_train_has_no_path", "interruption_en_gb_standard_b_male_train_has_no_path", "interruption_real_ice_train_delay_message", "interruption_changing", "interruption_random", "off"},
     order = "012"
   },
   {
     type = "string-setting",
-    name = "train_announcements_final_station_announcement_sound",
+    name = "train_announcements_default_station_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
@@ -104,11 +103,19 @@ data:extend({
   },
   {
     type = "string-setting",
+    name = "train_announcements_override_final_station_announcement_sound",
+    setting_type = "runtime-global",
+    default_value = "off",
+    allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
+    order = "014"
+  },
+  {
+    type = "string-setting",
     name = "train_announcements_station01_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "014"
+    order = "015"
   },
   {
     type = "string-setting",
@@ -116,7 +123,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "015"
+    order = "016"
   },
   {
     type = "string-setting",
@@ -124,7 +131,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "016"
+    order = "017"
   },
   {
     type = "string-setting",
@@ -132,7 +139,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "017"
+    order = "018"
   },
   {
     type = "string-setting",
@@ -140,7 +147,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "018"
+    order = "019"
   },
   {
     type = "string-setting",
@@ -148,7 +155,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "019"
+    order = "020"
   },
   {
     type = "string-setting",
@@ -156,7 +163,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "020"
+    order = "021"
   },
   {
     type = "string-setting",
@@ -164,7 +171,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "021"
+    order = "022"
   },
   {
     type = "string-setting",
@@ -172,7 +179,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "022"
+    order = "023"
   },
   {
     type = "string-setting",
@@ -180,7 +187,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "023"
+    order = "024"
   },
   {
     type = "string-setting",
@@ -188,7 +195,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "024"
+    order = "025"
   },
   {
     type = "string-setting",
@@ -196,7 +203,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "025"
+    order = "026"
   },
   {
     type = "string-setting",
@@ -204,7 +211,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "026"
+    order = "027"
   },
   {
     type = "string-setting",
@@ -212,7 +219,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "027"
+    order = "028"
   },
   {
     type = "string-setting",
@@ -220,7 +227,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "028"
+    order = "029"
   },
   {
     type = "string-setting",
@@ -228,7 +235,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "029"
+    order = "030"
   },
   {
     type = "string-setting",
@@ -236,7 +243,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "030"
+    order = "031"
   },
   {
     type = "string-setting",
@@ -244,7 +251,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "031"
+    order = "032"
   },
   {
     type = "string-setting",
@@ -252,7 +259,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "032"
+    order = "033"
   },
   {
     type = "string-setting",
@@ -260,7 +267,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "033"
+    order = "034"
   },
   {
     type = "string-setting",
@@ -268,7 +275,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "034"
+    order = "035"
   },
   {
     type = "string-setting",
@@ -276,7 +283,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "035"
+    order = "036"
   },
   {
     type = "string-setting",
@@ -284,7 +291,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "036"
+    order = "037"
   },
   {
     type = "string-setting",
@@ -292,7 +299,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "037"
+    order = "038"
   },
   {
     type = "string-setting",
@@ -300,7 +307,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "038"
+    order = "039"
   },
   {
     type = "string-setting",
@@ -308,7 +315,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "039"
+    order = "040"
   },
   {
     type = "string-setting",
@@ -316,7 +323,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "040"
+    order = "041"
   },
   {
     type = "string-setting",
@@ -324,7 +331,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "041"
+    order = "042"
   },
   {
     type = "string-setting",
@@ -332,7 +339,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "042"
+    order = "043"
   },
   {
     type = "string-setting",
@@ -340,7 +347,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "043"
+    order = "044"
   },
   {
     type = "string-setting",
@@ -348,7 +355,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "044"
+    order = "045"
   },
   {
     type = "string-setting",
@@ -356,7 +363,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "045"
+    order = "046"
   },
   {
     type = "string-setting",
@@ -364,7 +371,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "046"
+    order = "047"
   },
   {
     type = "string-setting",
@@ -372,7 +379,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "047"
+    order = "048"
   },
   {
     type = "string-setting",
@@ -380,7 +387,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "048"
+    order = "049"
   },
   {
     type = "string-setting",
@@ -388,7 +395,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "049"
+    order = "050"
   },
   {
     type = "string-setting",
@@ -396,7 +403,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "050"
+    order = "051"
   },
   {
     type = "string-setting",
@@ -404,7 +411,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "051"
+    order = "052"
   },
   {
     type = "string-setting",
@@ -412,7 +419,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "052"
+    order = "053"
   },
   {
     type = "string-setting",
@@ -420,7 +427,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "053"
+    order = "054"
   },
   {
     type = "string-setting",
@@ -428,7 +435,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "054"
+    order = "055"
   },
   {
     type = "string-setting",
@@ -436,7 +443,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "055"
+    order = "056"
   },
   {
     type = "string-setting",
@@ -444,7 +451,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "056"
+    order = "057"
   },
   {
     type = "string-setting",
@@ -452,7 +459,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "057"
+    order = "058"
   },
   {
     type = "string-setting",
@@ -460,7 +467,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "058"
+    order = "059"
   },
   {
     type = "string-setting",
@@ -468,7 +475,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "059"
+    order = "060"
   },
   {
     type = "string-setting",
@@ -476,7 +483,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "060"
+    order = "061"
   },
   {
     type = "string-setting",
@@ -484,7 +491,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "061"
+    order = "062"
   },
   {
     type = "string-setting",
@@ -492,7 +499,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "062"
+    order = "063"
   },
   {
     type = "string-setting",
@@ -500,7 +507,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "063"
+    order = "064"
   },
   {
     type = "string-setting",
@@ -508,7 +515,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "064"
+    order = "065"
   },
   {
     type = "string-setting",
@@ -516,7 +523,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "065"
+    order = "066"
   },
   {
     type = "string-setting",
@@ -524,7 +531,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "066"
+    order = "067"
   },
   {
     type = "string-setting",
@@ -532,7 +539,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "067"
+    order = "068"
   },
   {
     type = "string-setting",
@@ -540,7 +547,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "068"
+    order = "069"
   },
   {
     type = "string-setting",
@@ -548,7 +555,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "069"
+    order = "070"
   },
   {
     type = "string-setting",
@@ -556,7 +563,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "070"
+    order = "071"
   },
   {
     type = "string-setting",
@@ -564,7 +571,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "071"
+    order = "072"
   },
   {
     type = "string-setting",
@@ -572,7 +579,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "072"
+    order = "073"
   },
   {
     type = "string-setting",
@@ -580,7 +587,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "073"
+    order = "074"
   },
   {
     type = "string-setting",
@@ -588,7 +595,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "074"
+    order = "075"
   },
   {
     type = "string-setting",
@@ -596,7 +603,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "075"
+    order = "076"
   },
   {
     type = "string-setting",
@@ -604,7 +611,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "076"
+    order = "077"
   },
   {
     type = "string-setting",
@@ -612,7 +619,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "077"
+    order = "078"
   },
   {
     type = "string-setting",
@@ -620,7 +627,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "078"
+    order = "079"
   },
   {
     type = "string-setting",
@@ -628,7 +635,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "079"
+    order = "080"
   },
   {
     type = "string-setting",
@@ -636,7 +643,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "080"
+    order = "081"
   },
   {
     type = "string-setting",
@@ -644,7 +651,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "081"
+    order = "082"
   },
   {
     type = "string-setting",
@@ -652,7 +659,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "082"
+    order = "083"
   },
   {
     type = "string-setting",
@@ -660,7 +667,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "083"
+    order = "084"
   },
   {
     type = "string-setting",
@@ -668,7 +675,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "084"
+    order = "085"
   },
   {
     type = "string-setting",
@@ -676,7 +683,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "085"
+    order = "086"
   },
   {
     type = "string-setting",
@@ -684,7 +691,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "086"
+    order = "087"
   },
   {
     type = "string-setting",
@@ -692,7 +699,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "087"
+    order = "088"
   },
   {
     type = "string-setting",
@@ -700,7 +707,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "088"
+    order = "089"
   },
   {
     type = "string-setting",
@@ -708,7 +715,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "089"
+    order = "090"
   },
   {
     type = "string-setting",
@@ -716,7 +723,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "090"
+    order = "091"
   },
   {
     type = "string-setting",
@@ -724,7 +731,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "091"
+    order = "092"
   },
   {
     type = "string-setting",
@@ -732,7 +739,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "092"
+    order = "093"
   },
   {
     type = "string-setting",
@@ -740,7 +747,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "093"
+    order = "094"
   },
   {
     type = "string-setting",
@@ -748,7 +755,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "094"
+    order = "095"
   },
   {
     type = "string-setting",
@@ -756,7 +763,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "095"
+    order = "096"
   },
   {
     type = "string-setting",
@@ -764,7 +771,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "096"
+    order = "097"
   },
   {
     type = "string-setting",
@@ -772,7 +779,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "097"
+    order = "098"
   },
   {
     type = "string-setting",
@@ -780,7 +787,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "098"
+    order = "099"
   },
   {
     type = "string-setting",
@@ -788,7 +795,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "099"
+    order = "100"
   },
   {
     type = "string-setting",
@@ -796,7 +803,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "100"
+    order = "101"
   },
   {
     type = "string-setting",
@@ -804,7 +811,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "101"
+    order = "102"
   },
   {
     type = "string-setting",
@@ -812,7 +819,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "102"
+    order = "103"
   },
   {
     type = "string-setting",
@@ -820,7 +827,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "103"
+    order = "104"
   },
   {
     type = "string-setting",
@@ -828,7 +835,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "104"
+    order = "105"
   },
   {
     type = "string-setting",
@@ -836,7 +843,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "105"
+    order = "106"
   },
   {
     type = "string-setting",
@@ -844,7 +851,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "106"
+    order = "107"
   },
   {
     type = "string-setting",
@@ -852,7 +859,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "107"
+    order = "108"
   },
   {
     type = "string-setting",
@@ -860,7 +867,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "108"
+    order = "109"
   },
   {
     type = "string-setting",
@@ -868,7 +875,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "109"
+    order = "110"
   },
   {
     type = "string-setting",
@@ -876,7 +883,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "110"
+    order = "111"
   },
   {
     type = "string-setting",
@@ -884,7 +891,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "111"
+    order = "112"
   },
   {
     type = "string-setting",
@@ -892,7 +899,7 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
-    order = "112"
+    order = "113"
   },
   {
     type = "string-setting",
@@ -900,6 +907,6 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_standard_a_female_demand", "station_en_gb_standard_a_female_fuelling", "station_en_gb_standard_a_female_loading", "station_en_gb_standard_a_female_main_base", "station_en_gb_standard_a_female_supply", "station_en_gb_standard_a_female_unloading", "station_en_gb_standard_b_male_demand", "station_en_gb_standard_b_male_fuelling", "station_en_gb_standard_b_male_loading", "station_en_gb_standard_b_male_main_base", "station_en_gb_standard_b_male_supply", "station_en_gb_standard_b_male_unloading", "station_real_boehl_iggelheim", "station_real_guildford", "station_real_worplesdon", "station_changing", "station_random", "off"},
-    order = "113"
+    order = "114"
   },
 })
