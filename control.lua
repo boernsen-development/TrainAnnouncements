@@ -1,4 +1,3 @@
--- TODO check what happens when mod is modified and then updated (check with SendSpidertronToTheWest)
 -- TODO add checkbox to enable/disable printing of number in schedule
 -- TODO get station name from schedule, so that temporary is possible as well (https://lua-api.factorio.com/latest/Concepts.html#TrainScheduleRecord)
 -- TODO change final station to wait condition: "passenger_not_present" or "inactivity" with ticks > 216000 (1h) (https://lua-api.factorio.com/latest/Concepts.html#WaitCondition)
@@ -228,6 +227,11 @@ function update_train_states_for_player(player)
     else
         global.current_train_state_for_players[player.name] = nil
     end
+    
+--     if global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name]
+--     then
+--         game.print("State change: " .. util.train_state_to_string(global.previous_train_state_for_players[player.name]) .. " -> " .. util.train_state_to_string(global.current_train_state_for_players[player.name]))
+--     end
 end
 
 function process_player(player)

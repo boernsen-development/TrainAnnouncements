@@ -24,28 +24,29 @@ function util.seconds_to_ticks(seconds)
 end
 
 function util.train_state_to_string(state)
+    local train_state_strings =
+    {
+        [defines.train_state.on_the_path]           = "on_the_path",
+        [defines.train_state.path_lost]             = "path_lost",
+        [defines.train_state.no_schedule]           = "no_schedule",
+        [defines.train_state.no_path]               = "no_path",
+        [defines.train_state.arrive_signal]         = "arrive_signal",
+        [defines.train_state.wait_signal]           = "wait_signal",
+        [defines.train_state.arrive_station]        = "arrive_station",
+        [defines.train_state.wait_station]          = "wait_station",
+        [defines.train_state.manual_control_stop]   = "manual_control_stop",
+        [defines.train_state.manual_control]        = "manual_control",
+        [defines.train_state.destination_full]      = "destination_full"
+    }
+
     if state
     then
-        if state == defines.train_state.path_lost
+        local string = train_state_strings[state]
+        if string
         then
-            return "path_lost"
-        elseif state == defines.train_state.no_path
-        then
-            return "no_path"
-        elseif state == defines.train_state.arrive_signal
-        then
-            return "arrive_signal"
-        elseif state == defines.train_state.wait_signal
-        then
-            return "wait_signal"
-        elseif state == defines.train_state.arrive_station
-        then
-            return "arrive_station"
-        elseif state == defines.train_state.wait_station
-        then
-            return "wait_station"
+            return string
         else
-            return tostring(state)
+            return "nil"
         end
     else
         return "nil"
