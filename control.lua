@@ -176,8 +176,8 @@ function get_announcement_for_player(player)
     if needs_nopath_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_interruption_jingle_sound")
-        announcement["sound"] = util.get_global_mod_setting("train_announcements_interruption_announcement_sound")
+        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_no_path_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_no_path_announcement_sound")
         announcement["description"] = "no_path"
     elseif needs_station_announcement(player)
     then

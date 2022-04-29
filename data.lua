@@ -217,35 +217,35 @@ data:extend({
   },
   {
     type = "sound",
-    name = "interruption_en_gb_standard_a_female_train_has_no_path",
-    filename = "__TrainAnnouncements__/sounds/interruptions/en-GB-Standard-A-female/Train has no path.ogg",
+    name = "no_path_en_gb_standard_a_female_train_has_no_path",
+    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-Standard-A-female/Train has no path.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "interruption_en_gb_standard_b_male_train_has_no_path",
-    filename = "__TrainAnnouncements__/sounds/interruptions/en-GB-Standard-B-male/Train has no path.ogg",
+    name = "no_path_en_gb_standard_b_male_train_has_no_path",
+    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-Standard-B-male/Train has no path.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "interruption_real_ice_train_delay_message",
-    filename = "__TrainAnnouncements__/sounds/interruptions/real/ICE train delay message.ogg",
+    name = "no_path_real_ice_train_delay_message",
+    filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "interruption_changing",
+    name = "no_path_changing",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/interruptions/en-GB-Standard-A-female/Train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/interruptions/en-GB-Standard-B-male/Train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/interruptions/real/ICE train delay message.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-Standard-A-female/Train has no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-Standard-B-male/Train has no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -253,11 +253,11 @@ data:extend({
   },
   {
     type = "sound",
-    name = "interruption_random",
+    name = "no_path_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/interruptions/en-GB-Standard-A-female/Train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/interruptions/en-GB-Standard-B-male/Train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/interruptions/real/ICE train delay message.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-Standard-A-female/Train has no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-Standard-B-male/Train has no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,

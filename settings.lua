@@ -79,7 +79,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_override_interruption_jingle_sound",
+    name = "train_announcements_override_no_path_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"jingle_airport", "jingle_announcement_with_chord____sec_", "jingle_stockholm_s_tunnelbana", "jingle_changing", "jingle_random", "off"},
@@ -87,10 +87,10 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_interruption_announcement_sound",
+    name = "train_announcements_no_path_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "interruption_en_gb_standard_a_female_train_has_no_path",
-    allowed_values = {"interruption_en_gb_standard_a_female_train_has_no_path", "interruption_en_gb_standard_b_male_train_has_no_path", "interruption_real_ice_train_delay_message", "interruption_changing", "interruption_random", "off"},
+    default_value = "no_path_en_gb_standard_a_female_train_has_no_path",
+    allowed_values = {"no_path_en_gb_standard_a_female_train_has_no_path", "no_path_en_gb_standard_b_male_train_has_no_path", "no_path_real_ice_train_delay_message", "no_path_changing", "no_path_random", "off"},
     order = "012"
   },
   {

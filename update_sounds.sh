@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # INFO:
-# Generates data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sounds/interruptions, sounds/jingles, sounds/stations
+# Generates data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sounds/no_path, sounds/jingles, sounds/stations
 # 
 # data.lua: completely rewritten
-# settings.lua: all lines starting with 'allowed_values = {"interruption_', or 'allowed_values = {"jingle_', or 'allowed_values = {"station_' are overwritten
+# settings.lua: all lines starting with 'allowed_values = {"no_path_', or 'allowed_values = {"jingle_', or 'allowed_values = {"station_' are overwritten
 # locale.cfg: all lines below '[string-mod-setting]' are overwritten
 # 
 # Before starting, BACKUPS are created of all files.
@@ -14,8 +14,8 @@ JINGLES_SUB_DIR=sounds/jingles
 JINGLES_FULL_DIR=${SCRIPT_DIR}/${JINGLES_SUB_DIR}
 STATIONS_SUB_DIR=sounds/stations
 STATIONS_FULL_DIR=${SCRIPT_DIR}/${STATIONS_SUB_DIR}
-INTERRUPTIONS_SUB_DIR=sounds/interruptions
-INTERRUPTIONS_FULL_DIR=${SCRIPT_DIR}/${INTERRUPTIONS_SUB_DIR}
+NO_PATH_SUB_DIR=sounds/no_path
+NO_PATH_FULL_DIR=${SCRIPT_DIR}/${NO_PATH_SUB_DIR}
 MOD_NAME=__TrainAnnouncements__
 STATION_START_NUMBER=1
 STATION_START_NUMBER=50
@@ -32,8 +32,8 @@ declare -a JINGLES_CODE_NAMES
 declare -a JINGLES_GUI_NAMES
 declare -a STATIONS_CODE_NAMES
 declare -a STATIONS_GUI_NAMES
-declare -a INTERRUPTIONS_CODE_NAMES
-declare -a INTERRUPTIONS_GUI_NAMES
+declare -a NO_PATH_CODE_NAMES
+declare -a NO_PATH_GUI_NAMES
 
 print_array()
 {
@@ -155,15 +155,15 @@ edit_locale_cfg()
     sed -i '/\[string-mod-setting\]/,$d' ${LOCALE_CFG}
     echo "[string-mod-setting]" >> ${LOCALE_CFG}
     
-    for i in "${!INTERRUPTIONS_CODE_NAMES[@]}"; do
-        echo "train_announcements_interruption_announcement_sound-${INTERRUPTIONS_CODE_NAMES[$i]}=${INTERRUPTIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    for i in "${!NO_PATH_CODE_NAMES[@]}"; do
+        echo "train_announcements_no_path_announcement_sound-${NO_PATH_CODE_NAMES[$i]}=${NO_PATH_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
 
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_final_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_interruption_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
@@ -230,7 +230,7 @@ echo "data:extend({" >> ${DATA_LUA}
 # write actual .ogg files to data.lua
 add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} jingle_ ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES
 add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} station_ ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
-add_to_data_lua_and_arrays ${INTERRUPTIONS_FULL_DIR} interruption_ ${INTERRUPTIONS_SUB_DIR} INTERRUPTIONS_CODE_NAMES INTERRUPTIONS_GUI_NAMES
+add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} no_path_ ${NO_PATH_SUB_DIR} NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
@@ -240,16 +240,15 @@ echo ""
 print_array "Jingles" JINGLES_GUI_NAMES
 echo ""
 print_array "Stations" STATIONS_GUI_NAMES
-print_array "Stations code names" STATIONS_CODE_NAMES
 echo ""
-print_array "Interruptions" INTERRUPTIONS_GUI_NAMES
+print_array "No path" NO_PATH_GUI_NAMES
 echo ""
 
 # edit settings.lua
 echo "Editing ${SETTINGS_LUA}..."
 edit_settings_lua "allowed_values = {\"jingle_" JINGLES_CODE_NAMES
 edit_settings_lua "allowed_values = {\"station_" STATIONS_CODE_NAMES
-edit_settings_lua "allowed_values = {\"interruption_" INTERRUPTIONS_CODE_NAMES
+edit_settings_lua "allowed_values = {\"no_path_" NO_PATH_CODE_NAMES
 fix_settings_lua_order
 
 # edit locale.cfg
