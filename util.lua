@@ -83,7 +83,7 @@ function util.get_train_for_player(player)
 end
 
 function util.get_number_of_rails_to_next_stop(train)
-    if train.path_end_stop and train.path
+    if train.path
     then
         return train.path.size - train.path.current
     else
@@ -104,7 +104,7 @@ function util.is_approaching_final_station(train)
     end
 end
 
-function util.get_number_of_approaching_station_in_schedule(train)
+function util.get_index_of_approaching_station_in_schedule(train)
     if train.schedule and train.schedule.current and train.schedule.records
     then
         return train.schedule.current
@@ -123,11 +123,26 @@ function util.get_number_of_stations_in_schedule(train)
     end
 end
 
+function util.get_next_station_name(train)
+    if train.schedule and train.schedule.current and train.schedule.records and train.schedule.records[train.schedule.current]
+    then
+        if train.schedule.records[train.schedule.current].station
+        then
+            return train.schedule.records[train.schedule.current].station
+        elseif train.schedule.records[train.schedule.current].temporary
+        then
+            return "Temporary"
+        end
+    end
+    
+    return ""
+end
+
 function util.get_next_station_name_for_player(player)
     local train = util.get_train_for_player(player)
-    if train and train.path_end_stop and train.path_end_stop.backer_name
+    if train
     then
-        return train.path_end_stop.backer_name
+        return util.get_next_station_name(train)
     else
         return ""
     end

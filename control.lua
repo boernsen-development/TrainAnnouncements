@@ -1,11 +1,10 @@
--- TODO add checkbox to enable/disable printing of number in schedule
--- TODO get station name from schedule, so that temporary is possible as well (https://lua-api.factorio.com/latest/Concepts.html#TrainScheduleRecord)
--- TODO change final station to wait condition: "passenger_not_present" or "inactivity" with ticks > 216000 (1h) (https://lua-api.factorio.com/latest/Concepts.html#WaitCondition)
+-- TODO change final station to wait condition: "passenger_not_present" or "inactivity" with ticks > 108000 (30min) (https://lua-api.factorio.com/latest/Concepts.html#WaitCondition)
 -- TODO reduce sounds to UK female
 -- TODO reduce pattern settings
--- TODO add accouncement for waiting at signal (https://lua-api.factorio.com/latest/defines.html#defines.train_state)
--- TODO add accouncement for state change no_path/wait_signal -> on_the_path
--- TODO add accouncement for state change manual_control -> on_the_path
+-- TODO add "blocked tracks" accouncement for state change ? -> wait_signal (https://lua-api.factorio.com/latest/defines.html#defines.train_state)
+-- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path
+-- TODO add "good journey" accouncement for state change manual_control(+speed=0) -> on_the_path
+-- TODO add "destination full" accouncement for state ? -> destination_full
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
 -- TODO add thumbnail.png
 -- TODO add script convert_mp3_to_ogg.sh
@@ -16,6 +15,7 @@ function print_message_to_player(player, announcement, announcement_sound)
     announcement_description = announcement["description"]
     if not announcement_description
     then
+        --game.print("ERROR: returning from print_message_to_player")
         return
     end
     
@@ -31,8 +31,8 @@ function print_message_to_player(player, announcement, announcement_sound)
         local station_number_gui_string = ""
         if print_station_number_enabled and station_number and station_count
         then
-            local station_count_string = util.pad_left_string(tostring(station_count), 2, "0")
-            local station_number_string = util.pad_left_string(tostring(station_number), 2, "0")
+            local station_count_string = tostring(station_count)
+            local station_number_string = tostring(station_number)
             station_number_gui_string = {"announcement-text.number_in_schedule", station_number_string, station_count_string}
         end
         player.print({"announcement-text.station", util.corrected_train_stop_name(station_name), station_number_gui_string})
@@ -141,7 +141,7 @@ function has_entered_train_state_no_path(player)
            
 end
 
-function needs_nopath_announcement(player)
+function needs_no_path_announcement(player)
     return has_entered_train_state_no_path(player)
 end
 
@@ -173,7 +173,7 @@ end
 
 function get_announcement_for_player(player)
     local announcement = nil
-    if needs_nopath_announcement(player)
+    if needs_no_path_announcement(player)
     then
         announcement = {}
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_no_path_jingle_sound")
@@ -191,10 +191,10 @@ function get_announcement_for_player(player)
                 announcement["sound"] = util.get_global_mod_setting("train_announcements_override_final_station_announcement_sound")
                 announcement["description"] = "final_station"
             else
-                local station_number = util.get_number_of_approaching_station_in_schedule(train)
+                local station_number = util.get_index_of_approaching_station_in_schedule(train)
                 local station_count = util.get_number_of_stations_in_schedule(train)
                 local station_name = util.get_next_station_name_for_player(player)
-                if station_number and station_name
+                if station_number and station_count and station_name
                 then
                     announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_station_jingle_sound")
                     announcement["sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
@@ -256,9 +256,9 @@ function process_player(player)
         local announcement_description = announcement["description"]
         
         local print_messages_enabled = util.get_players_mod_setting(player, "train_announcements_print_announcement_messages_enabled")
-        if print_message_enabled and announcement_description
+        if print_messages_enabled
         then
-            print_message_to_player(player, announcement_description, announcement_sound)
+            print_message_to_player(player, announcement, announcement_sound)
         end
 
         local play_sounds_enabled = util.get_players_mod_setting(player, "train_announcements_play_announcement_sounds_enabled")
