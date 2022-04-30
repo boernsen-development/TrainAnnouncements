@@ -1,9 +1,9 @@
--- TODO add "blocked tracks" accouncement for state change ? -> wait_signal (https://lua-api.factorio.com/latest/defines.html#defines.train_state)
 -- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path
 -- TODO add "good journey" accouncement for state change manual_control(+speed=0) -> on_the_path
--- TODO add separate announcement "Please mind the gap between the train and the platform."
--- TODO add separate announcement "Please remember to collect all your personal belongings when leaving the train."
--- TODO add separate announcement "You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare."
+-- TODO add "random announcements": min. distance to stations, min distance between stations, every X rails?, better would be time-based
+-- TODO add random announcement "Please mind the gap between the train and the platform."
+-- TODO add random announcement "Please remember to collect all your personal belongings when leaving the train."
+-- TODO add random announcement "You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare."
 -- TODO reduce pattern settings
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
 -- TODO add script convert_mp3_to_ogg.sh
@@ -48,6 +48,9 @@ function print_message_to_player(player, announcement, announcement_sound)
     elseif announcement_description == "destination_full"
     then
         player.print({"announcement-text.destination_full"})
+    elseif announcement_description == "wait_signal"
+    then
+        player.print({"announcement-text.wait_signal"})
     elseif announcement_description == "station" or announcement_description == "final_station"
     then
         local station_name = util.get_next_station_name_for_player(player)
@@ -161,24 +164,22 @@ function train_is_on_announcement_distance(train, player)
     return actual_rails_to_next_stop and required_rails_to_next_stop and required_rails_to_next_stop > 0 and actual_rails_to_next_stop == required_rails_to_next_stop
 end
 
-function has_entered_train_state_no_path(player)
+function has_entered_train_state(player,train_state)
     return global.current_train_state_for_players[player.name] == defines.train_state.no_path and 
            global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name]
            
 end
 
-function has_entered_train_state_destination_full(player)
-    return global.current_train_state_for_players[player.name] == defines.train_state.destination_full and 
-           global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name]
-           
+function needs_wait_signal_announcement(player)
+    return has_entered_train_state(player,defines.train_state.wait_signal)
 end
 
 function needs_destination_full_announcement(player)
-    return has_entered_train_state_destination_full(player)
+    return has_entered_train_state(player,defines.train_state.destination_full)
 end
 
 function needs_no_path_announcement(player)
-    return has_entered_train_state_no_path(player)
+    return has_entered_train_state(player,defines.train_state.no_path)
 end
 
 function needs_station_announcement(player)
@@ -221,6 +222,12 @@ function get_announcement_for_player(player)
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_destination_full_jingle_sound")
         announcement["sound"] = util.get_global_mod_setting("train_announcements_destination_full_announcement_sound")
         announcement["description"] = "destination_full"
+    elseif needs_wait_signal_announcement(player)
+    then
+        announcement = {}
+        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_wait_signal_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_wait_signal_announcement_sound")
+        announcement["description"] = "wait_signal"
     elseif needs_station_announcement(player)
     then
         announcement = {}

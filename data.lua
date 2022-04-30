@@ -411,4 +411,42 @@ data:extend({
     allow_random_repeat = true,
     audible_distance_modifier = 1e20
   },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_track_in_front_seems_blocked",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track in front seems blocked.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_changing",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track in front seems blocked.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track in front seems blocked.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
 })
