@@ -1,4 +1,3 @@
--- TODO change git username / email in old commits
 -- TODO add doc for TTL texts (README.md?)
 -- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path
 -- TODO add "good journey" accouncement for state change manual_control(+speed=0) -> on_the_path
