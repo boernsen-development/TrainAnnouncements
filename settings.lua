@@ -121,8 +121,8 @@ data:extend({
     type = "string-setting",
     name = "train_announcements_wait_signal_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "wait_signal_en_gb_c_female_track_in_front_seems_blocked",
-    allowed_values = {"wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front", "wait_signal_en_gb_c_female_track_in_front_seems_blocked", "wait_signal_changing", "wait_signal_random", "off"},
+    default_value = "wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked",
+    allowed_values = {"wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front", "wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked", "wait_signal_changing", "wait_signal_random", "off"},
     order = "016"
   },
   {

@@ -51,7 +51,7 @@ no TTS
 |File name || Text for TTS|
 |:---|:---|:---|
 |Apologise for delay and inconvenience due to blocked track in front.ogg || We are sorry to announce that this train may be delayed. This is due to another train being blocked in front of this one. We apologise for this late running, and the inconvenience caused.|
-|Track in front seems blocked.ogg || The track in front of us seems blocked.|
+|Track in front of us is blocked.ogg || The track in front of us is blocked.|
 
 ## More candidates for possible later use
 * You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.
