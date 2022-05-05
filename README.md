@@ -53,6 +53,13 @@ no TTS
 |Apologise for delay and inconvenience due to blocked track in front.ogg || We are sorry to announce that this train may be delayed. This is due to another train being blocked in front of this one. We apologise for this late running, and the inconvenience caused.|
 |Track in front of us is blocked.ogg || The track in front of us is blocked.|
 
+## pleasant_journey
+|File name || Text for TTS|
+|:---|:---|:---|
+|Welcome on board and have a pleasant journey.ogg || We welcome you on board of this train and wish you a pleasant journey.|
+|Have a good trip.ogg || Have a good trip.|
+
+
 ## More candidates for possible later use
 * You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.
 * Please remember to collect all your personal belongings when leaving the train.
@@ -68,7 +75,6 @@ no TTS
 * We are sorry to announce that this train may be delayed. The reason for the delay is currently being investigated by our team. We apologise for this late running, and the inconvenience caused.
 * We are sorry to announce that this train may be delayed. This is due to a problem currently under investigation. We apologise for this late running, and the inconvenience caused.
 * We are sorry to announce that this train may be delayed. This is due to a late running train being in front of this one. We apologise for this late running, and the inconvenience caused.
-* We welcome you on board of this train and wish you a pleasant journey.
 
 ## More sources for announcements
 * https://invidio.xamh.de/watch?v=Ft19PwjfVvs&autoplay=0&continue=0&dark_mode=true&listen=0&local=1&loop=0&nojs=0&player_style=youtube&quality=hd720&thin_mode=false

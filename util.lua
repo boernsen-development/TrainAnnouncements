@@ -23,9 +23,12 @@ function util.seconds_to_ticks(seconds)
     return math.floor(seconds * 60)
 end
 
+defines.train_state.any = {}
+
 function util.train_state_to_string(state)
     local train_state_strings =
     {
+        [defines.train_state.any]                   = "any",
         [defines.train_state.on_the_path]           = "on_the_path",
         [defines.train_state.path_lost]             = "path_lost",
         [defines.train_state.no_schedule]           = "no_schedule",
@@ -77,6 +80,16 @@ function util.get_train_for_player(player)
     if player.vehicle and player.vehicle.valid and player.vehicle.train and player.vehicle.train.valid
     then
         return player.vehicle.train
+    else
+        return nil
+    end
+end
+
+function util.get_train_speed(player)
+    local train = util.get_train_for_player(player)
+    if train and train.speed
+    then
+        return train.speed
     else
         return nil
     end

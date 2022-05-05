@@ -20,6 +20,8 @@ DESTINATION_FULL_SUB_DIR=sounds/destination_full
 DESTINATION_FULL_FULL_DIR=${SCRIPT_DIR}/${DESTINATION_FULL_SUB_DIR}
 WAIT_SIGNAL_SUB_DIR=sounds/wait_signal
 WAIT_SIGNAL_FULL_DIR=${SCRIPT_DIR}/${WAIT_SIGNAL_SUB_DIR}
+PLEASANT_JOURNEY_SUB_DIR=sounds/pleasant_journey
+PLEASANT_JOURNEY_FULL_DIR=${SCRIPT_DIR}/${PLEASANT_JOURNEY_SUB_DIR}
 MOD_NAME=__TrainAnnouncements__
 STATION_START_NUMBER=1
 STATION_START_NUMBER=50
@@ -42,6 +44,8 @@ declare -a DESTINATION_FULL_CODE_NAMES
 declare -a DESTINATION_FULL_GUI_NAMES
 declare -a WAIT_SIGNAL_CODE_NAMES
 declare -a WAIT_SIGNAL_GUI_NAMES
+declare -a PLEASANT_JOURNEY_CODE_NAMES
+declare -a PLEASANT_JOURNEY_GUI_NAMES
 
 print_array()
 {
@@ -56,12 +60,13 @@ print_array()
 
 add_to_data_lua_and_arrays()
 {
-    #echo "add_to_data_lua_and_arrays() ${1} ${2} ${3} ${4} ${5}"
+    #echo "add_to_data_lua_and_arrays() ${1} ${2} ${3} ${4} ${5} ${6}"
     local dir=${1}
     local name_prefix=${2}
     local sub_dir=${3}
     local -n code_names_array=${4}
     local -n gui_names_array=${5}
+    local is_default_needed=${6}
     
     #echo "Processing directory $dir"
 
@@ -136,7 +141,14 @@ add_to_data_lua_and_arrays()
     code_names_array+=("${name_prefix}random")
     gui_names_array+=("<Random>")
 
-    # add "Off" to code names array (for settings.lua)
+    # add entry "Inherit" if required
+    if "$is_default_needed"
+    then
+        code_names_array+=("default")
+        gui_names_array+=("<Default>")
+    fi
+
+    # add entry "Off"
     code_names_array+=("off")
     gui_names_array+=("<Off>")
 }
@@ -176,6 +188,10 @@ edit_locale_cfg()
         echo "train_announcements_wait_signal_announcement_sound-${WAIT_SIGNAL_CODE_NAMES[$i]}=${WAIT_SIGNAL_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
 
+    for i in "${!PLEASANT_JOURNEY_CODE_NAMES[@]}"; do
+        echo "train_announcements_pleasant_journey_announcement_sound-${PLEASANT_JOURNEY_CODE_NAMES[$i]}=${PLEASANT_JOURNEY_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
+
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
@@ -183,6 +199,7 @@ edit_locale_cfg()
         echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_destination_full_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_wait_signal_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_pleasant_journey_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
@@ -247,11 +264,12 @@ echo "Writing ${DATA_LUA}..."
 echo "data:extend({" >> ${DATA_LUA}
 
 # write actual .ogg files to data.lua
-add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} "jingle_" ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES
-add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "station_" ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES
-add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" ${NO_PATH_SUB_DIR} NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES
-add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} "destination_full_" ${DESTINATION_FULL_SUB_DIR} DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES
-add_to_data_lua_and_arrays  ${WAIT_SIGNAL_FULL_DIR}  "wait_signal_"  ${WAIT_SIGNAL_SUB_DIR}  WAIT_SIGNAL_CODE_NAMES  WAIT_SIGNAL_GUI_NAMES
+add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} "jingle_" ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES true
+add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "station_" ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES false
+add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" ${NO_PATH_SUB_DIR} NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES false
+add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} "destination_full_" ${DESTINATION_FULL_SUB_DIR} DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES false
+add_to_data_lua_and_arrays  ${WAIT_SIGNAL_FULL_DIR}  "wait_signal_"  ${WAIT_SIGNAL_SUB_DIR}  WAIT_SIGNAL_CODE_NAMES  WAIT_SIGNAL_GUI_NAMES false
+add_to_data_lua_and_arrays  ${PLEASANT_JOURNEY_FULL_DIR}  "pleasant_journey_"  ${PLEASANT_JOURNEY_SUB_DIR}  PLEASANT_JOURNEY_CODE_NAMES  PLEASANT_JOURNEY_GUI_NAMES false
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
@@ -268,6 +286,8 @@ print_array "Destination full" DESTINATION_FULL_GUI_NAMES
 echo ""
 print_array "Wait signal" WAIT_SIGNAL_GUI_NAMES
 echo ""
+print_array "Pleasant journey" PLEASANT_JOURNEY_GUI_NAMES
+echo ""
 
 # edit settings.lua
 echo "Editing ${SETTINGS_LUA}..."
@@ -276,6 +296,7 @@ edit_settings_lua "allowed_values = {\"station_" STATIONS_CODE_NAMES
 edit_settings_lua "allowed_values = {\"no_path_" NO_PATH_CODE_NAMES
 edit_settings_lua "allowed_values = {\"destination_full_" DESTINATION_FULL_CODE_NAMES
 edit_settings_lua "allowed_values = {\"wait_signal_" WAIT_SIGNAL_CODE_NAMES
+edit_settings_lua "allowed_values = {\"pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES
 fix_settings_lua_order
 
 # edit locale.cfg

@@ -449,4 +449,42 @@ data:extend({
     allow_random_repeat = true,
     audible_distance_modifier = 1e20
   },
+  {
+    type = "sound",
+    name = "pleasant_journey_have_a_good_trip",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/Have a good trip.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "pleasant_journey_welcome_on_board_and_have_a_pleasant_journey",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/Welcome on board and have a pleasant journey.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "pleasant_journey_changing",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Have a good trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Welcome on board and have a pleasant journey.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "pleasant_journey_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Have a good trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Welcome on board and have a pleasant journey.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
 })
