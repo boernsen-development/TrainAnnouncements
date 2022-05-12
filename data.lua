@@ -297,54 +297,6 @@ data:extend({
   },
   {
     type = "sound",
-    name = "no_path_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_no_path",
-    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "no_path_en_gb_c_female_the_train_has_no_path",
-    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "no_path_en_gb_c_female_we_cannot_continue_our_journey_as_the_train_has_no_path",
-    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "no_path_changing",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "no_path_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
     name = "destination_full_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_full_destination",
     filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg",
     category = "alert",
@@ -393,44 +345,35 @@ data:extend({
   },
   {
     type = "sound",
-    name = "wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front",
-    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg",
+    name = "no_path_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_no_path",
+    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked",
-    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg",
+    name = "no_path_en_gb_c_female_the_train_has_no_path",
+    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "wait_signal_en_gb_c_female_track_is_blocked",
-    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg",
+    name = "no_path_en_gb_c_female_we_cannot_continue_our_journey_as_the_train_has_no_path",
+    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked",
-    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "wait_signal_changing",
+    name = "no_path_changing",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -438,12 +381,11 @@ data:extend({
   },
   {
     type = "sound",
-    name = "wait_signal_random",
+    name = "no_path_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -512,6 +454,122 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a pleasant journey.ogg"},
       {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board and have a pleasant journey.ogg"},
       {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board the Factorio train service.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_track_is_blocked",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_changing",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "back_on_path_en_gb_c_female_have_a_good_trip",
+    filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a good trip.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "back_on_path_en_gb_c_female_have_a_nice_trip",
+    filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a nice trip.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "back_on_path_en_gb_c_female_have_a_pleasant_journey",
+    filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a pleasant journey.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "back_on_path_en_gb_c_female_we_are_back_on_track",
+    filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/We are back on track.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "back_on_path_changing",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a good trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a nice trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/We are back on track.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "back_on_path_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a good trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a nice trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/We are back on track.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,

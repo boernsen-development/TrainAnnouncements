@@ -13,6 +13,7 @@ Currently the following announcements are supported:
 * No path
 * Pleasant journey (Train is just switched to automatic and starts to move)
 * Waiting at a red signal
+* Back on path (Train continues after "No path" or "Waiting at red signal")
 
 Additionally, a few jingles are included, which will be played before the announcement if configured. Unfortunately, there is no audio preview possible in the settings, so you will have to try the sounds or play them from the 
 
@@ -76,6 +77,12 @@ If you are on Linux (possibly also MacOS) and play single player / local only, y
 |Track in front of us is blocked.ogg || The track in front of us is blocked.|
 |We cannot continue our journey as the track in front of us is blocked.ogg || We cannot continue our journey as the track in front of us is blocked.|
 |Track is blocked.ogg || Track is blocked. |
+||||
+|----- **Back on path** -----|||
+|Have a good trip.ogg || Have a good trip.|
+|Have a nice trip.ogg || Have a nice trip.|
+|Have a pleasant journey.ogg || Have a pleasant journey. |
+|We are back on track.ogg || We are back on track. |
 
 
 ## More candidates for possible later use

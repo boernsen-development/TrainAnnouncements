@@ -167,23 +167,23 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station01_name_pattern",
+    name = "train_announcements_override_back_on_path_jingle_sound",
     setting_type = "runtime-global",
-    default_value = "",
-    allow_blank = true,
+    default_value = "off",
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_changing", "jingle_random", "default", "off"},
     order = "022"
   },
   {
     type = "string-setting",
-    name = "train_announcements_station01_announcement_sound",
+    name = "train_announcements_back_on_path_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "off",
-    allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
+    default_value = "back_on_path_en_gb_c_female_we_are_back_on_track",
+    allowed_values = {"back_on_path_en_gb_c_female_have_a_good_trip", "back_on_path_en_gb_c_female_have_a_nice_trip", "back_on_path_en_gb_c_female_have_a_pleasant_journey", "back_on_path_en_gb_c_female_we_are_back_on_track", "back_on_path_changing", "back_on_path_random", "off"},
     order = "023"
   },
   {
     type = "string-setting",
-    name = "train_announcements_station02_name_pattern",
+    name = "train_announcements_station01_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -191,7 +191,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station02_announcement_sound",
+    name = "train_announcements_station01_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -199,7 +199,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station03_name_pattern",
+    name = "train_announcements_station02_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -207,7 +207,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station03_announcement_sound",
+    name = "train_announcements_station02_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -215,7 +215,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station04_name_pattern",
+    name = "train_announcements_station03_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -223,7 +223,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station04_announcement_sound",
+    name = "train_announcements_station03_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -231,7 +231,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station05_name_pattern",
+    name = "train_announcements_station04_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -239,7 +239,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station05_announcement_sound",
+    name = "train_announcements_station04_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -247,7 +247,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station06_name_pattern",
+    name = "train_announcements_station05_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -255,7 +255,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station06_announcement_sound",
+    name = "train_announcements_station05_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -263,7 +263,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station07_name_pattern",
+    name = "train_announcements_station06_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -271,7 +271,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station07_announcement_sound",
+    name = "train_announcements_station06_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -279,7 +279,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station08_name_pattern",
+    name = "train_announcements_station07_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -287,7 +287,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station08_announcement_sound",
+    name = "train_announcements_station07_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -295,7 +295,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station09_name_pattern",
+    name = "train_announcements_station08_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -303,7 +303,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station09_announcement_sound",
+    name = "train_announcements_station08_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -311,7 +311,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station10_name_pattern",
+    name = "train_announcements_station09_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -319,7 +319,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station10_announcement_sound",
+    name = "train_announcements_station09_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -327,7 +327,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station11_name_pattern",
+    name = "train_announcements_station10_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -335,7 +335,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station11_announcement_sound",
+    name = "train_announcements_station10_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -343,7 +343,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station12_name_pattern",
+    name = "train_announcements_station11_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -351,7 +351,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station12_announcement_sound",
+    name = "train_announcements_station11_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -359,7 +359,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station13_name_pattern",
+    name = "train_announcements_station12_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -367,7 +367,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station13_announcement_sound",
+    name = "train_announcements_station12_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -375,7 +375,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station14_name_pattern",
+    name = "train_announcements_station13_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -383,7 +383,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station14_announcement_sound",
+    name = "train_announcements_station13_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -391,7 +391,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station15_name_pattern",
+    name = "train_announcements_station14_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -399,7 +399,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station15_announcement_sound",
+    name = "train_announcements_station14_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -407,7 +407,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station16_name_pattern",
+    name = "train_announcements_station15_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -415,7 +415,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station16_announcement_sound",
+    name = "train_announcements_station15_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -423,7 +423,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station17_name_pattern",
+    name = "train_announcements_station16_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -431,7 +431,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station17_announcement_sound",
+    name = "train_announcements_station16_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -439,7 +439,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station18_name_pattern",
+    name = "train_announcements_station17_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -447,7 +447,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station18_announcement_sound",
+    name = "train_announcements_station17_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -455,7 +455,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station19_name_pattern",
+    name = "train_announcements_station18_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -463,7 +463,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station19_announcement_sound",
+    name = "train_announcements_station18_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -471,7 +471,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station20_name_pattern",
+    name = "train_announcements_station19_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -479,7 +479,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station20_announcement_sound",
+    name = "train_announcements_station19_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -487,7 +487,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station21_name_pattern",
+    name = "train_announcements_station20_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -495,7 +495,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station21_announcement_sound",
+    name = "train_announcements_station20_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -503,7 +503,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station22_name_pattern",
+    name = "train_announcements_station21_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -511,7 +511,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station22_announcement_sound",
+    name = "train_announcements_station21_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -519,7 +519,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station23_name_pattern",
+    name = "train_announcements_station22_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -527,7 +527,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station23_announcement_sound",
+    name = "train_announcements_station22_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -535,7 +535,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station24_name_pattern",
+    name = "train_announcements_station23_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -543,7 +543,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station24_announcement_sound",
+    name = "train_announcements_station23_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -551,7 +551,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station25_name_pattern",
+    name = "train_announcements_station24_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -559,7 +559,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station25_announcement_sound",
+    name = "train_announcements_station24_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -567,7 +567,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station26_name_pattern",
+    name = "train_announcements_station25_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -575,7 +575,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station26_announcement_sound",
+    name = "train_announcements_station25_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -583,7 +583,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station27_name_pattern",
+    name = "train_announcements_station26_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -591,7 +591,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station27_announcement_sound",
+    name = "train_announcements_station26_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -599,7 +599,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station28_name_pattern",
+    name = "train_announcements_station27_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -607,7 +607,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station28_announcement_sound",
+    name = "train_announcements_station27_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -615,7 +615,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station29_name_pattern",
+    name = "train_announcements_station28_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -623,7 +623,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station29_announcement_sound",
+    name = "train_announcements_station28_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -631,7 +631,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station30_name_pattern",
+    name = "train_announcements_station29_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -639,7 +639,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station30_announcement_sound",
+    name = "train_announcements_station29_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -647,7 +647,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station31_name_pattern",
+    name = "train_announcements_station30_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -655,7 +655,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station31_announcement_sound",
+    name = "train_announcements_station30_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -663,7 +663,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station32_name_pattern",
+    name = "train_announcements_station31_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -671,7 +671,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station32_announcement_sound",
+    name = "train_announcements_station31_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -679,7 +679,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station33_name_pattern",
+    name = "train_announcements_station32_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -687,7 +687,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station33_announcement_sound",
+    name = "train_announcements_station32_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -695,7 +695,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station34_name_pattern",
+    name = "train_announcements_station33_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -703,7 +703,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station34_announcement_sound",
+    name = "train_announcements_station33_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -711,7 +711,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station35_name_pattern",
+    name = "train_announcements_station34_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -719,7 +719,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station35_announcement_sound",
+    name = "train_announcements_station34_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -727,7 +727,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station36_name_pattern",
+    name = "train_announcements_station35_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -735,7 +735,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station36_announcement_sound",
+    name = "train_announcements_station35_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -743,7 +743,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station37_name_pattern",
+    name = "train_announcements_station36_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -751,7 +751,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station37_announcement_sound",
+    name = "train_announcements_station36_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -759,7 +759,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station38_name_pattern",
+    name = "train_announcements_station37_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -767,7 +767,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station38_announcement_sound",
+    name = "train_announcements_station37_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -775,7 +775,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station39_name_pattern",
+    name = "train_announcements_station38_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -783,7 +783,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station39_announcement_sound",
+    name = "train_announcements_station38_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -791,7 +791,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station40_name_pattern",
+    name = "train_announcements_station39_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -799,7 +799,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station40_announcement_sound",
+    name = "train_announcements_station39_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -807,7 +807,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station41_name_pattern",
+    name = "train_announcements_station40_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -815,7 +815,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station41_announcement_sound",
+    name = "train_announcements_station40_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -823,7 +823,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station42_name_pattern",
+    name = "train_announcements_station41_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -831,7 +831,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station42_announcement_sound",
+    name = "train_announcements_station41_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -839,7 +839,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station43_name_pattern",
+    name = "train_announcements_station42_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -847,7 +847,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station43_announcement_sound",
+    name = "train_announcements_station42_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -855,7 +855,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station44_name_pattern",
+    name = "train_announcements_station43_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -863,7 +863,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station44_announcement_sound",
+    name = "train_announcements_station43_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -871,7 +871,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station45_name_pattern",
+    name = "train_announcements_station44_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -879,7 +879,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station45_announcement_sound",
+    name = "train_announcements_station44_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -887,7 +887,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station46_name_pattern",
+    name = "train_announcements_station45_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -895,7 +895,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station46_announcement_sound",
+    name = "train_announcements_station45_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -903,7 +903,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station47_name_pattern",
+    name = "train_announcements_station46_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -911,7 +911,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station47_announcement_sound",
+    name = "train_announcements_station46_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -919,7 +919,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station48_name_pattern",
+    name = "train_announcements_station47_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -927,7 +927,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station48_announcement_sound",
+    name = "train_announcements_station47_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -935,7 +935,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station49_name_pattern",
+    name = "train_announcements_station48_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -943,7 +943,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station49_announcement_sound",
+    name = "train_announcements_station48_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
@@ -951,7 +951,7 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station50_name_pattern",
+    name = "train_announcements_station49_name_pattern",
     setting_type = "runtime-global",
     default_value = "",
     allow_blank = true,
@@ -959,10 +959,26 @@ data:extend({
   },
   {
     type = "string-setting",
-    name = "train_announcements_station50_announcement_sound",
+    name = "train_announcements_station49_announcement_sound",
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
     order = "121"
+  },
+  {
+    type = "string-setting",
+    name = "train_announcements_station50_name_pattern",
+    setting_type = "runtime-global",
+    default_value = "",
+    allow_blank = true,
+    order = "122"
+  },
+  {
+    type = "string-setting",
+    name = "train_announcements_station50_announcement_sound",
+    setting_type = "runtime-global",
+    default_value = "off",
+    allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_changing", "station_random", "off"},
+    order = "123"
   },
 })

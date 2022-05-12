@@ -25,6 +25,9 @@ function print_message_to_player(player, announcement, announcement_sound)
     elseif announcement_description == "wait_signal"
     then
         player.print({"announcement-text.wait_signal"})
+    elseif announcement_description == "back_on_path"
+    then
+        player.print({"announcement-text.back_on_path"})
     elseif announcement_description == "station" or announcement_description == "final_station"
     then
         local station_name = util.get_next_station_name_for_player(player)
@@ -145,6 +148,14 @@ function has_change_of_train_state(player, previous_train_state, current_train_s
            ( previous_train_state == defines.train_state.any or global.previous_train_state_for_players[player.name] == previous_train_state )
 end
 
+function needs_destination_full_announcement(player)
+    return has_change_of_train_state(player, defines.train_state.any, defines.train_state.destination_full)
+end
+
+function needs_no_path_announcement(player)
+    return has_change_of_train_state(player, defines.train_state.any, defines.train_state.no_path)
+end
+
 function needs_pleasant_journey_announcement(player)
     local train_speed = util.get_train_speed(player)
     return has_change_of_train_state(player, defines.train_state.manual_control, defines.train_state.on_the_path) and train_speed and train_speed == 0
@@ -154,12 +165,9 @@ function needs_wait_signal_announcement(player)
     return has_change_of_train_state(player, defines.train_state.any, defines.train_state.wait_signal)
 end
 
-function needs_destination_full_announcement(player)
-    return has_change_of_train_state(player, defines.train_state.any, defines.train_state.destination_full)
-end
-
-function needs_no_path_announcement(player)
-    return has_change_of_train_state(player, defines.train_state.any, defines.train_state.no_path)
+function needs_back_on_path_announcement(player)
+    return has_change_of_train_state(player, defines.train_state.wait_signal, defines.train_state.on_the_path)
+        or has_change_of_train_state(player, defines.train_state.no_path, defines.train_state.on_the_path)
 end
 
 function needs_station_announcement(player)
@@ -190,7 +198,13 @@ end
 
 function get_announcement_for_player(player)
     local announcement = nil
-    if needs_no_path_announcement(player)
+    if needs_destination_full_announcement(player)
+    then
+        announcement = {}
+        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_destination_full_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_destination_full_announcement_sound")
+        announcement["description"] = "destination_full"
+    elseif needs_no_path_announcement(player)
     then
         announcement = {}
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_no_path_jingle_sound")
@@ -202,18 +216,18 @@ function get_announcement_for_player(player)
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_pleasant_journey_jingle_sound")
         announcement["sound"] = util.get_global_mod_setting("train_announcements_pleasant_journey_announcement_sound")
         announcement["description"] = "pleasant_journey"
-    elseif needs_destination_full_announcement(player)
-    then
-        announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_destination_full_jingle_sound")
-        announcement["sound"] = util.get_global_mod_setting("train_announcements_destination_full_announcement_sound")
-        announcement["description"] = "destination_full"
     elseif needs_wait_signal_announcement(player)
     then
         announcement = {}
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_wait_signal_jingle_sound")
         announcement["sound"] = util.get_global_mod_setting("train_announcements_wait_signal_announcement_sound")
         announcement["description"] = "wait_signal"
+    elseif needs_back_on_path_announcement(player)
+    then
+        announcement = {}
+        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_back_on_path_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_back_on_path_announcement_sound")
+        announcement["description"] = "back_on_path"
     elseif needs_station_announcement(player)
     then
         announcement = {}
