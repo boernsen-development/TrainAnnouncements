@@ -47,9 +47,10 @@ end
 
 function play_sound_for_player(player, sound)
 --     game.print(game.tick .. "play: " .. sound)
-    local volume = util.get_players_mod_setting(player, "train_announcements_volume")
-    if volume and volume > 0 then
-        player.play_sound({path = sound, volume_modifier = volume, override_sound_type = "alert"})
+    local volume = util.get_players_mod_setting(player, "train_announcements_sound_volume")
+    local type = util.get_players_mod_setting(player, "train_announcements_sound_type")
+    if volume and volume > 0 and type then
+        player.play_sound({path = sound, volume_modifier = volume, override_sound_type = type})
     end
 end
 
