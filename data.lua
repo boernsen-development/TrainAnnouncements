@@ -1,15 +1,15 @@
 data:extend({
   {
     type = "sound",
-    name = "jingle_airport",
-    filename = "__TrainAnnouncements__/sounds/jingles/Airport.ogg",
+    name = "jingle_airport__2_sec_",
+    filename = "__TrainAnnouncements__/sounds/jingles/Airport (2 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "jingle_announcement_with_chord____sec_",
+    name = "jingle_announcement_with_chord__4_sec_",
     filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg",
     category = "alert",
     volume = 1.0,
@@ -17,8 +17,8 @@ data:extend({
   },
   {
     type = "sound",
-    name = "jingle_stockholm_s_tunnelbana",
-    filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana.ogg",
+    name = "jingle_stockholm_s_tunnelbana__2_sec_",
+    filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana (2 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
@@ -27,9 +27,9 @@ data:extend({
     type = "sound",
     name = "jingle_changing",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/jingles/Airport.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/jingles/Airport (2 sec).ogg"},
       {filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana (2 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -39,9 +39,9 @@ data:extend({
     type = "sound",
     name = "jingle_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/jingles/Airport.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/jingles/Airport (2 sec).ogg"},
       {filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana (2 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -233,30 +233,6 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_real_boehl_iggelheim",
-    filename = "__TrainAnnouncements__/sounds/stations/real/Boehl-Iggelheim.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_real_guildford",
-    filename = "__TrainAnnouncements__/sounds/stations/real/Guildford.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_real_worplesdon",
-    filename = "__TrainAnnouncements__/sounds/stations/real/Worplesdon.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
     name = "station_changing",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
@@ -282,9 +258,6 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/real/Boehl-Iggelheim.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/real/Guildford.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/real/Worplesdon.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -317,9 +290,6 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/real/Boehl-Iggelheim.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/real/Guildford.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/real/Worplesdon.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -343,8 +313,8 @@ data:extend({
   },
   {
     type = "sound",
-    name = "no_path_real_ice_train_delay_message",
-    filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg",
+    name = "no_path_en_gb_c_female_we_cannot_continue_our_journey_as_the_train_has_no_path",
+    filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
@@ -355,7 +325,7 @@ data:extend({
     variations = {
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -367,7 +337,7 @@ data:extend({
     variations = {
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/no_path/real/ICE train delay message.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/We cannot continue our journey as the train has no path.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -391,10 +361,19 @@ data:extend({
   },
   {
     type = "sound",
+    name = "destination_full_en_gb_c_female_we_cannot_leave_as_the_destination_is_full",
+    filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/We cannot leave as the destination is full.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
     name = "destination_full_changing",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg"},
       {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Destination is full.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/We cannot leave as the destination is full.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -406,6 +385,7 @@ data:extend({
     variations = {
       {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg"},
       {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Destination is full.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/We cannot leave as the destination is full.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -429,10 +409,28 @@ data:extend({
   },
   {
     type = "sound",
+    name = "wait_signal_en_gb_c_female_track_is_blocked",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked",
+    filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
     name = "wait_signal_changing",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
       {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -444,6 +442,8 @@ data:extend({
     variations = {
       {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
       {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Track is blocked.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/We cannot continue our journey as the track in front of us is blocked.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -451,16 +451,40 @@ data:extend({
   },
   {
     type = "sound",
-    name = "pleasant_journey_have_a_good_trip",
-    filename = "__TrainAnnouncements__/sounds/pleasant_journey/Have a good trip.ogg",
+    name = "pleasant_journey_en_gb_c_female_have_a_good_trip",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a good trip.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "pleasant_journey_welcome_on_board_and_have_a_pleasant_journey",
-    filename = "__TrainAnnouncements__/sounds/pleasant_journey/Welcome on board and have a pleasant journey.ogg",
+    name = "pleasant_journey_en_gb_c_female_have_a_nice_trip",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a nice trip.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "pleasant_journey_en_gb_c_female_have_a_pleasant_journey",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a pleasant journey.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "pleasant_journey_en_gb_c_female_welcome_on_board_and_have_a_pleasant_journey",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board and have a pleasant journey.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "pleasant_journey_en_gb_c_female_welcome_on_board_the_factorio_train_service",
+    filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board the Factorio train service.ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
@@ -469,8 +493,11 @@ data:extend({
     type = "sound",
     name = "pleasant_journey_changing",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Have a good trip.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Welcome on board and have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a good trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a nice trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board and have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board the Factorio train service.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -480,8 +507,11 @@ data:extend({
     type = "sound",
     name = "pleasant_journey_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Have a good trip.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/Welcome on board and have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a good trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a nice trip.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board and have a pleasant journey.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Welcome on board the Factorio train service.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,

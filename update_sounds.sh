@@ -66,7 +66,7 @@ add_to_data_lua_and_arrays()
     local sub_dir=${3}
     local -n code_names_array=${4}
     local -n gui_names_array=${5}
-    local is_default_needed=${6}
+    local add_default=${6}
     
     #echo "Processing directory $dir"
 
@@ -85,7 +85,7 @@ add_to_data_lua_and_arrays()
 
         # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
         # ${parameter//pattern/string}
-        code_name=$name_prefix${gui_name_lowercase//[![:alpha:]]/_}
+        code_name=$name_prefix${gui_name_lowercase//[![:alnum:]]/_}
         
         #echo "Code name $code_name"
 
@@ -142,7 +142,7 @@ add_to_data_lua_and_arrays()
     gui_names_array+=("<Random>")
 
     # add entry "Inherit" if required
-    if "$is_default_needed"
+    if "$add_default"
     then
         code_names_array+=("default")
         gui_names_array+=("<Default>")
@@ -194,7 +194,7 @@ edit_locale_cfg()
 
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_next_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_final_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_destination_full_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
@@ -203,7 +203,7 @@ edit_locale_cfg()
     done
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
-        echo "train_announcements_default_station_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_default_next_station_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         for j in $(seq -w $STATION_START_NUMBER $STATION_END_NUMBER)
         do
             echo "train_announcements_station${j}_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}

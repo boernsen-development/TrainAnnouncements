@@ -1,8 +1,6 @@
 -- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path
+-- TODO add "intermediate announcements": fixed distance to next station (higher than standard announcement)
 -- TODO add "random announcements": min. distance to stations, min distance between stations, every X rails?, better would be time-based
--- TODO add random announcement "Please mind the gap between the train and the platform."
--- TODO add random announcement "Please remember to collect all your personal belongings when leaving the train."
--- TODO add random announcement "You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare."
 -- TODO reduce pattern settings
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
 -- TODO add script convert_mp3_to_ogg.sh
@@ -232,7 +230,7 @@ function get_announcement_for_player(player)
                 local station_name = util.get_next_station_name_for_player(player)
                 if station_number and station_count and station_name
                 then
-                    announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_station_jingle_sound")
+                    announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_next_station_jingle_sound")
                     announcement["sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
                     announcement["description"] = "station"
                     announcement["station_number"] = station_number
@@ -244,7 +242,7 @@ function get_announcement_for_player(player)
         -- fall back to defaults if necessary
         if not announcement["sound"] or not game.is_valid_sound_path(announcement["sound"])
         then
-            announcement["sound"] = util.get_global_mod_setting("train_announcements_default_station_announcement_sound")
+            announcement["sound"] = util.get_global_mod_setting("train_announcements_default_next_station_announcement_sound")
         end
         if not announcement["description"] or announcement["description"] == ""
         then
@@ -291,13 +289,13 @@ function process_player(player)
         local announcement_sound = announcement["sound"]
         local announcement_description = announcement["description"]
         
-        local print_messages_enabled = util.get_players_mod_setting(player, "train_announcements_print_announcement_messages_enabled")
+        local print_messages_enabled = util.get_players_mod_setting(player, "train_announcements_text_enabled")
         if print_messages_enabled
         then
             print_message_to_player(player, announcement, announcement_sound)
         end
 
-        local play_sounds_enabled = util.get_players_mod_setting(player, "train_announcements_play_announcement_sounds_enabled")
+        local play_sounds_enabled = util.get_players_mod_setting(player, "train_announcements_audio_enabled")
         if play_sounds_enabled
         then
             if announcement_jingle_sound and game.is_valid_sound_path(announcement_jingle_sound)
@@ -317,7 +315,7 @@ function process_player(player)
         end
     elseif has_pending_announcement_on_tick(player, game.tick)
     then
-        local play_sounds_enabled = util.get_players_mod_setting(player, "train_announcements_play_announcement_sounds_enabled")
+        local play_sounds_enabled = util.get_players_mod_setting(player, "train_announcements_audio_enabled")
         local announcement_sound = get_and_remove_pending_announcement(player)
         if play_sounds_enabled and announcement_sound
         then

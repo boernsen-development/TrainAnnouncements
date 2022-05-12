@@ -1,9 +1,6 @@
 This mod uses the following sounds or modified versions from freesound.org:
 
-"ice_train_delay_message.wav" by uair01 ( https://freesound.org/people/uair01/sounds/66758/ ) licensed under CC BY 3.0
-"The Next Station is Guildford1.wav" by planetfrog ( https://freesound.org/people/planetfrog/sounds/83298/ ) licensed under CC0 1.0
-"The Next Station is Worplesdon.wav" by planetfrog ( https://freesound.org/people/planetfrog/sounds/83299/ ) licensed under CC0 1.0
-"SWT to London Waterloo Calling at.wav" by planetfrog ( https://freesound.org/people/planetfrog/sounds/83296/ ) licensed under CC0 1.0
+"Airport Announcement.wav" by Benboncan ( https://freesound.org/people/Benboncan/sounds/93645/ ) licensed under CC BY 3.0
 "Announcement-03.wav" by gollamar ( https://freesound.org/people/gollamar/sounds/273232/ ) licensed under CC BY 3.0
 "Stockholm's Tunnelbana jingle.wav" by klankbeeld ( https://freesound.org/people/klankbeeld/sounds/587168/ ) licensed under CC BY 4.0
 
