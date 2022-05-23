@@ -25,7 +25,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "jingle_changing",
+    name = "jingle_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/jingles/Airport (2 sec).ogg"},
       {filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg"},
@@ -233,7 +233,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_changing",
+    name = "station_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal unloading.ogg"},
@@ -321,7 +321,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "destination_full_changing",
+    name = "destination_full_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Apologise for delay and inconvenience due to full destination.ogg"},
       {filename = "__TrainAnnouncements__/sounds/destination_full/en-GB-C-female/Destination is full.ogg"},
@@ -369,7 +369,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "no_path_changing",
+    name = "no_path_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/Apologise for delay and inconvenience due to no path.ogg"},
       {filename = "__TrainAnnouncements__/sounds/no_path/en-GB-C-female/The train has no path.ogg"},
@@ -433,7 +433,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "pleasant_journey_changing",
+    name = "pleasant_journey_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a good trip.ogg"},
       {filename = "__TrainAnnouncements__/sounds/pleasant_journey/en-GB-C-female/Have a nice trip.ogg"},
@@ -493,7 +493,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "wait_signal_changing",
+    name = "wait_signal_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/Apologise for delay and inconvenience due to blocked track in front.ogg"},
       {filename = "__TrainAnnouncements__/sounds/wait_signal/en-GB-C-female/The track in front of us is blocked.ogg"},
@@ -551,7 +551,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "back_on_path_changing",
+    name = "back_on_path_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a good trip.ogg"},
       {filename = "__TrainAnnouncements__/sounds/back_on_path/en-GB-C-female/Have a nice trip.ogg"},
@@ -601,7 +601,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "intermediate_changing",
+    name = "intermediate_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/intermediate/Please mind the gap.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/Please remember to collect personal belongings.ogg"},

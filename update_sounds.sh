@@ -114,10 +114,10 @@ add_to_data_lua_and_arrays()
         echo "  }," >> ${DATA_LUA}
     done
     
-    # add entry "changing"
+    # add entry "rotating"
     echo "  {" >> ${DATA_LUA}
     echo "    type = \"sound\"," >> ${DATA_LUA}
-    echo "    name = \"${name_prefix}changing\"," >> ${DATA_LUA}
+    echo "    name = \"${name_prefix}rotating\"," >> ${DATA_LUA}
     echo "    variations = {" >> ${DATA_LUA}
     for file in $files
     do
@@ -129,8 +129,8 @@ add_to_data_lua_and_arrays()
     echo "    allow_random_repeat = false," >> ${DATA_LUA}
     echo "    audible_distance_modifier = 1e20" >> ${DATA_LUA}
     echo "  }," >> ${DATA_LUA}
-    code_names_array+=("${name_prefix}changing")
-    gui_names_array+=("<Changing>")
+    code_names_array+=("${name_prefix}rotating")
+    gui_names_array+=("<Rotating>")
 
     # add entry "random"
     echo "  {" >> ${DATA_LUA}
