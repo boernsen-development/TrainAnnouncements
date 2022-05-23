@@ -24,6 +24,8 @@ WAIT_SIGNAL_SUB_DIR=sounds/wait_signal
 WAIT_SIGNAL_FULL_DIR=${SCRIPT_DIR}/${WAIT_SIGNAL_SUB_DIR}
 BACK_ON_PATH_SUB_DIR=sounds/back_on_path
 BACK_ON_PATH_FULL_DIR=${SCRIPT_DIR}/${BACK_ON_PATH_SUB_DIR}
+INTERMEDIATE_SUB_DIR=sounds/intermediate
+INTERMEDIATE_FULL_DIR=${SCRIPT_DIR}/${INTERMEDIATE_SUB_DIR}
 
 MOD_NAME=__TrainAnnouncements__
 STATION_START_NUMBER=1
@@ -51,6 +53,8 @@ declare -a WAIT_SIGNAL_CODE_NAMES
 declare -a WAIT_SIGNAL_GUI_NAMES
 declare -a BACK_ON_PATH_CODE_NAMES
 declare -a BACK_ON_PATH_GUI_NAMES
+declare -a INTERMEDIATE_CODE_NAMES
+declare -a INTERMEDIATE_GUI_NAMES
 
 print_array()
 {
@@ -201,6 +205,10 @@ edit_locale_cfg()
         echo "train_announcements_back_on_path_announcement_sound-${BACK_ON_PATH_CODE_NAMES[$i]}=${BACK_ON_PATH_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
 
+    for i in "${!INTERMEDIATE_CODE_NAMES[@]}"; do
+        echo "train_announcements_intermediate_announcement_sound-${INTERMEDIATE_CODE_NAMES[$i]}=${INTERMEDIATE_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
+
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_next_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
@@ -210,6 +218,7 @@ edit_locale_cfg()
         echo "train_announcements_override_pleasant_journey_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_wait_signal_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_back_on_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_intermediate_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
@@ -281,6 +290,7 @@ add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" ${NO_PATH_SUB_DIR} NO_
 add_to_data_lua_and_arrays  ${PLEASANT_JOURNEY_FULL_DIR}  "pleasant_journey_"  ${PLEASANT_JOURNEY_SUB_DIR}  PLEASANT_JOURNEY_CODE_NAMES  PLEASANT_JOURNEY_GUI_NAMES false
 add_to_data_lua_and_arrays  ${WAIT_SIGNAL_FULL_DIR}  "wait_signal_"  ${WAIT_SIGNAL_SUB_DIR}  WAIT_SIGNAL_CODE_NAMES  WAIT_SIGNAL_GUI_NAMES false
 add_to_data_lua_and_arrays  ${BACK_ON_PATH_FULL_DIR}  "back_on_path_"  ${BACK_ON_PATH_SUB_DIR}  BACK_ON_PATH_CODE_NAMES  BACK_ON_PATH_GUI_NAMES false
+add_to_data_lua_and_arrays  ${INTERMEDIATE_FULL_DIR}  "intermediate_"  ${INTERMEDIATE_SUB_DIR}  INTERMEDIATE_CODE_NAMES  INTERMEDIATE_GUI_NAMES false
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
@@ -301,6 +311,8 @@ print_array "Wait signal" WAIT_SIGNAL_GUI_NAMES
 echo ""
 print_array "Back on path" BACK_ON_PATH_GUI_NAMES
 echo ""
+print_array "Intermediate" INTERMEDIATE_GUI_NAMES
+echo ""
 
 # edit settings.lua
 echo "Editing ${SETTINGS_LUA}..."
@@ -311,6 +323,7 @@ edit_settings_lua "allowed_values = {\"no_path_" NO_PATH_CODE_NAMES
 edit_settings_lua "allowed_values = {\"pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES
 edit_settings_lua "allowed_values = {\"wait_signal_" WAIT_SIGNAL_CODE_NAMES
 edit_settings_lua "allowed_values = {\"back_on_path_" BACK_ON_PATH_CODE_NAMES
+edit_settings_lua "allowed_values = {\"intermediate_" INTERMEDIATE_CODE_NAMES
 fix_settings_lua_order
 
 # edit locale.cfg

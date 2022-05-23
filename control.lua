@@ -1,10 +1,14 @@
--- TODO add "back on path" accouncement for state change no_path/wait_signal -> on_the_path
--- TODO add "intermediate announcements": fixed distance to next station (higher than standard announcement)
--- TODO add "random announcements": min. distance to stations, min distance between stations, every X rails?, better would be time-based
--- TODO reduce pattern settings
--- TODO allow lua regex expression as patterns (e.g. "regex()")
--- TODO add script convert_mp3_to_ogg.sh
+-- TODO add modulo to "intermediate"
+-- TODO rename "Changing" to "Rotating"
+-- TODO update script to detect sub-folders and add Rotating/Random fields
+-- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
 -- TODO add license to README.md
+-- TODO add contribution description to README.md
+-- TODO add automatic extraction of mod description to info.json
+-- TODO add "random announcements": min. distance to stations, min distance between stations, every X rails?, better would be time-based
+-- TODO add derivation of seconds between jingle and announcement from jingle filename: " (x sec)"
+-- TODO reduce pattern settings?
+-- TODO allow lua regex expression as patterns (e.g. "regex()")
 
 local util = require("util")
 
@@ -28,6 +32,9 @@ function print_message_to_player(player, announcement, announcement_sound)
     elseif announcement_description == "back_on_path"
     then
         player.print({"announcement-text.back_on_path"})
+    elseif announcement_description == "intermediate"
+    then
+        player.print({"announcement-text.intermediate"})
     elseif announcement_description == "station" or announcement_description == "final_station"
     then
         local station_name = util.get_next_station_name_for_player(player)
@@ -142,6 +149,12 @@ function train_is_on_announcement_distance(train, player)
     return actual_rails_to_next_stop and required_rails_to_next_stop and required_rails_to_next_stop > 0 and actual_rails_to_next_stop == required_rails_to_next_stop
 end
 
+function train_is_on_intermediate_announcement_distance(train, player)
+    local required_rails_to_next_stop = util.get_global_mod_setting("train_announcements_number_of_rails_before_station_for_intermediate")
+    local actual_rails_to_next_stop = util.get_number_of_rails_to_next_stop(train)
+    return actual_rails_to_next_stop and required_rails_to_next_stop and required_rails_to_next_stop > 0 and actual_rails_to_next_stop == required_rails_to_next_stop
+end
+
 function has_change_of_train_state(player, previous_train_state, current_train_state)
     return ( current_train_state == defines.train_state.any or global.current_train_state_for_players[player.name] == current_train_state ) and 
            global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name] and
@@ -168,6 +181,11 @@ end
 function needs_back_on_path_announcement(player)
     return has_change_of_train_state(player, defines.train_state.wait_signal, defines.train_state.on_the_path)
         or has_change_of_train_state(player, defines.train_state.no_path, defines.train_state.on_the_path)
+end
+
+function needs_intermediate_announcement(player)
+    local train = util.get_train_for_player(player)
+    return train and train.valid and train_is_on_intermediate_announcement_distance(train, player)
 end
 
 function needs_station_announcement(player)
@@ -228,6 +246,12 @@ function get_announcement_for_player(player)
         announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_back_on_path_jingle_sound")
         announcement["sound"] = util.get_global_mod_setting("train_announcements_back_on_path_announcement_sound")
         announcement["description"] = "back_on_path"
+    elseif needs_intermediate_announcement(player)
+    then
+        announcement = {}
+        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_intermediate_jingle_sound")
+        announcement["sound"] = util.get_global_mod_setting("train_announcements_intermediate_announcement_sound")
+        announcement["description"] = "intermediate"
     elseif needs_station_announcement(player)
     then
         announcement = {}

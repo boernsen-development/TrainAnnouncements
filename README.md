@@ -83,12 +83,14 @@ If you are on Linux (possibly also MacOS) and play single player / local only, y
 |Have a nice trip.ogg || Have a nice trip.|
 |Have a pleasant journey.ogg || Have a pleasant journey. |
 |We are back on track.ogg || We are back on track. |
+||||
+|----- **Intermediate** -----|||
+|Please mind the gap.ogg || Please mind the gap between the train and the platform.|
+|Please remember to collect personal belongings.ogg || Please remember to collect all your personal belongings when leaving the train.|
+|You must buy a ticket.ogg || You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare. |
 
 
 ## More candidates for possible later use
-* You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.
-* Please remember to collect all your personal belongings when leaving the train.
-* Please mind the gap between the train and the platform.
 * We are sorry to announce that this train may be delayed. This is due to a damage to the overhead electric wires. We apologise for this late running, and the inconvenience caused.
 * We are sorry to announce that this train may be delayed. This is due to animals on the line earlier. We apologise for this late running, and the inconvenience caused.
 * We are sorry to announce that this train may be delayed. This is due to trespassers on the railway earlier today. We apologise for this late running, and the inconvenience caused.

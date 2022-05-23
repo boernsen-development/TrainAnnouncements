@@ -575,4 +575,52 @@ data:extend({
     allow_random_repeat = true,
     audible_distance_modifier = 1e20
   },
+  {
+    type = "sound",
+    name = "intermediate_please_mind_the_gap",
+    filename = "__TrainAnnouncements__/sounds/intermediate/Please mind the gap.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "intermediate_please_remember_to_collect_personal_belongings",
+    filename = "__TrainAnnouncements__/sounds/intermediate/Please remember to collect personal belongings.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "intermediate_you_must_buy_a_ticket",
+    filename = "__TrainAnnouncements__/sounds/intermediate/You must buy a ticket.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "intermediate_changing",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/intermediate/Please mind the gap.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/intermediate/Please remember to collect personal belongings.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/intermediate/You must buy a ticket.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "intermediate_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/intermediate/Please mind the gap.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/intermediate/Please remember to collect personal belongings.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/intermediate/You must buy a ticket.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
 })
