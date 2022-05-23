@@ -1,4 +1,3 @@
--- TODO add modulo to "intermediate"
 -- TODO rename "Changing" to "Rotating"
 -- TODO update script to detect sub-folders and add Rotating/Random fields
 -- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
@@ -152,7 +151,7 @@ end
 function train_is_on_intermediate_announcement_distance(train, player)
     local required_rails_to_next_stop = util.get_global_mod_setting("train_announcements_number_of_rails_before_station_for_intermediate")
     local actual_rails_to_next_stop = util.get_number_of_rails_to_next_stop(train)
-    return actual_rails_to_next_stop and required_rails_to_next_stop and required_rails_to_next_stop > 0 and actual_rails_to_next_stop == required_rails_to_next_stop
+    return actual_rails_to_next_stop and required_rails_to_next_stop and required_rails_to_next_stop > 0 and actual_rails_to_next_stop % required_rails_to_next_stop == 0
 end
 
 function has_change_of_train_state(player, previous_train_state, current_train_state)
