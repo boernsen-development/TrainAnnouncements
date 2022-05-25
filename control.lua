@@ -1,4 +1,3 @@
--- TODO reduce pattern settings?
 -- TODO add derivation of seconds between jingle and announcement from jingle filename: " (x sec)"
 -- TODO add license to README.md
 -- TODO add contribution description to README.md
