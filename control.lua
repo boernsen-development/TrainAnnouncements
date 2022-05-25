@@ -1,4 +1,3 @@
--- TODO update script to detect sub-folders and add Rotating/Random fields
 -- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
 -- TODO add license to README.md
 -- TODO add contribution description to README.md

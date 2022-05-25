@@ -10,22 +10,14 @@
 # Before starting, BACKUPS are created of all files.
 
 SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-JINGLES_SUB_DIR=sounds/jingles
-JINGLES_FULL_DIR=${SCRIPT_DIR}/${JINGLES_SUB_DIR}
-STATIONS_SUB_DIR=sounds/stations
-STATIONS_FULL_DIR=${SCRIPT_DIR}/${STATIONS_SUB_DIR}
-DESTINATION_FULL_SUB_DIR=sounds/destination_full
-DESTINATION_FULL_FULL_DIR=${SCRIPT_DIR}/${DESTINATION_FULL_SUB_DIR}
-NO_PATH_SUB_DIR=sounds/no_path
-NO_PATH_FULL_DIR=${SCRIPT_DIR}/${NO_PATH_SUB_DIR}
-PLEASANT_JOURNEY_SUB_DIR=sounds/pleasant_journey
-PLEASANT_JOURNEY_FULL_DIR=${SCRIPT_DIR}/${PLEASANT_JOURNEY_SUB_DIR}
-WAIT_SIGNAL_SUB_DIR=sounds/wait_signal
-WAIT_SIGNAL_FULL_DIR=${SCRIPT_DIR}/${WAIT_SIGNAL_SUB_DIR}
-BACK_ON_PATH_SUB_DIR=sounds/back_on_path
-BACK_ON_PATH_FULL_DIR=${SCRIPT_DIR}/${BACK_ON_PATH_SUB_DIR}
-INTERMEDIATE_SUB_DIR=sounds/intermediate
-INTERMEDIATE_FULL_DIR=${SCRIPT_DIR}/${INTERMEDIATE_SUB_DIR}
+JINGLES_FULL_DIR=${SCRIPT_DIR}/sounds/jingles
+STATIONS_FULL_DIR=${SCRIPT_DIR}/sounds/stations
+DESTINATION_FULL_FULL_DIR=${SCRIPT_DIR}/sounds/destination_full
+NO_PATH_FULL_DIR=${SCRIPT_DIR}/sounds/no_path
+PLEASANT_JOURNEY_FULL_DIR=${SCRIPT_DIR}/sounds/pleasant_journey
+WAIT_SIGNAL_FULL_DIR=${SCRIPT_DIR}/sounds/wait_signal
+BACK_ON_PATH_FULL_DIR=${SCRIPT_DIR}/sounds/back_on_path
+INTERMEDIATE_FULL_DIR=${SCRIPT_DIR}/sounds/intermediate
 
 MOD_NAME=__TrainAnnouncements__
 STATION_START_NUMBER=1
@@ -67,25 +59,55 @@ print_array()
     done
 }
 
-add_to_data_lua_and_arrays()
+add_variations_entry_to_data_lua()
 {
-    #echo "add_to_data_lua_and_arrays() ${1} ${2} ${3} ${4} ${5} ${6}"
+    local codename=${1}
+    local all_sub_files=${2}
+    local allow_random_repeat_value=${3}
+
+    # make for loops iterate over lines delimited by \n
+    local IFS=$'\n'
+    
+    echo "  {" >> ${DATA_LUA}
+    echo "    type = \"sound\"," >> ${DATA_LUA}
+    echo "    name = \"$codename\"," >> ${DATA_LUA}
+    echo "    variations = {" >> ${DATA_LUA}
+    for file in $all_sub_files
+    do
+        echo "      {filename = \"$MOD_NAME/${file:${#SCRIPT_DIR}+1}\"}," >> ${DATA_LUA}
+    done
+    echo "    }," >> ${DATA_LUA}
+    echo "    category = \"alert\"," >> ${DATA_LUA}
+    echo "    allow_random_repeat = $allow_random_repeat_value," >> ${DATA_LUA}
+    echo "    audible_distance_modifier = 1e20" >> ${DATA_LUA}
+    echo "  }," >> ${DATA_LUA}
+}
+
+add_to_data_lua_and_arrays_process_directory()
+{
     local dir=${1}
-    local name_prefix=${2}
-    local sub_dir=${3}
+    local original_dir=${2}
+    local name_prefix=${3}
     local -n code_names_array=${4}
     local -n gui_names_array=${5}
-    local add_default=${6}
     
-    #echo "Processing directory $dir"
-
-    files=$(find $dir -type f -iname "*.ogg" | sort)
+    # make for loops iterate over lines delimited by \n
     local IFS=$'\n'
+
+    # process subdirectories recursively
+    local sub_dirs=$(find $dir -mindepth 1 -maxdepth 1 -type d | sort)
+    for sub_dir in $sub_dirs
+    do
+        add_to_data_lua_and_arrays_process_directory $sub_dir/ ${2} ${3} ${4} ${5}
+    done
+    
+    # process all files directly in the current folder
+    local files=$(find $dir -maxdepth 1 -type f -iname "*.ogg" | sort)
     for file in $files
     do
-        file_name=${file:${#dir}+1}
-        gui_name=${file_name%.ogg}
-        gui_name_lowercase=${gui_name,,}
+        local file_name=${file:${#original_dir}+1}
+        local gui_name=${file_name%.ogg}
+        local gui_name_lowercase=${gui_name,,}
         
         #echo "\n"
         #echo "Processing file $file_name"
@@ -94,7 +116,7 @@ add_to_data_lua_and_arrays()
 
         # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
         # ${parameter//pattern/string}
-        code_name=$name_prefix${gui_name_lowercase//[![:alnum:]]/_}
+        local code_name=$name_prefix${gui_name_lowercase//[![:alnum:]]/_}
         
         #echo "Code name $code_name"
 
@@ -103,54 +125,54 @@ add_to_data_lua_and_arrays()
         gui_names_array+=("${gui_name}")
 
         # write data.lua
-        #echo "data.lua.filename $MOD_NAME/$sub_dir/$file_name"
+        #echo "data.lua.filename $MOD_NAME/${file:${#SCRIPT_DIR}+1}"
         echo "  {" >> ${DATA_LUA}
         echo "    type = \"sound\"," >> ${DATA_LUA}
         echo "    name = \"$code_name\"," >> ${DATA_LUA}
-        echo "    filename = \"$MOD_NAME/$sub_dir/$file_name\"," >> ${DATA_LUA}
+        echo "    filename = \"$MOD_NAME/${file:${#SCRIPT_DIR}+1}\"," >> ${DATA_LUA}
         echo "    category = \"alert\"," >> ${DATA_LUA}
         echo "    volume = 1.0," >> ${DATA_LUA}
         echo "    audible_distance_modifier = 1e20" >> ${DATA_LUA}
         echo "  }," >> ${DATA_LUA}
     done
+
+    # for the rotating/random entries collect all files recursively from the current and all sub-folders
+    local all_sub_files=$(find $dir -type f -iname "*.ogg" | sort)
+    
+    # the gui name should contain the sub-folder relative to the original_dir or be empty if it is the original_dir itself
+    local guiname_prefix=${dir:${#original_dir}+1}
+    
+    # the code name prefix is derived from the gui name by replacing all non-alpha-numeric by an underscore "_" and prepending the name_prefix
+    local codename_prefix=${name_prefix}${guiname_prefix//[![:alnum:]]/_}
     
     # add entry "rotating"
-    echo "  {" >> ${DATA_LUA}
-    echo "    type = \"sound\"," >> ${DATA_LUA}
-    echo "    name = \"${name_prefix}rotating\"," >> ${DATA_LUA}
-    echo "    variations = {" >> ${DATA_LUA}
-    for file in $files
-    do
-        file_name=${file:${#dir}+1}
-        echo "      {filename = \"$MOD_NAME/$sub_dir/$file_name\"}," >> ${DATA_LUA}
-    done
-    echo "    }," >> ${DATA_LUA}
-    echo "    category = \"alert\"," >> ${DATA_LUA}
-    echo "    allow_random_repeat = false," >> ${DATA_LUA}
-    echo "    audible_distance_modifier = 1e20" >> ${DATA_LUA}
-    echo "  }," >> ${DATA_LUA}
-    code_names_array+=("${name_prefix}rotating")
-    gui_names_array+=("<Rotating>")
+    local rotating_codename="${codename_prefix}rotating"
+    local rotating_guiname="${guiname_prefix}<Rotating>"
+    add_variations_entry_to_data_lua $rotating_codename "${all_sub_files}" "false"
+    code_names_array+=($rotating_codename)
+    gui_names_array+=($rotating_guiname)
 
     # add entry "random"
-    echo "  {" >> ${DATA_LUA}
-    echo "    type = \"sound\"," >> ${DATA_LUA}
-    echo "    name = \"${name_prefix}random\"," >> ${DATA_LUA}
-    echo "    variations = {" >> ${DATA_LUA}
-    for file in $files
-    do
-        file_name=${file:${#dir}+1}
-        echo "      {filename = \"$MOD_NAME/$sub_dir/$file_name\"}," >> ${DATA_LUA}
-    done
-    echo "    }," >> ${DATA_LUA}
-    echo "    category = \"alert\"," >> ${DATA_LUA}
-    echo "    allow_random_repeat = true," >> ${DATA_LUA}
-    echo "    audible_distance_modifier = 1e20" >> ${DATA_LUA}
-    echo "  }," >> ${DATA_LUA}
-    code_names_array+=("${name_prefix}random")
-    gui_names_array+=("<Random>")
+    local random_codename="${codename_prefix}random"
+    local random_guiname="${guiname_prefix}<Random>"
+    add_variations_entry_to_data_lua $random_codename "${all_sub_files}" "true"
+    code_names_array+=($random_codename)
+    gui_names_array+=($random_guiname)
+}
 
-    # add entry "Inherit" if required
+add_to_data_lua_and_arrays()
+{
+    #echo "add_to_data_lua_and_arrays() ${1} ${2} ${3} ${4} ${5}"
+    local dir=${1}
+    local name_prefix=${2}
+    local -n code_names_array=${3}
+    local -n gui_names_array=${4}
+    local add_default=${5}
+    
+    #echo "Processing directory $dir"
+    add_to_data_lua_and_arrays_process_directory ${dir} ${dir} ${2} ${3} ${4}
+    
+    # add entry "Default" if requested
     if "$add_default"
     then
         code_names_array+=("default")
@@ -212,7 +234,7 @@ edit_locale_cfg()
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_next_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_final_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_final_statio n_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_destination_full_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_pleasant_journey_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
@@ -283,14 +305,14 @@ echo "Writing ${DATA_LUA}..."
 echo "data:extend({" >> ${DATA_LUA}
 
 # write actual .ogg files to data.lua
-add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} "jingle_" ${JINGLES_SUB_DIR} JINGLES_CODE_NAMES JINGLES_GUI_NAMES true
-add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "station_" ${STATIONS_SUB_DIR} STATIONS_CODE_NAMES STATIONS_GUI_NAMES false
-add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} "destination_full_" ${DESTINATION_FULL_SUB_DIR} DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES false
-add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" ${NO_PATH_SUB_DIR} NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES false
-add_to_data_lua_and_arrays  ${PLEASANT_JOURNEY_FULL_DIR}  "pleasant_journey_"  ${PLEASANT_JOURNEY_SUB_DIR}  PLEASANT_JOURNEY_CODE_NAMES  PLEASANT_JOURNEY_GUI_NAMES false
-add_to_data_lua_and_arrays  ${WAIT_SIGNAL_FULL_DIR}  "wait_signal_"  ${WAIT_SIGNAL_SUB_DIR}  WAIT_SIGNAL_CODE_NAMES  WAIT_SIGNAL_GUI_NAMES false
-add_to_data_lua_and_arrays  ${BACK_ON_PATH_FULL_DIR}  "back_on_path_"  ${BACK_ON_PATH_SUB_DIR}  BACK_ON_PATH_CODE_NAMES  BACK_ON_PATH_GUI_NAMES false
-add_to_data_lua_and_arrays  ${INTERMEDIATE_FULL_DIR}  "intermediate_"  ${INTERMEDIATE_SUB_DIR}  INTERMEDIATE_CODE_NAMES  INTERMEDIATE_GUI_NAMES false
+add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} "jingle_" JINGLES_CODE_NAMES JINGLES_GUI_NAMES true
+add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "station_" STATIONS_CODE_NAMES STATIONS_GUI_NAMES false
+add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} "destination_full_" DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES false
+add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES false
+add_to_data_lua_and_arrays ${PLEASANT_JOURNEY_FULL_DIR} "pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES PLEASANT_JOURNEY_GUI_NAMES false
+add_to_data_lua_and_arrays ${WAIT_SIGNAL_FULL_DIR} "wait_signal_" ${WAIT_SIGNAL_SUB_DIR} WAIT_SIGNAL_CODE_NAMES WAIT_SIGNAL_GUI_NAMES false
+add_to_data_lua_and_arrays ${BACK_ON_PATH_FULL_DIR} "back_on_path_" BACK_ON_PATH_CODE_NAMES BACK_ON_PATH_GUI_NAMES false
+add_to_data_lua_and_arrays ${INTERMEDIATE_FULL_DIR} "intermediate_" INTERMEDIATE_CODE_NAMES INTERMEDIATE_GUI_NAMES false
 
 # write ending of data.lua
 echo "})" >> ${DATA_LUA}
