@@ -1,10 +1,10 @@
--- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
+-- TODO reduce pattern settings?
+-- TODO add derivation of seconds between jingle and announcement from jingle filename: " (x sec)"
 -- TODO add license to README.md
 -- TODO add contribution description to README.md
+-- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
 -- TODO add automatic extraction of mod description to info.json
 -- TODO add "random announcements": min. distance to stations, min distance between stations, every X rails?, better would be time-based
--- TODO add derivation of seconds between jingle and announcement from jingle filename: " (x sec)"
--- TODO reduce pattern settings?
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
 
 local util = require("util")
