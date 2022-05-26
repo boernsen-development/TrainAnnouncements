@@ -3,21 +3,22 @@
 ***
 
 # Description
-This Factorio mod adds train announcements when sitting in a train. Announcements are available as text and sound and are in English only for now. The audio announcements include various generic station names, which have been generated using https://freetts.com for copyright reasons. The generic audio announcements can be assigned to the actual station names of your game via the mod settings. The textual announcements do print the actual station names.
+This Factorio mod adds train announcements when sitting in a train. Announcements are available as text as well as sound and they are in English only for now. The audio announcements include various generic station names, which have been generated using https://freetts.com. The generic audio announcements can be assigned to the actual station names of your game via the mod settings by copy & paste. The textual announcements do print the actual station names.
 
 Currently the following announcements are supported:
 
-* Next station (if distance equals configured)
+* Next station (at configurable distance before the next station)
 * Final station (if any wait condition of the next station is one of: Passenger not present, Inactivity >= 0.5h)
 * Destination full
 * No path
-* Pleasant journey (Train is just switched to automatic and starts to move)
 * Waiting at a red signal
-* Back on path (Train continues after "No path" or "Waiting at red signal")
+* Back on path (train continues after "No path" or "Waiting at red signal")
+* Pleasant journey (train has been switched to automatic and starts to move)
+* Intermediate (at configurable distances before the next station)
 
-Additionally, a few jingles are included, which will be played before the announcement if configured. Unfortunately, there is no audio preview possible in the settings, so you will have to try the sounds or play them from the 
+Additionally, a few jingles are included, which will be played before the announcement if configured. Unfortunately, there is no audio preview possible in the settings, so you will have to try the sounds or play them from the folder in the mod's zip file.
 
-If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube or any free text-to-speech service such as https://freetts.com . Just extract the mod zip (in Factorio folder/mods), remove the zip file and then add your sounds as *.ogg files to the corresponding sub-folders (Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the script update_sounds.sh (tested on Linux only). This makes them available in the corresponding mod settings dropdowns. After updating the sounds, you might need to disable the mod, restart and then re-enable the mod if Factorio complains about missing mod settings. BE WARNED that if you added custom sounds, they will be removed once the mod is updated, so make sure to backup them before updating!
+If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube or any free text-to-speech service such as https://freetts.com . Just extract the mod zip (in Factorio folder/mods), keep the folder, but remove the zip file and then add your sounds as *.ogg files to the corresponding sub-folders (Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the script update_data_settings_locale.sh (tested on Linux only). This makes them available in the corresponding mod settings dropdowns. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating!
 
 # Included file names and TTS texts for reference
 ***
