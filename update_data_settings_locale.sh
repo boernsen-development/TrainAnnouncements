@@ -125,7 +125,7 @@ add_to_data_lua_and_arrays_process_directory()
         # replace all non-alnum characters with underscore "_"
         # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
         # ${parameter//pattern/string}
-        local code_name=$name_prefix${gui_name_lowercase//[![:alnum:]]/_}
+        local code_name=$name_prefix${gui_name_lowercase//[![:alnum:].]/_}
         
         #echo "Code name $code_name"
 
@@ -154,19 +154,22 @@ add_to_data_lua_and_arrays_process_directory()
     # the code name prefix is derived from the gui name by replacing all non-alpha-numeric by an underscore "_" and prepending the name_prefix
     local codename_prefix=${name_prefix}${guiname_prefix//[![:alnum:]]/_}
     
-    # add entry "rotating"
-    local rotating_codename="${codename_prefix}rotating"
-    local rotating_guiname="${guiname_prefix}<Rotating>"
-    add_variations_entry_to_data_lua $rotating_codename "${all_sub_files}" "false"
-    code_names_array+=($rotating_codename)
-    gui_names_array+=($rotating_guiname)
+    if [ "$name_prefix" != "jingle_" ]
+    then
+        # add entry "rotating"
+        local rotating_codename="${codename_prefix}rotating"
+        local rotating_guiname="${guiname_prefix}<Rotating>"
+        add_variations_entry_to_data_lua $rotating_codename "${all_sub_files}" "false"
+        code_names_array+=($rotating_codename)
+        gui_names_array+=($rotating_guiname)
 
-    # add entry "random"
-    local random_codename="${codename_prefix}random"
-    local random_guiname="${guiname_prefix}<Random>"
-    add_variations_entry_to_data_lua $random_codename "${all_sub_files}" "true"
-    code_names_array+=($random_codename)
-    gui_names_array+=($random_guiname)
+        # add entry "random"
+        local random_codename="${codename_prefix}random"
+        local random_guiname="${guiname_prefix}<Random>"
+        add_variations_entry_to_data_lua $random_codename "${all_sub_files}" "true"
+        code_names_array+=($random_codename)
+        gui_names_array+=($random_guiname)
+    fi
 }
 
 add_to_data_lua_and_arrays()
@@ -198,9 +201,14 @@ edit_settings_lua()
     local search_string=${1}
     local -n code_names_array=${2}
     
+    # derive replacement string for allowed_values
+    # prepend "#" to every entry, e.g. #one #two #three
     joined="${code_names_array[*]/#/#}"
+    # remove first "#", e.g. one #two #three
     joined=${joined#"#"}
+    # remove blank spaces, e.g. one#two#three
     joined=${joined//[[:blank:]]/}
+    # replace "#" by ", ", e.g. one, two, three
     joined="    allowed_values = {\"${joined//#/\", \"}\"},"
     
     sed -i "/$search_string/c\\$joined" ${SETTINGS_LUA}

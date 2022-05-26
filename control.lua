@@ -7,6 +7,7 @@
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
 
 local util = require("util")
+local station_pattern_count = 30
 
 function print_message_to_player(player, announcement, announcement_sound)
     announcement_description = announcement["description"]
@@ -189,8 +190,8 @@ function needs_station_announcement(player)
     return train and train.valid and train_is_on_announcement_distance(train, player)
 end
 
-function get_station_sound_with_matching_name_pattern(player, station_name)
-    for i = 1,50,1 
+function get_station_sound_with_matching_name_pattern(player, station_name, fallback_setting)
+    for i = 1,station_pattern_count,1 
     do 
         local padded_number = util.pad_left_string(tostring(i),2,0)
         local name_pattern = util.get_global_mod_setting("train_announcements_station" .. padded_number .. "_name_pattern")
@@ -207,7 +208,7 @@ function get_station_sound_with_matching_name_pattern(player, station_name)
 --             game.print(game.tick .. "name pattern not found at all in settings")
         end
     end
-    return nil
+    return util.get_global_mod_setting(fallback_setting)
 end
 
 function get_announcement_for_player(player)
@@ -254,23 +255,24 @@ function get_announcement_for_player(player)
         local train = util.get_train_for_player(player)
         if train and train.valid
         then
-            if util.is_approaching_final_station(train)
+            local station_number = util.get_index_of_approaching_station_in_schedule(train)
+            local station_count = util.get_number_of_stations_in_schedule(train)
+            local station_name = util.get_next_station_name_for_player(player)
+            -- should always be valid
+            if station_number and station_count and station_name
             then
-                announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_final_station_jingle_sound")
-                announcement["sound"] = util.get_global_mod_setting("train_announcements_override_final_station_announcement_sound")
-                announcement["description"] = "final_station"
-            else
-                local station_number = util.get_index_of_approaching_station_in_schedule(train)
-                local station_count = util.get_number_of_stations_in_schedule(train)
-                local station_name = util.get_next_station_name_for_player(player)
-                if station_number and station_count and station_name
+                if util.is_approaching_final_station(train)
                 then
+                    announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_final_station_jingle_sound")
+                    announcement["sound"] = get_station_sound_with_matching_name_pattern(player, station_name, "train_announcements_override_final_station_announcement_sound")
+                    announcement["description"] = "final_station"
+                else
                     announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_override_next_station_jingle_sound")
-                    announcement["sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
+                    announcement["sound"] = get_station_sound_with_matching_name_pattern(player, station_name, "train_announcements_default_next_station_announcement_sound")
                     announcement["description"] = "station"
-                    announcement["station_number"] = station_number
-                    announcement["station_count"] = station_count
                 end
+                announcement["station_number"] = station_number
+                announcement["station_count"] = station_count
             end
         end
         
@@ -312,6 +314,21 @@ function update_train_states_for_player(player)
 --      end
 end
 
+function get_seconds_between_jingle_and_announcement(sound_name)
+    seconds = nil
+
+    -- try to match and convert number from sound_name
+    dummy,dummy,seconds=string.find(sound_name, "(%d+[.]?%d*)[_]*sec")
+
+    -- fall back to mod setting if number was not valid
+    if not seconds
+    then
+        seconds = util.get_global_mod_setting("train_announcements_seconds_between_jingle_and_announcement")
+    end
+    
+    return seconds
+end
+
 function process_player(player)
     update_train_states_for_player(player)
     
@@ -336,7 +353,7 @@ function process_player(player)
             if announcement_jingle_sound and game.is_valid_sound_path(announcement_jingle_sound)
             then
                 play_sound_for_player(player, announcement_jingle_sound)
-                local seconds_between_jingle_and_announcement = util.get_global_mod_setting("train_announcements_seconds_between_jingle_and_announcement")
+                local seconds_between_jingle_and_announcement = get_seconds_between_jingle_and_announcement(announcement_jingle_sound)
                 if announcement_sound and game.is_valid_sound_path(announcement_sound) and seconds_between_jingle_and_announcement
                 then
                     schedule_announcement(player, announcement_sound, game.tick + util.seconds_to_ticks(seconds_between_jingle_and_announcement))

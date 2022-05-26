@@ -58,24 +58,16 @@ data:extend({
     name = "train_announcements_default_jingle_sound",
     setting_type = "runtime-global",
     default_value = "jingle_airport__2_sec_",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "008"
-  },
-  {
-    type = "int-setting",
-    name = "train_announcements_number_of_rails_before_station",
-    setting_type = "runtime-global",
-    minimum_value = 1,
-    default_value = 250,
-    order = "009"
   },
   {
     type = "string-setting",
     name = "train_announcements_override_next_station_jingle_sound",
     setting_type = "runtime-global",
     default_value = "default",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
-    order = "010"
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
+    order = "009"
   },
   {
     type = "string-setting",
@@ -83,14 +75,22 @@ data:extend({
     setting_type = "runtime-global",
     default_value = "off",
     allowed_values = {"station_en_gb_c_female_coal_loading", "station_en_gb_c_female_coal_unloading", "station_en_gb_c_female_copper_loading", "station_en_gb_c_female_copper_unloading", "station_en_gb_c_female_demand", "station_en_gb_c_female_deposit", "station_en_gb_c_female_depot", "station_en_gb_c_female_fuel_station", "station_en_gb_c_female_iron_loading", "station_en_gb_c_female_iron_unloading", "station_en_gb_c_female_loading", "station_en_gb_c_female_main_base", "station_en_gb_c_female_oil_loading", "station_en_gb_c_female_oil_unloading", "station_en_gb_c_female_outpost", "station_en_gb_c_female_petrol_station", "station_en_gb_c_female_refuelling", "station_en_gb_c_female_stone_loading", "station_en_gb_c_female_stone_unloading", "station_en_gb_c_female_supply", "station_en_gb_c_female_unloading", "station_en_gb_c_female_uranium_loading", "station_en_gb_c_female_uranium_unloading", "station_en_GB_C_female_rotating", "station_en_GB_C_female_random", "station_rotating", "station_random", "off"},
+    order = "010"
+  },
+  {
+    type = "int-setting",
+    name = "train_announcements_number_of_rails_before_station",
+    setting_type = "runtime-global",
+    minimum_value = 1,
+    default_value = 500,
     order = "011"
   },
   {
     type = "string-setting",
     name = "train_announcements_override_final_station_jingle_sound",
     setting_type = "runtime-global",
-    default_value = "jingle_announcement_with_chord__4_sec_",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    default_value = "jingle_announcement_with_chord__4.2_sec_",
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "012"
   },
   {
@@ -106,7 +106,7 @@ data:extend({
     name = "train_announcements_override_destination_full_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "014"
   },
   {
@@ -122,7 +122,7 @@ data:extend({
     name = "train_announcements_override_no_path_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "016"
   },
   {
@@ -138,7 +138,7 @@ data:extend({
     name = "train_announcements_override_pleasant_journey_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "018"
   },
   {
@@ -154,7 +154,7 @@ data:extend({
     name = "train_announcements_override_wait_signal_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "020"
   },
   {
@@ -170,7 +170,7 @@ data:extend({
     name = "train_announcements_override_back_on_path_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "022"
   },
   {
@@ -194,7 +194,7 @@ data:extend({
     name = "train_announcements_override_intermediate_jingle_sound",
     setting_type = "runtime-global",
     default_value = "off",
-    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "jingle_rotating", "jingle_random", "default", "off"},
+    allowed_values = {"jingle_airport__2_sec_", "jingle_announcement_with_chord__4.2_sec_", "jingle_stockholm_s_tunnelbana__2_sec_", "default", "off"},
     order = "025"
   },
   {

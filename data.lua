@@ -9,8 +9,8 @@ data:extend({
   },
   {
     type = "sound",
-    name = "jingle_announcement_with_chord__4_sec_",
-    filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg",
+    name = "jingle_announcement_with_chord__4.2_sec_",
+    filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4.2 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
@@ -21,30 +21,6 @@ data:extend({
     filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana (2 sec).ogg",
     category = "alert",
     volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "jingle_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/jingles/Airport (2 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana (2 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "jingle_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/jingles/Airport (2 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/jingles/Announcement with chord (4 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/jingles/Stockholm S Tunnelbana (2 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
     audible_distance_modifier = 1e20
   },
   {
