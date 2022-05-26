@@ -1,10 +1,18 @@
 #!/bin/bash
 
 # INFO:
-# Generates data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sounds/no_path, sounds/jingles, sounds/stations
+# Generates data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sub-directory sounds
 # 
-# data.lua: completely rewritten
-# settings.lua: all lines starting with 'allowed_values = {"no_path_', or 'allowed_values = {"jingle_', or 'allowed_values = {"station_' are overwritten
+# data.lua: is completely rewritten
+# settings.lua: all lines starting with one the following are overwritten:
+#   'allowed_values = {"wait_signal_'
+#   'allowed_values = {"station_' 
+#   'allowed_values = {"pleasant_journey_'
+#   'allowed_values = {"no_path_'
+#   'allowed_values = {"jingle_'
+#   'allowed_values = {"intermediate_'
+#   'allowed_values = {"destination_full_'
+#   'allowed_values = {"back_on_path_'
 # locale.cfg: all lines below '[string-mod-setting]' are overwritten
 # 
 # Before starting, BACKUPS are created of all files.
@@ -114,6 +122,7 @@ add_to_data_lua_and_arrays_process_directory()
         #echo "Gui name $gui_name"
         #echo "Lower case $gui_name_lowercase"
 
+        # replace all non-alnum characters with underscore "_"
         # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
         # ${parameter//pattern/string}
         local code_name=$name_prefix${gui_name_lowercase//[![:alnum:]]/_}
