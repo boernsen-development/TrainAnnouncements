@@ -209,6 +209,22 @@ data:extend({
   },
   {
     type = "sound",
+    name = "station_en_gb_c_female_we_will_arrive_at_our_final_station_shortly",
+    filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_en_gb_c_female_we_will_arrive_at_the_next_station_shortly",
+    filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
     name = "station_en_GB_C_female_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
@@ -234,6 +250,8 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -266,6 +284,8 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -298,6 +318,8 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -330,6 +352,8 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,

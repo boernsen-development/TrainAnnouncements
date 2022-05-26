@@ -27,10 +27,12 @@ If you are on Linux (possibly also MacOS) and play single player / local only, y
 ||||||
 |----- **Jingles** -----|||||
 |Airport (2 sec).ogg || from https://freesound.org/people/Benboncan/sounds/93645/ || |
-|Announcement with chord (4 sec).ogg || from https://freesound.org/people/gollamar/sounds/273232/ || |
+|Announcement with chord (4.2 sec).ogg || from https://freesound.org/people/gollamar/sounds/273232/ || |
 |Stockholm S Tunnelbana (2 sec).ogg || from https://freesound.org/people/klankbeeld/sounds/587168/|
 ||||||
 |----- **Stations** -----|||||
+|We will arrive at the next station shortly.ogg || We will arrive at the next station shortly. || x |
+|We will arrive at our final station shortly.ogg || We will arrive at our final station shortly. || x |
 |Coal loading.ogg || Next station: Coal loading. || x |
 |Coal unloading.ogg || Next station: Coal unloading. || x |
 |Copper loading.ogg || Next station: Copper loading. || x |
