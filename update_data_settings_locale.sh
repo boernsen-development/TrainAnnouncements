@@ -243,7 +243,7 @@ edit_locale_cfg()
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
         echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_next_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_final_statio n_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_override_final_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_destination_full_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         echo "train_announcements_override_pleasant_journey_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
