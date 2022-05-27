@@ -1,5 +1,4 @@
 -- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
--- TODO add license to README.md
 -- TODO add contribution description to README.md
 -- TODO add automatic extraction of mod description to info.json into deploy.sh
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
