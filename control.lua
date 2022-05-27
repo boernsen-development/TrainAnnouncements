@@ -1,6 +1,6 @@
 -- TODO add default patterns (e.g. "Coal loading", "Coal unloading")
 -- TODO add contribution description to README.md
--- TODO add automatic extraction of mod description to info.json into deploy.sh
+-- TODO add links to github, forum, mod page, etc to README.md and mod page once published
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
 
 local util = require("util")
