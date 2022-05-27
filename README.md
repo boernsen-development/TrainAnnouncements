@@ -47,7 +47,7 @@ https://creativecommons.org/licenses/by-nc/3.0/
 
 Everything else is under the following MIT License
 
-Copyright (c) 2022 boernsen2
+Copyright (c) 2022 boernsen2 <77436741+boernsen2@users.noreply.github.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
