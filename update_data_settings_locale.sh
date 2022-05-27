@@ -1,21 +1,34 @@
 #!/bin/bash
 
-# INFO:
-# Generates data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sub-directory sounds
+# HOW TO USE:
+# 
+# Put all the desired sound files into the "sounds" subfolder, e.g.
+#   sounds/jingles/my_jingle.ogg
+#   sounds/stations/my/my_station.ogg
+#   sounds/stations/my/my_otherstation.ogg
+# 
+# Then after running this script, you should see these options in Factorio:
+#   <jingle setting> -> my_jingle
+#   <station announcement setting> -> my/my_station
+#   <station announcement setting> -> my/my_otherstation
+# 
+# MORE INFO:
+# 
+# This script generates a new data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sub-directory sounds.
 # 
 # data.lua: is completely rewritten
 # settings.lua: all lines starting with one the following are overwritten:
-#   'allowed_values = {"wait_signal_'
-#   'allowed_values = {"station_' 
-#   'allowed_values = {"pleasant_journey_'
-#   'allowed_values = {"no_path_'
-#   'allowed_values = {"jingle_'
-#   'allowed_values = {"intermediate_'
-#   'allowed_values = {"destination_full_'
 #   'allowed_values = {"back_on_path_'
+#   'allowed_values = {"destination_full_'
+#   'allowed_values = {"intermediate_'
+#   'allowed_values = {"jingle_'
+#   'allowed_values = {"no_path_'
+#   'allowed_values = {"pleasant_journey_'
+#   'allowed_values = {"station_' 
+#   'allowed_values = {"wait_signal_'
 # locale.cfg: all lines below '[string-mod-setting]' are overwritten
 # 
-# Before starting, BACKUPS are created of all files.
+# Before starting, BACKUPS are automatically created of all the files.
 
 SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 JINGLES_FULL_DIR=${SCRIPT_DIR}/sounds/jingles
