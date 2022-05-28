@@ -1,6 +1,5 @@
 # Train Announcements
 
-***
 ## Description
 
 This Factorio mod adds train announcements to the game when sitting in a train. Currently the following announcements are supported:
@@ -18,12 +17,10 @@ Announcements are available as text as well as sound and they are in English onl
 
 Additionally, a few jingles are included, which will be played before the announcement if configured. Unfortunately, there is no audio preview possible in the settings, so you will have to try the sounds or play them manually from the sounds folder in the mod's zip file.
 
-If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com . Just extract the mod zip (in Factorio folder/mods), keep the folder, but remove the zip file and then add your sounds as *.ogg files to the corresponding sub-folders (Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the script update_data_settings_locale.sh (tested on Linux only). This makes them available in the corresponding mod settings dropdowns. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating!
+If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com . Just extract the mod zip (in Factorio folder/mods), keep the folder, but remove the zip file and then add your sounds as *.ogg files to the corresponding sub-folders (Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the two scripts update_sounds_lengths.sh and script update_data_settings_locale.sh (tested on Ubuntu only). This appends the required sound lengths and makes them available in the corresponding mod settings dropdowns. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating or maintain them in a separate folder and copy/update them after each mod update!
 
 DISCLAIMER: If you use the script update_data_settings_locale.sh, you do that on your own responsibility. I will not take any responsibility for any damage to or loss of any data caused by the script.
 
-
-***
 ## CREDITS
 
 This mod uses the following sounds or modified versions from freesound.org:
@@ -39,7 +36,6 @@ This mod uses the following icons or modified versions from iconfinder.com:
 "Ui, essential, app, sound, speaker" icon by Nack Thanakorn ( https://www.iconfinder.com/icons/8324192/ui_essential_app_sound_speaker_icon )
 
 
-***
 ## LICENSE
 
 All sound and icon files are licensed under Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)
@@ -47,7 +43,7 @@ https://creativecommons.org/licenses/by-nc/3.0/
 
 Everything else is under the following MIT License
 
-Copyright (c) 2022 boernsen2 <77436741+boernsen2@users.noreply.github.com>
+Copyright (c) 2022 boernsen-development <77436741+boernsen-development@users.noreply.github.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -68,25 +64,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-***
 ## Included jingles
 
-|File name||Text for TTS or source|
-|:---|:---|:---|
-|Airport (2 sec).ogg || https://freesound.org/people/Benboncan/sounds/93645/ |
-|Announcement with chord (4.2 sec).ogg || https://freesound.org/people/gollamar/sounds/273232/ |
-|Stockholm S Tunnelbana (2 sec).ogg || https://freesound.org/people/klankbeeld/sounds/587168/|
+|File name|Text for TTS or source|
+|:---|:---|
+|Airport (2 sec).ogg | https://freesound.org/people/Benboncan/sounds/93645/ |
+|Announcement with chord (4.2 sec).ogg | https://freesound.org/people/gollamar/sounds/273232/ |
+|Stockholm S Tunnelbana (2 sec).ogg | https://freesound.org/people/klankbeeld/sounds/587168/|
 
 
-***
 ## Included voices from https://freetts.com for reference
 
-|freetts setting||Name in mod|
-|:---|:---|:---|
-|English (UK) > en-GB-Standard-C||en-GB-C-female|
+|freetts setting|Name in mod|
+|:---|:---|
+|English (UK) > en-GB-Standard-C|en-GB-C-female|
 
 
-***
 ## Included TTS texts for reference
 
 ### Back on path

@@ -8,14 +8,14 @@ function deploy {
     # deploy new archive
     zip -FSr $2 $1 --exclude '*.git*' '*.sh*' '*~*' '*default_station_names*' '*backup*'
     
-    # add update script to archive
-    zip -u $2 "$1/update_data_settings_locale.sh"
+    # add update scripts to archive
+    zip -u $2 "$1/update_data_settings_locale.sh" "$1/update_sounds_lengths.sh"
 }
 
 function extract_description_from_readme {
     local readme=${1}
     local start_line="## Description"
-    local end_line="\*\*\*"
+    local end_line="## CREDITS"
     local text=$(sed -n "/$start_line/,/$end_line/p" ${readme})
     local text="${text:${#start_line}+2}"
     local text="${text%${end_line}}"
