@@ -1,4 +1,5 @@
 # Train Announcements
+![](thumbnail.png)
 
 ## Description
 
@@ -19,7 +20,7 @@ Additionally, a few jingles are included, which will be played before the announ
 
 If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com . Just extract the mod zip (in Factorio folder/mods), keep the folder, but remove the zip file and then add your sounds as *.ogg files to the corresponding sub-folders (Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the two scripts update_sounds_lengths.sh and script update_data_settings_locale.sh (tested on Ubuntu only). This appends the required sound lengths and makes them available in the corresponding mod settings dropdowns. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating or maintain them in a separate folder and copy/update them after each mod update!
 
-DISCLAIMER: If you use the script update_data_settings_locale.sh, you do that on your own responsibility. I will not take any responsibility for any damage to or loss of any data caused by the script.
+DISCLAIMER: If you use any included script, you do that on your own responsibility. I will not take any responsibility for any damage to or loss of any data caused by the script.
 
 ## CREDITS
 
@@ -68,9 +69,9 @@ SOFTWARE.
 
 |File name|Text for TTS or source|
 |:---|:---|
-|Airport (2 sec).ogg | https://freesound.org/people/Benboncan/sounds/93645/ |
-|Announcement with chord (4.2 sec).ogg | https://freesound.org/people/gollamar/sounds/273232/ |
-|Stockholm S Tunnelbana (2 sec).ogg | https://freesound.org/people/klankbeeld/sounds/587168/|
+|Airport.ogg | https://freesound.org/people/Benboncan/sounds/93645/ |
+|Announcement with chord.ogg | https://freesound.org/people/gollamar/sounds/273232/ |
+|Stockholm S Tunnelbana.ogg | https://freesound.org/people/klankbeeld/sounds/587168/|
 
 
 ## Included voices from https://freetts.com for reference
