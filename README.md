@@ -1,6 +1,14 @@
 # Train Announcements
 ![](thumbnail.png)
 
+* [Description](#description)
+* [CREDITS](#credits)
+* [LICENSE](#license)
+* [Included jingles](#included-jingles)
+* [Included voices from https://freetts.com](#included-voices-from-httpsfreettscom)
+* [Included TTS texts](#included-tts-texts)
+
+
 ## Description
 
 This Factorio mod adds train announcements to the game when sitting in a train. Currently the following announcements are supported:
@@ -74,14 +82,14 @@ SOFTWARE.
 |Stockholm S Tunnelbana.ogg | https://freesound.org/people/klankbeeld/sounds/587168/|
 
 
-## Included voices from https://freetts.com for reference
+## Included voices from https://freetts.com
 
 |freetts setting|Name in mod|
 |:---|:---|
 |English (UK) > en-GB-Standard-C|en-GB-C-female|
 
 
-## Included TTS texts for reference
+## Included TTS texts
 
 ### Back on path
 * Have a good trip.
