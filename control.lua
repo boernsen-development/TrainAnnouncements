@@ -273,15 +273,16 @@ function get_announcement_for_player(player)
                     if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
-                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_final_station_prefix_sound")
+                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefix_sound")
                     else
                         -- else fall back to default without prefix
-                        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_final_station_announcement_sound_default")
+                        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_next_station_announcement_sound_default")
                     end
+                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_final_station_suffix_sound")
                     announcement["description"] = "final_station"
                 else
                     announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_next_station_jingle_sound_override")
-                    announcement["actual_sound"] = get_station_sound_with_matching_name_pattern(player, station_name, "train_announcements_next_station_announcement_sound_default")
+                    announcement["actual_sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
                     if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
@@ -290,6 +291,7 @@ function get_announcement_for_player(player)
                         -- else fall back to default without prefix
                         announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_next_station_announcement_sound_default")
                     end
+                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_next_station_suffix_sound")
                     --announcement["description"] = "next_station"
                 end
                 announcement["station_number"] = station_number
@@ -324,7 +326,7 @@ function update_train_states_for_player(player)
 --      end
 end
 
-function get_length_of_sound_in_seconds(sound_name, fallback_setting)
+function get_length_of_sound_in_seconds(sound_name)
     if not sound_name or sound_name == "off" or not game.is_valid_sound_path(sound_name)
     then
         return 0
@@ -337,7 +339,7 @@ function get_length_of_sound_in_seconds(sound_name, fallback_setting)
     if not seconds and fallback_setting
     then
         game.print("WARNING: Could not derive length of sound. Using fallback.")
-        seconds = util.get_global_mod_setting(fallback_setting)
+        seconds = util.get_global_mod_setting("train_announcements_length_fall_back_in_seconds")
     end
     
     -- if still nil, set 0
@@ -360,6 +362,7 @@ function process_player(player)
         local announcement_jingle_sound = announcement["jingle_sound"]
         local announcement_prefix_sound = announcement["prefix_sound"]
         local announcement_actual_sound = announcement["actual_sound"]
+        local announcement_suffix_sound = announcement["suffix_sound"]
         local announcement_description = announcement["description"]
         
         local print_messages_enabled = util.get_players_mod_setting(player, "train_announcements_text_enabled")
@@ -372,11 +375,13 @@ function process_player(player)
         if play_sounds_enabled
         then
             -- schedule all sounds (starting with 1 tick ahead of the current tick)
-            local length_of_jingle_in_seconds = get_length_of_sound_in_seconds(announcement_jingle_sound, "train_announcements_length_of_jingle_fall_back_in_seconds")
-            local length_of_prefix_in_seconds = get_length_of_sound_in_seconds(announcement_prefix_sound, "train_announcements_length_of_prefix_fall_back_in_seconds")
+            local length_of_jingle_in_seconds = get_length_of_sound_in_seconds(announcement_jingle_sound)
+            local length_of_prefix_in_seconds = get_length_of_sound_in_seconds(announcement_prefix_sound)
+            local length_of_actual_sound_in_seconds = get_length_of_sound_in_seconds(announcement_actual_sound)
             schedule_announcement(player, announcement_jingle_sound, game.tick + 1)
             schedule_announcement(player, announcement_prefix_sound, game.tick + 1 + util.seconds_to_ticks(length_of_jingle_in_seconds))
             schedule_announcement(player, announcement_actual_sound, game.tick + 1 + util.seconds_to_ticks(length_of_jingle_in_seconds + length_of_prefix_in_seconds))
+            schedule_announcement(player, announcement_suffix_sound, game.tick + 1 + util.seconds_to_ticks(length_of_jingle_in_seconds + length_of_prefix_in_seconds + length_of_actual_sound_in_seconds))
         end
     elseif has_pending_announcement_on_tick(player, game.tick)
     then

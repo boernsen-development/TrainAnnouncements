@@ -433,35 +433,26 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly__2.74_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg",
+    name = "station_default_en_gb_c_female_we_will_arrive_at_our_next_stop_shortly__2.62_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train__7.32_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg",
+    name = "station_default_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "station_default_final_en_gb_c_female_we_will_arrive_at_the_final_station_shortly__2.81_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_final_en_GB_C_female_rotating",
+    name = "station_default_en_GB_C_female_rotating",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -469,95 +460,10 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_default_final_en_GB_C_female_random",
+    name = "station_default_en_GB_C_female_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_final_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_final_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_next_en_gb_c_female_we_will_arrive_at_our_next_stop_shortly__2.62_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_next_en_GB_C_female_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_next_en_GB_C_female_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_next_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_default_next_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -567,11 +473,8 @@ data:extend({
     type = "sound",
     name = "station_default_rotating",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -581,11 +484,8 @@ data:extend({
     type = "sound",
     name = "station_default_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly (2.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train (7.32 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at the final station shortly (2.81 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at our next stop shortly (2.62 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/en-GB-C-female/We will arrive at the next station shortly (2.71 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -593,35 +493,35 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is__8.33_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg",
+    name = "station_prefix_en_gb_c_female_next_station__1.22_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Next station (1.22 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._the_next_stop_is__3.74_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg",
+    name = "station_prefix_en_gb_c_female_our_next_stop_is__1.39_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Our next stop is (1.39 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "station_prefix_final_en_gb_c_female_the_next_station_is_the_final_station._the_next_station_is__4.10_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg",
+    name = "station_prefix_en_gb_c_female_the_next_station_is__1.49_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/The next station is (1.49 sec).ogg",
     category = "alert",
     volume = 1.0,
     audible_distance_modifier = 1e20
   },
   {
     type = "sound",
-    name = "station_prefix_final_en_GB_C_female_rotating",
+    name = "station_prefix_en_GB_C_female_rotating",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Next station (1.22 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/The next station is (1.49 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -629,107 +529,11 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_prefix_final_en_GB_C_female_random",
+    name = "station_prefix_en_GB_C_female_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_final_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_final_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_en_gb_c_female_next_station__1.22_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_en_gb_c_female_our_next_stop_is__1.39_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_en_gb_c_female_the_next_station_is__1.49_sec_",
-    filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_en_GB_C_female_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_en_GB_C_female_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = true,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_rotating",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg"},
-    },
-    category = "alert",
-    allow_random_repeat = false,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_prefix_next_random",
-    variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Next station (1.22 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/The next station is (1.49 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -739,12 +543,9 @@ data:extend({
     type = "sound",
     name = "station_prefix_rotating",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Next station (1.22 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/The next station is (1.49 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -754,12 +555,117 @@ data:extend({
     type = "sound",
     name = "station_prefix_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is (8.33 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. The next stop is (3.74 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/The next station is the final station. The next station is (4.10 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station (1.22 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
-      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is (1.49 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Next station (1.22 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/Our next stop is (1.39 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/en-GB-C-female/The next station is (1.49 sec).ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_gb_c_female_final_this_is_our_final_stop__1.82_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_gb_c_female_final_this_is_our_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train__6.41_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_gb_c_female_final_this_is_the_final_station__1.97_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_GB_C_female_final_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_GB_C_female_final_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_gb_c_female_please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train__4.66_sec_",
+    filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/Please remember to collect all your personal belongings when leaving the train (4.66 sec).ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_GB_C_female_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/Please remember to collect all your personal belongings when leaving the train (4.66 sec).ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_en_GB_C_female_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/Please remember to collect all your personal belongings when leaving the train (4.66 sec).ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/Please remember to collect all your personal belongings when leaving the train (4.66 sec).ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_suffix_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop (1.82 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is our final stop. Please remember to collect all your personal belongings when leaving the train (6.41 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/final/This is the final station (1.97 sec).ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_suffixes/en-GB-C-female/Please remember to collect all your personal belongings when leaving the train (4.66 sec).ogg"},
     },
     category = "alert",
     allow_random_repeat = true,

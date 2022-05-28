@@ -35,6 +35,7 @@ JINGLES_FULL_DIR=${SCRIPT_DIR}/sounds/jingles
 STATIONS_FULL_DIR=${SCRIPT_DIR}/sounds/stations
 STATION_DEFAULTS_FULL_DIR=${SCRIPT_DIR}/sounds/station_defaults
 STATION_PREFIXES_FULL_DIR=${SCRIPT_DIR}/sounds/station_prefixes
+STATION_SUFFIXES_FULL_DIR=${SCRIPT_DIR}/sounds/station_suffixes
 DESTINATION_FULL_FULL_DIR=${SCRIPT_DIR}/sounds/destination_full
 NO_PATH_FULL_DIR=${SCRIPT_DIR}/sounds/no_path
 PLEASANT_JOURNEY_FULL_DIR=${SCRIPT_DIR}/sounds/pleasant_journey
@@ -62,6 +63,8 @@ declare -a STATION_DEFAULTS_CODE_NAMES
 declare -a STATION_DEFAULTS_GUI_NAMES
 declare -a STATION_PREFIXES_CODE_NAMES
 declare -a STATION_PREFIXES_GUI_NAMES
+declare -a STATION_SUFFIXES_CODE_NAMES
+declare -a STATION_SUFFIXES_GUI_NAMES
 declare -a DESTINATION_FULL_CODE_NAMES
 declare -a DESTINATION_FULL_GUI_NAMES
 declare -a NO_PATH_CODE_NAMES
@@ -289,6 +292,11 @@ edit_locale_cfg()
         echo "train_announcements_final_station_prefix_sound-${STATION_PREFIXES_CODE_NAMES[$i]}=${STATION_PREFIXES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done    
     
+    for i in "${!STATION_SUFFIXES_CODE_NAMES[@]}"; do
+        echo "train_announcements_next_station_suffix_sound-${STATION_SUFFIXES_CODE_NAMES[$i]}=${STATION_SUFFIXES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_final_station_suffix_sound-${STATION_SUFFIXES_CODE_NAMES[$i]}=${STATION_SUFFIXES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
+    
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
         for j in $(seq -w $STATION_START_NUMBER $STATION_END_NUMBER)
         do
@@ -353,6 +361,7 @@ add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} "jingle_" JINGLES_CODE_NAMES JING
 add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "stations_" STATIONS_CODE_NAMES STATIONS_GUI_NAMES false
 add_to_data_lua_and_arrays ${STATION_DEFAULTS_FULL_DIR} "station_default_" STATION_DEFAULTS_CODE_NAMES STATION_DEFAULTS_GUI_NAMES false
 add_to_data_lua_and_arrays ${STATION_PREFIXES_FULL_DIR} "station_prefix_" STATION_PREFIXES_CODE_NAMES STATION_PREFIXES_GUI_NAMES false
+add_to_data_lua_and_arrays ${STATION_SUFFIXES_FULL_DIR} "station_suffix_" STATION_SUFFIXES_CODE_NAMES STATION_SUFFIXES_GUI_NAMES false
 add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} "destination_full_" DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES false
 add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES false
 add_to_data_lua_and_arrays ${PLEASANT_JOURNEY_FULL_DIR} "pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES PLEASANT_JOURNEY_GUI_NAMES false
@@ -373,6 +382,8 @@ print_array "Station defaults" STATION_DEFAULTS_GUI_NAMES
 echo ""
 print_array "Station prefixes" STATION_PREFIXES_GUI_NAMES
 echo ""
+print_array "Station suffixes" STATION_SUFFIXES_GUI_NAMES
+echo ""
 print_array "Destination full" DESTINATION_FULL_GUI_NAMES
 echo ""
 print_array "No path" NO_PATH_GUI_NAMES
@@ -392,6 +403,7 @@ edit_settings_lua "allowed_values = {\"jingle_" JINGLES_CODE_NAMES
 edit_settings_lua "allowed_values = {\"stations_" STATIONS_CODE_NAMES
 edit_settings_lua "allowed_values = {\"station_default_" STATION_DEFAULTS_CODE_NAMES
 edit_settings_lua "allowed_values = {\"station_prefix_" STATION_PREFIXES_CODE_NAMES
+edit_settings_lua "allowed_values = {\"station_suffix_" STATION_SUFFIXES_CODE_NAMES
 edit_settings_lua "allowed_values = {\"destination_full_" DESTINATION_FULL_CODE_NAMES
 edit_settings_lua "allowed_values = {\"no_path_" NO_PATH_CODE_NAMES
 edit_settings_lua "allowed_values = {\"pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES

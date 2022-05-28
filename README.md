@@ -88,19 +88,19 @@ SOFTWARE.
 |Stockholm S Tunnelbana (2 sec).ogg || https://freesound.org/people/klankbeeld/sounds/587168/|
 ||||
 |----- **Station defaults** -----|||
-|next/We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
-|next/We will arrive at our next stop shortly.ogg || We will arrive at our next stop shortly.|
-|final/We will arrive at the final station shortly.ogg || We will arrive at the final station shortly.|
-|final/We will arrive at our final stop shortly.ogg || We will arrive at our final stop shortly.|
-|final/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train.ogg || We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train.|
+|We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
+|We will arrive at our next stop shortly.ogg || We will arrive at our next stop shortly.|
 ||||
 |----- **Station prefixes** -----|||
-|next/Next station.ogg || Next station? |
-|next/The next station is.ogg || The next station is? |
-|next/Our next stop is.ogg || Our next stop is? |
-|final/The next station is the final station. The next station is.ogg || The next station is the final station. The next station is? |
-|final/Our next stop is the final stop. The next stop is.ogg || Our next stop is the final stop. The next stop is? |
-|final/Our next stop is the final stop Please remember to collect all your personal belongings when leaving the train.ogg || Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is? |
+|Next station.ogg || Next station? |
+|The next station is.ogg || The next station is? |
+|Our next stop is.ogg || Our next stop is? |
+||||
+|----- **Station suffixes** -----|||
+|Please remember to collect all your personal belongings when leaving the train.ogg || Please remember to collect all your personal belongings when leaving the train. |
+|final/This is the final station.ogg || This is the final station. |
+|final/This is our final stop.ogg || This is our final stop. |
+|final/This is our final stop. Please remember to collect all your personal belongings when leaving the train.ogg || This is our final stop. Please remember to collect all your personal belongings when leaving the train. |
 ||||
 |----- **Stations** -----|||
 |Coal loading.ogg || Coal loading|
