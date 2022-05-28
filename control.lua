@@ -335,6 +335,7 @@ function get_length_of_sound_in_seconds(sound_name, fallback_setting)
     -- fall back to mod setting if number was not valid
     if not seconds and fallback_setting
     then
+        game.print("WARNING: Could not derive length of sound. Using fallback.")
         seconds = util.get_global_mod_setting(fallback_setting)
     end
     
