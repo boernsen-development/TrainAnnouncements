@@ -154,6 +154,9 @@ SOFTWARE.
 * Petrol station
 * Refuelling
 * Research labs
+* Steel loading
+* Steel unloading
+* Steel outpost
 * Stone loading
 * Stone unloading
 * Stone outpost

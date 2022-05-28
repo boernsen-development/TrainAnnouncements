@@ -1,7 +1,4 @@
--- TODO add automatic duration derivation script: ffmpeg -i "Next station.ogg" 2>&1 | grep Duration
--- TODO check defaults in new game
 -- TODO update script to add some defaults (only basic/important products for now?)
--- TODO add default patterns for basic/important products (e.g. "Coal loading", "Coal unloading")
 -- TODO add contribution description to README.md
 -- TODO add links to github, forum, mod page, etc to README.md and mod page once published
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
