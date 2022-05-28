@@ -87,47 +87,51 @@ SOFTWARE.
 |Announcement with chord (4.2 sec).ogg || https://freesound.org/people/gollamar/sounds/273232/ |
 |Stockholm S Tunnelbana (2 sec).ogg || https://freesound.org/people/klankbeeld/sounds/587168/|
 ||||
-|----- **Next station default** -----|||
-|We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
+|----- **Station defaults** -----|||
+|next/We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
+|final/We will arrive at our final station shortly.ogg || We will arrive at our final station shortly.|
 ||||
-|----- **Next station prefix** -----|||
-|Next station.ogg || Next station? |
-|The next station is.ogg || The next station is? |
-|Our next stop is.ogg || Our next stop is? |
-||||
-|----- **Final station default** -----|||
-|We will arrive at our final station shortly.ogg || We will arrive at our final station shortly.|
-||||
-|----- **Final station prefix** -----|||
-|Next station is the final station.ogg || Next station is the final station? |
-|Next stop is the final stop.ogg || Next stop is the final stop? |
-|Our next stop is the final stop.ogg || Our next stop is the final stop? |
-|Our next stop is the final stop Please remember to collect all your personal belongings when leaving the train.ogg || Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is? |
+|----- **Station prefixes** -----|||
+|next/Next station.ogg || Next station? |
+|next/The next station is.ogg || The next station is? |
+|next/Our next stop is.ogg || Our next stop is? |
+|final/Next station is the final station.ogg || Next station is the final station? |
+|final/Next stop is the final stop.ogg || Next stop is the final stop? |
+|final/Our next stop is the final stop.ogg || Our next stop is the final stop? |
+|final/Our next stop is the final stop Please remember to collect all your personal belongings when leaving the train.ogg || Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is? |
 ||||
 |----- **Stations** -----|||
-|Coal loading.ogg || Next station: Coal loading.|
-|Coal unloading.ogg || Next station: Coal unloading.|
-|Copper loading.ogg || Next station: Copper loading.|
-|Copper unloading.ogg || Next station: Copper unloading.|
-|Demand.ogg || Next station: Demand.|
-|Deposit.ogg || Next station: Deposit.|
-|Depot.ogg || Next station: Depot.|
-|Fuel station.ogg || Next station: Fuel station.|
-|Iron loading.ogg || Next station: Iron loading.|
-|Iron unloading.ogg || Next station: Iron unloading.|
-|Loading.ogg || Next station: Loading.|
-|Main base.ogg || Next station: Main base.|
-|Oil loading.ogg || Next station: Oil loading.|
-|Oil unloading.ogg || Next station: Oil unloading.|
-|Outpost.ogg || Next station: Outpost.|
-|Petrol station.ogg || Next station: Petrol station.|
-|Refuelling.ogg || Next station: Refuelling.|
-|Stone loading.ogg || Next station: Stone loading.|
-|Stone unloading.ogg || Next station: Stone unloading.|
-|Supply.ogg || Next station: Supply.|
-|Unloading.ogg || Next station: Unloading.|
-|Uranium loading.ogg || Next station: Uranium loading.|
-|Uranium unloading.ogg || Next station: Uranium unloading.|
+|Coal loading.ogg || Coal loading|
+|Coal unloading.ogg || Coal unloading|
+|Coal outpost.ogg || Coal outpost|
+|Copper loading.ogg || Copper loading|
+|Copper unloading.ogg || Copper unloading|
+|Copper outpost.ogg || Copper outpost|
+|Demand.ogg || Demand|
+|Deposit.ogg || Deposit|
+|Depot.ogg || Depot|
+|Fuel station.ogg || Fuel station|
+|Iron loading.ogg || Iron loading|
+|Iron unloading.ogg || Iron unloading|
+|Iron outpost.ogg || Iron outpost|
+|Loading.ogg || Loading|
+|Main base.ogg || Main base|
+|Oil loading.ogg || Oil loading|
+|Oil unloading.ogg || Oil unloading|
+|Oil outpost.ogg || Oil outpost|
+|Outpost.ogg || Outpost|
+|Petrol station.ogg || Petrol station|
+|Refuelling.ogg || Refuelling|
+|Research labs.ogg || Research labs|
+|Stone loading.ogg || Stone loading|
+|Stone unloading.ogg || Stone unloading|
+|Stone outpost.ogg || Stone outpost|
+|Supply.ogg || Supply|
+|Train yard.ogg || Train yard|
+|Unloading.ogg || Unloading|
+|Uranium loading.ogg || Uranium loading|
+|Uranium unloading.ogg || Uranium unloading|
+|Uranium outpost.ogg || Uranium outpost|
 ||||
 |----- **Destination full** -----|||
 |Apologise for delay and inconvenience due to full destination.ogg || We are sorry to announce that this train may be delayed. This is due to our destination currently being full. We apologise for this late running, and the inconvenience caused.|
