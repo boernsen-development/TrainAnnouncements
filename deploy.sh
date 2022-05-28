@@ -6,7 +6,7 @@ PWD=$(pwd)
 
 function deploy {
     # deploy new archive
-    zip -FSr $2 $1 --exclude '*.git*' '*.sh*' '*~*'
+    zip -FSr $2 $1 --exclude '*.git*' '*.sh*' '*~*' '*default_station_names*' '*backup*'
     
     # add update script to archive
     zip -u $2 "$1/update_data_settings_locale.sh"
@@ -42,6 +42,6 @@ convert_and_replace_description_in_info_json "${description}" "info.json"
 cd ..
 deploy ${SCRIPT_DIR##*/} "${FACTORIO_MOD_DIR}${SCRIPT_DIR##*/}.zip"
 
-echo; read -rsn1 -p "Finished. Press any key to continue . . ."; echo
+#echo; read -rsn1 -p "Finished. Press any key to continue . . ."; echo
 
 cd $PWD
