@@ -89,15 +89,17 @@ SOFTWARE.
 ||||
 |----- **Station defaults** -----|||
 |next/We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
-|final/We will arrive at our final station shortly.ogg || We will arrive at our final station shortly.|
+|next/We will arrive at our next stop shortly.ogg || We will arrive at our next stop shortly.|
+|final/We will arrive at the final station shortly.ogg || We will arrive at the final station shortly.|
+|final/We will arrive at our final stop shortly.ogg || We will arrive at our final stop shortly.|
+|final/We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train.ogg || We will arrive at our final stop shortly. Please remember to collect all your personal belongings when leaving the train.|
 ||||
 |----- **Station prefixes** -----|||
 |next/Next station.ogg || Next station? |
 |next/The next station is.ogg || The next station is? |
 |next/Our next stop is.ogg || Our next stop is? |
-|final/Next station is the final station.ogg || Next station is the final station? |
-|final/Next stop is the final stop.ogg || Next stop is the final stop? |
-|final/Our next stop is the final stop.ogg || Our next stop is the final stop? |
+|final/The next station is the final station. The next station is.ogg || The next station is the final station. The next station is? |
+|final/Our next stop is the final stop. The next stop is.ogg || Our next stop is the final stop. The next stop is? |
 |final/Our next stop is the final stop Please remember to collect all your personal belongings when leaving the train.ogg || Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is? |
 ||||
 |----- **Stations** -----|||
@@ -135,7 +137,7 @@ SOFTWARE.
 ||||
 |----- **Destination full** -----|||
 |Apologise for delay and inconvenience due to full destination.ogg || We are sorry to announce that this train may be delayed. This is due to our destination currently being full. We apologise for this late running, and the inconvenience caused.|
-|Destination is full.ogg || The destination is full.|
+|The destination is full.ogg || The destination is full.|
 |We cannot leave as the destination is full.ogg || We cannot leave as the destination is full.|
 ||||
 |----- **No path** -----|||
@@ -154,7 +156,7 @@ SOFTWARE.
 |Apologise for delay and inconvenience due to blocked track in front.ogg || We are sorry to announce that this train may be delayed. This is due to another train being blocked in front of this one. We apologise for this late running, and the inconvenience caused.|
 |Track in front of us is blocked.ogg || The track in front of us is blocked.|
 |We cannot continue our journey as the track in front of us is blocked.ogg || We cannot continue our journey as the track in front of us is blocked.|
-|Track is blocked.ogg || Track is blocked.|
+|The track is blocked.ogg || The track is blocked.|
 ||||
 |----- **Back on path** -----|||
 |Have a good trip.ogg || Have a good trip.|

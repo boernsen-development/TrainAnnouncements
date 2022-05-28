@@ -180,6 +180,7 @@ end
 function needs_back_on_path_announcement(player)
     return has_change_of_train_state(player, defines.train_state.wait_signal, defines.train_state.on_the_path)
         or has_change_of_train_state(player, defines.train_state.no_path, defines.train_state.on_the_path)
+        or has_change_of_train_state(player, defines.train_state.destination_full, defines.train_state.on_the_path)
 end
 
 function needs_intermediate_announcement(player)

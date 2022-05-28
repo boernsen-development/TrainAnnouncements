@@ -57,8 +57,8 @@ data:extend({
     type = "string-setting",
     name = "train_announcements_destination_full_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "destination_full_en_gb_c_female_destination_is_full__1.61_sec_",
-    allowed_values = {"destination_full_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_full_destination__10.46_sec_", "destination_full_en_gb_c_female_destination_is_full__1.61_sec_", "destination_full_en_gb_c_female_we_cannot_leave_as_the_destination_is_full__2.74_sec_", "destination_full_en_GB_C_female_rotating", "destination_full_en_GB_C_female_random", "destination_full_rotating", "destination_full_random", "off"},
+    default_value = "destination_full_en_gb_c_female_the_destination_is_full__1.61_sec_",
+    allowed_values = {"destination_full_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_full_destination__10.46_sec_", "destination_full_en_gb_c_female_the_destination_is_full__1.61_sec_", "destination_full_en_gb_c_female_we_cannot_leave_as_the_destination_is_full__2.74_sec_", "destination_full_en_GB_C_female_rotating", "destination_full_en_GB_C_female_random", "destination_full_rotating", "destination_full_random", "off"},
     order = "008"
   },
   {
@@ -89,7 +89,7 @@ data:extend({
     type = "string-setting",
     name = "train_announcements_pleasant_journey_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "pleasant_journey_en_gb_c_female_have_a_good_trip__1.15_sec_",
+    default_value = "pleasant_journey_en_gb_c_female_have_a_pleasant_journey__1.46_sec_",
     allowed_values = {"pleasant_journey_en_gb_c_female_have_a_good_trip__1.15_sec_", "pleasant_journey_en_gb_c_female_have_a_nice_trip__1.22_sec_", "pleasant_journey_en_gb_c_female_have_a_pleasant_journey__1.46_sec_", "pleasant_journey_en_gb_c_female_welcome_on_board_and_have_a_pleasant_journey__4.25_sec_", "pleasant_journey_en_gb_c_female_welcome_on_board_the_factorio_train_service__5.18_sec_", "pleasant_journey_en_GB_C_female_rotating", "pleasant_journey_en_GB_C_female_random", "pleasant_journey_rotating", "pleasant_journey_random", "off"},
     order = "012"
   },
@@ -105,8 +105,8 @@ data:extend({
     type = "string-setting",
     name = "train_announcements_wait_signal_announcement_sound",
     setting_type = "runtime-global",
-    default_value = "wait_signal_en_gb_c_female_track_is_blocked__1.27_sec_",
-    allowed_values = {"wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front__11.33_sec_", "wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked__2.28_sec_", "wait_signal_en_gb_c_female_track_is_blocked__1.27_sec_", "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked__4.58_sec_", "wait_signal_en_GB_C_female_rotating", "wait_signal_en_GB_C_female_random", "wait_signal_rotating", "wait_signal_random", "off"},
+    default_value = "wait_signal_en_gb_c_female_the_track_is_blocked__1.34_sec_",
+    allowed_values = {"wait_signal_en_gb_c_female_apologise_for_delay_and_inconvenience_due_to_blocked_track_in_front__11.33_sec_", "wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked__2.28_sec_", "wait_signal_en_gb_c_female_the_track_is_blocked__1.34_sec_", "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked__4.58_sec_", "wait_signal_en_GB_C_female_rotating", "wait_signal_en_GB_C_female_random", "wait_signal_rotating", "wait_signal_random", "off"},
     order = "014"
   },
   {
@@ -161,16 +161,16 @@ data:extend({
     type = "string-setting",
     name = "train_announcements_next_station_prefix_sound",
     setting_type = "runtime-global",
-    default_value = "station_prefix_next_en_gb_c_female_next_station__1.22_sec_",
-    allowed_values = {"station_prefix_final_en_gb_c_female_next_station_is_the_final_station__2.54_sec_", "station_prefix_final_en_gb_c_female_next_stop_is_the_final_stop__2.26_sec_", "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop__2.38_sec_", "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is__8.33_sec_", "station_prefix_final_en_GB_C_female_rotating", "station_prefix_final_en_GB_C_female_random", "station_prefix_final_rotating", "station_prefix_final_random", "station_prefix_next_en_gb_c_female_next_station__1.22_sec_", "station_prefix_next_en_gb_c_female_our_next_stop_is__1.39_sec_", "station_prefix_next_en_gb_c_female_the_next_station_is__1.49_sec_", "station_prefix_next_en_GB_C_female_rotating", "station_prefix_next_en_GB_C_female_random", "station_prefix_next_rotating", "station_prefix_next_random", "station_prefix_rotating", "station_prefix_random", "off"},
+    default_value = "station_prefix_next_en_gb_c_female_our_next_stop_is__1.39_sec_",
+    allowed_values = {"station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is__8.33_sec_", "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._the_next_stop_is__3.74_sec_", "station_prefix_final_en_gb_c_female_the_next_station_is_the_final_station._the_next_station_is__4.10_sec_", "station_prefix_final_en_GB_C_female_rotating", "station_prefix_final_en_GB_C_female_random", "station_prefix_final_rotating", "station_prefix_final_random", "station_prefix_next_en_gb_c_female_next_station__1.22_sec_", "station_prefix_next_en_gb_c_female_our_next_stop_is__1.39_sec_", "station_prefix_next_en_gb_c_female_the_next_station_is__1.49_sec_", "station_prefix_next_en_GB_C_female_rotating", "station_prefix_next_en_GB_C_female_random", "station_prefix_next_rotating", "station_prefix_next_random", "station_prefix_rotating", "station_prefix_random", "off"},
     order = "021"
   },
   {
     type = "string-setting",
     name = "train_announcements_next_station_announcement_sound_default",
     setting_type = "runtime-global",
-    default_value = "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_",
-    allowed_values = {"station_default_final_en_gb_c_female_we_will_arrive_at_our_final_station_shortly__2.90_sec_", "station_default_final_en_GB_C_female_rotating", "station_default_final_en_GB_C_female_random", "station_default_final_rotating", "station_default_final_random", "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_", "station_default_next_en_GB_C_female_rotating", "station_default_next_en_GB_C_female_random", "station_default_next_rotating", "station_default_next_random", "station_default_rotating", "station_default_random", "off"},
+    default_value = "station_default_next_en_gb_c_female_we_will_arrive_at_our_next_stop_shortly__2.62_sec_",
+    allowed_values = {"station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly__2.74_sec_", "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train__7.32_sec_", "station_default_final_en_gb_c_female_we_will_arrive_at_the_final_station_shortly__2.81_sec_", "station_default_final_en_GB_C_female_rotating", "station_default_final_en_GB_C_female_random", "station_default_final_rotating", "station_default_final_random", "station_default_next_en_gb_c_female_we_will_arrive_at_our_next_stop_shortly__2.62_sec_", "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_", "station_default_next_en_GB_C_female_rotating", "station_default_next_en_GB_C_female_random", "station_default_next_rotating", "station_default_next_random", "station_default_rotating", "station_default_random", "off"},
     order = "022"
   },
   {
@@ -178,7 +178,7 @@ data:extend({
     name = "train_announcements_number_of_rails_before_station",
     setting_type = "runtime-global",
     minimum_value = 1,
-    default_value = 500,
+    default_value = 600,
     order = "023"
   },
   {
@@ -193,16 +193,16 @@ data:extend({
     type = "string-setting",
     name = "train_announcements_final_station_prefix_sound",
     setting_type = "runtime-global",
-    default_value = "station_prefix_final_en_gb_c_female_next_station_is_the_final_station__2.54_sec_",
-    allowed_values = {"station_prefix_final_en_gb_c_female_next_station_is_the_final_station__2.54_sec_", "station_prefix_final_en_gb_c_female_next_stop_is_the_final_stop__2.26_sec_", "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop__2.38_sec_", "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is__8.33_sec_", "station_prefix_final_en_GB_C_female_rotating", "station_prefix_final_en_GB_C_female_random", "station_prefix_final_rotating", "station_prefix_final_random", "station_prefix_next_en_gb_c_female_next_station__1.22_sec_", "station_prefix_next_en_gb_c_female_our_next_stop_is__1.39_sec_", "station_prefix_next_en_gb_c_female_the_next_station_is__1.49_sec_", "station_prefix_next_en_GB_C_female_rotating", "station_prefix_next_en_GB_C_female_random", "station_prefix_next_rotating", "station_prefix_next_random", "station_prefix_rotating", "station_prefix_random", "off"},
+    default_value = "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is__8.33_sec_",
+    allowed_values = {"station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is__8.33_sec_", "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._the_next_stop_is__3.74_sec_", "station_prefix_final_en_gb_c_female_the_next_station_is_the_final_station._the_next_station_is__4.10_sec_", "station_prefix_final_en_GB_C_female_rotating", "station_prefix_final_en_GB_C_female_random", "station_prefix_final_rotating", "station_prefix_final_random", "station_prefix_next_en_gb_c_female_next_station__1.22_sec_", "station_prefix_next_en_gb_c_female_our_next_stop_is__1.39_sec_", "station_prefix_next_en_gb_c_female_the_next_station_is__1.49_sec_", "station_prefix_next_en_GB_C_female_rotating", "station_prefix_next_en_GB_C_female_random", "station_prefix_next_rotating", "station_prefix_next_random", "station_prefix_rotating", "station_prefix_random", "off"},
     order = "025"
   },
   {
     type = "string-setting",
     name = "train_announcements_final_station_announcement_sound_default",
     setting_type = "runtime-global",
-    default_value = "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_station_shortly__2.90_sec_",
-    allowed_values = {"station_default_final_en_gb_c_female_we_will_arrive_at_our_final_station_shortly__2.90_sec_", "station_default_final_en_GB_C_female_rotating", "station_default_final_en_GB_C_female_random", "station_default_final_rotating", "station_default_final_random", "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_", "station_default_next_en_GB_C_female_rotating", "station_default_next_en_GB_C_female_random", "station_default_next_rotating", "station_default_next_random", "station_default_rotating", "station_default_random", "off"},
+    default_value = "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train__7.32_sec_",
+    allowed_values = {"station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly__2.74_sec_", "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_stop_shortly._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train__7.32_sec_", "station_default_final_en_gb_c_female_we_will_arrive_at_the_final_station_shortly__2.81_sec_", "station_default_final_en_GB_C_female_rotating", "station_default_final_en_GB_C_female_random", "station_default_final_rotating", "station_default_final_random", "station_default_next_en_gb_c_female_we_will_arrive_at_our_next_stop_shortly__2.62_sec_", "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly__2.71_sec_", "station_default_next_en_GB_C_female_rotating", "station_default_next_en_GB_C_female_random", "station_default_next_rotating", "station_default_next_random", "station_default_rotating", "station_default_random", "off"},
     order = "026"
   },
   {
