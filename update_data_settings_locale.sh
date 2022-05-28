@@ -33,6 +33,8 @@
 SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 JINGLES_FULL_DIR=${SCRIPT_DIR}/sounds/jingles
 STATIONS_FULL_DIR=${SCRIPT_DIR}/sounds/stations
+STATION_DEFAULTS_FULL_DIR=${SCRIPT_DIR}/sounds/station_defaults
+STATION_PREFIXES_FULL_DIR=${SCRIPT_DIR}/sounds/station_prefixes
 DESTINATION_FULL_FULL_DIR=${SCRIPT_DIR}/sounds/destination_full
 NO_PATH_FULL_DIR=${SCRIPT_DIR}/sounds/no_path
 PLEASANT_JOURNEY_FULL_DIR=${SCRIPT_DIR}/sounds/pleasant_journey
@@ -56,6 +58,10 @@ declare -a JINGLES_CODE_NAMES
 declare -a JINGLES_GUI_NAMES
 declare -a STATIONS_CODE_NAMES
 declare -a STATIONS_GUI_NAMES
+declare -a STATION_DEFAULTS_CODE_NAMES
+declare -a STATION_DEFAULTS_GUI_NAMES
+declare -a STATION_PREFIXES_CODE_NAMES
+declare -a STATION_PREFIXES_GUI_NAMES
 declare -a DESTINATION_FULL_CODE_NAMES
 declare -a DESTINATION_FULL_GUI_NAMES
 declare -a NO_PATH_CODE_NAMES
@@ -68,6 +74,8 @@ declare -a BACK_ON_PATH_CODE_NAMES
 declare -a BACK_ON_PATH_GUI_NAMES
 declare -a INTERMEDIATE_CODE_NAMES
 declare -a INTERMEDIATE_GUI_NAMES
+
+shopt -s extglob
 
 print_array()
 {
@@ -127,17 +135,15 @@ add_to_data_lua_and_arrays_process_directory()
     for file in $files
     do
         local file_name=${file:${#original_dir}+1}
-        local gui_name=${file_name%.ogg}
-        local gui_name_lowercase=${gui_name,,}
+        local file_name_no_ext=${file_name%.ogg}
         
-        #echo "\n"
-        #echo "Processing file $file_name"
-        #echo "Gui name $gui_name"
-        #echo "Lower case $gui_name_lowercase"
+        # remove the " (?.?? sec)" for the GUI
+        local gui_name=$(echo "$file_name_no_ext" | sed -e 's/ ([[:digit:]]\+\.\?[[:digit:]]* sec)$//g')
 
-        # replace all non-alnum characters with underscore "_"
+        # make it lowercase and replace all non-alnum characters with underscore "_"
         # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
         # ${parameter//pattern/string}
+        local gui_name_lowercase=${file_name_no_ext,,}
         local code_name=$name_prefix${gui_name_lowercase//[![:alnum:].]/_}
         
         #echo "Code name $code_name"
@@ -239,48 +245,56 @@ edit_locale_cfg()
     
     for i in "${!DESTINATION_FULL_CODE_NAMES[@]}"; do
         echo "train_announcements_destination_full_announcement_sound-${DESTINATION_FULL_CODE_NAMES[$i]}=${DESTINATION_FULL_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 
     for i in "${!NO_PATH_CODE_NAMES[@]}"; do
         echo "train_announcements_no_path_announcement_sound-${NO_PATH_CODE_NAMES[$i]}=${NO_PATH_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 
     for i in "${!PLEASANT_JOURNEY_CODE_NAMES[@]}"; do
         echo "train_announcements_pleasant_journey_announcement_sound-${PLEASANT_JOURNEY_CODE_NAMES[$i]}=${PLEASANT_JOURNEY_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 
     for i in "${!WAIT_SIGNAL_CODE_NAMES[@]}"; do
         echo "train_announcements_wait_signal_announcement_sound-${WAIT_SIGNAL_CODE_NAMES[$i]}=${WAIT_SIGNAL_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 
     for i in "${!BACK_ON_PATH_CODE_NAMES[@]}"; do
         echo "train_announcements_back_on_path_announcement_sound-${BACK_ON_PATH_CODE_NAMES[$i]}=${BACK_ON_PATH_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 
     for i in "${!INTERMEDIATE_CODE_NAMES[@]}"; do
         echo "train_announcements_intermediate_announcement_sound-${INTERMEDIATE_CODE_NAMES[$i]}=${INTERMEDIATE_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 
     for i in "${!JINGLES_CODE_NAMES[@]}"; do
-        echo "train_announcements_default_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_next_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_final_station_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_destination_full_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_no_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_pleasant_journey_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_wait_signal_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_back_on_path_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-        echo "train_announcements_override_intermediate_jingle_sound-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_jingle_sound_default-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_next_station_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_final_station_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_destination_full_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_no_path_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_pleasant_journey_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_wait_signal_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_back_on_path_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_intermediate_jingle_sound_override-${JINGLES_CODE_NAMES[$i]}=${JINGLES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
     done
+
+    for i in "${!STATION_DEFAULTS_CODE_NAMES[@]}"; do
+        echo "train_announcements_next_station_announcement_sound_default-${STATION_DEFAULTS_CODE_NAMES[$i]}=${STATION_DEFAULTS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_final_station_announcement_sound_default-${STATION_DEFAULTS_CODE_NAMES[$i]}=${STATION_DEFAULTS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
+
+    for i in "${!STATION_PREFIXES_CODE_NAMES[@]}"; do
+        echo "train_announcements_next_station_prefix_sound-${STATION_PREFIXES_CODE_NAMES[$i]}=${STATION_PREFIXES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+        echo "train_announcements_final_station_prefix_sound-${STATION_PREFIXES_CODE_NAMES[$i]}=${STATION_PREFIXES_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
+    done    
     
     for i in "${!STATIONS_CODE_NAMES[@]}"; do
-        echo "train_announcements_default_next_station_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         for j in $(seq -w $STATION_START_NUMBER $STATION_END_NUMBER)
         do
             echo "train_announcements_station${j}_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
         done
-        echo "train_announcements_override_final_station_announcement_sound-${STATIONS_CODE_NAMES[$i]}=${STATIONS_GUI_NAMES[$i]}" >> ${LOCALE_CFG}
-    done    
+    done
 }
 
 backup_move()
@@ -336,7 +350,9 @@ echo "data:extend({" >> ${DATA_LUA}
 
 # write actual .ogg files to data.lua
 add_to_data_lua_and_arrays ${JINGLES_FULL_DIR} "jingle_" JINGLES_CODE_NAMES JINGLES_GUI_NAMES true
-add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "station_" STATIONS_CODE_NAMES STATIONS_GUI_NAMES false
+add_to_data_lua_and_arrays ${STATIONS_FULL_DIR} "stations_" STATIONS_CODE_NAMES STATIONS_GUI_NAMES false
+add_to_data_lua_and_arrays ${STATION_DEFAULTS_FULL_DIR} "station_default_" STATION_DEFAULTS_CODE_NAMES STATION_DEFAULTS_GUI_NAMES false
+add_to_data_lua_and_arrays ${STATION_PREFIXES_FULL_DIR} "station_prefix_" STATION_PREFIXES_CODE_NAMES STATION_PREFIXES_GUI_NAMES false
 add_to_data_lua_and_arrays ${DESTINATION_FULL_FULL_DIR} "destination_full_" DESTINATION_FULL_CODE_NAMES DESTINATION_FULL_GUI_NAMES false
 add_to_data_lua_and_arrays ${NO_PATH_FULL_DIR} "no_path_" NO_PATH_CODE_NAMES NO_PATH_GUI_NAMES false
 add_to_data_lua_and_arrays ${PLEASANT_JOURNEY_FULL_DIR} "pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES PLEASANT_JOURNEY_GUI_NAMES false
@@ -352,6 +368,10 @@ echo ""
 print_array "Jingles" JINGLES_GUI_NAMES
 echo ""
 print_array "Stations" STATIONS_GUI_NAMES
+echo ""
+print_array "Station defaults" STATION_DEFAULTS_GUI_NAMES
+echo ""
+print_array "Station prefixes" STATION_PREFIXES_GUI_NAMES
 echo ""
 print_array "Destination full" DESTINATION_FULL_GUI_NAMES
 echo ""
@@ -369,7 +389,9 @@ echo ""
 # edit settings.lua
 echo "Editing ${SETTINGS_LUA}..."
 edit_settings_lua "allowed_values = {\"jingle_" JINGLES_CODE_NAMES
-edit_settings_lua "allowed_values = {\"station_" STATIONS_CODE_NAMES
+edit_settings_lua "allowed_values = {\"stations_" STATIONS_CODE_NAMES
+edit_settings_lua "allowed_values = {\"station_default_" STATION_DEFAULTS_CODE_NAMES
+edit_settings_lua "allowed_values = {\"station_prefix_" STATION_PREFIXES_CODE_NAMES
 edit_settings_lua "allowed_values = {\"destination_full_" DESTINATION_FULL_CODE_NAMES
 edit_settings_lua "allowed_values = {\"no_path_" NO_PATH_CODE_NAMES
 edit_settings_lua "allowed_values = {\"pleasant_journey_" PLEASANT_JOURNEY_CODE_NAMES

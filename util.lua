@@ -175,9 +175,9 @@ function util.get_next_station_name_for_player(player)
 end
 
 function util.corrected_train_stop_name(str)
+    -- If symbols are added to the station name in Factorio, the symbol's text looks like [item=copper-plate], which when printed to console will add text next to the symbol.
+    -- Therefore, this function can be used to convert it to something like: [img=item/copper-plate], which will only output the symbol without the text when printed.
     -- Source: https://wiki.factorio.com/Rich_text
-    -- If the name contains symbols it looks like: [item=copper-plate]
-    -- Therefore, replace this, so that it looks like: [img=item/copper-plate]
     if not string.find(str,"=")
     then
         return str

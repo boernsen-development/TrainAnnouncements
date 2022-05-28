@@ -87,63 +87,77 @@ SOFTWARE.
 |Announcement with chord (4.2 sec).ogg || https://freesound.org/people/gollamar/sounds/273232/ |
 |Stockholm S Tunnelbana (2 sec).ogg || https://freesound.org/people/klankbeeld/sounds/587168/|
 ||||
+|----- **Next station default** -----|||
+|We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
+||||
+|----- **Next station prefix** -----|||
+|Next station.ogg || Next station? |
+|The next station is.ogg || The next station is? |
+|Our next stop is.ogg || Our next stop is? |
+||||
+|----- **Final station default** -----|||
+|We will arrive at our final station shortly.ogg || We will arrive at our final station shortly.|
+||||
+|----- **Final station prefix** -----|||
+|Next station is the final station.ogg || Next station is the final station? |
+|Next stop is the final stop.ogg || Next stop is the final stop? |
+|Our next stop is the final stop.ogg || Our next stop is the final stop? |
+|Our next stop is the final stop Please remember to collect all your personal belongings when leaving the train.ogg || Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is? |
+||||
 |----- **Stations** -----|||
-|We will arrive at the next station shortly.ogg || We will arrive at the next station shortly. |
-|We will arrive at our final station shortly.ogg || We will arrive at our final station shortly. |
-|Coal loading.ogg || Next station: Coal loading. |
-|Coal unloading.ogg || Next station: Coal unloading. |
-|Copper loading.ogg || Next station: Copper loading. |
-|Copper unloading.ogg || Next station: Copper unloading. |
-|Demand.ogg || Next station: Demand. |
-|Deposit.ogg || Next station: Deposit. |
-|Depot.ogg || Next station: Depot. |
-|Fuel station.ogg || Next station: Fuel station. |
-|Iron loading.ogg || Next station: Iron loading. |
-|Iron unloading.ogg || Next station: Iron unloading. |
-|Loading.ogg || Next station: Loading. |
-|Main base.ogg || Next station: Main base. |
-|Oil loading.ogg || Next station: Oil loading. |
-|Oil unloading.ogg || Next station: Oil unloading. |
-|Outpost.ogg || Next station: Outpost. |
-|Petrol station.ogg || Next station: Petrol station. |
-|Refuelling.ogg || Next station: Refuelling. |
-|Stone loading.ogg || Next station: Stone loading. |
-|Stone unloading.ogg || Next station: Stone unloading. |
-|Supply.ogg || Next station: Supply. |
-|Unloading.ogg || Next station: Unloading. |
-|Uranium loading.ogg || Next station: Uranium loading. |
-|Uranium unloading.ogg || Next station: Uranium unloading. |
+|Coal loading.ogg || Next station: Coal loading.|
+|Coal unloading.ogg || Next station: Coal unloading.|
+|Copper loading.ogg || Next station: Copper loading.|
+|Copper unloading.ogg || Next station: Copper unloading.|
+|Demand.ogg || Next station: Demand.|
+|Deposit.ogg || Next station: Deposit.|
+|Depot.ogg || Next station: Depot.|
+|Fuel station.ogg || Next station: Fuel station.|
+|Iron loading.ogg || Next station: Iron loading.|
+|Iron unloading.ogg || Next station: Iron unloading.|
+|Loading.ogg || Next station: Loading.|
+|Main base.ogg || Next station: Main base.|
+|Oil loading.ogg || Next station: Oil loading.|
+|Oil unloading.ogg || Next station: Oil unloading.|
+|Outpost.ogg || Next station: Outpost.|
+|Petrol station.ogg || Next station: Petrol station.|
+|Refuelling.ogg || Next station: Refuelling.|
+|Stone loading.ogg || Next station: Stone loading.|
+|Stone unloading.ogg || Next station: Stone unloading.|
+|Supply.ogg || Next station: Supply.|
+|Unloading.ogg || Next station: Unloading.|
+|Uranium loading.ogg || Next station: Uranium loading.|
+|Uranium unloading.ogg || Next station: Uranium unloading.|
 ||||
 |----- **Destination full** -----|||
-|Apologise for delay and inconvenience due to full destination.ogg || We are sorry to announce that this train may be delayed. This is due to our destination currently being full. We apologise for this late running, and the inconvenience caused. |
-|Destination is full.ogg || The destination is full. |
-|We cannot leave as the destination is full.ogg || We cannot leave as the destination is full. |
+|Apologise for delay and inconvenience due to full destination.ogg || We are sorry to announce that this train may be delayed. This is due to our destination currently being full. We apologise for this late running, and the inconvenience caused.|
+|Destination is full.ogg || The destination is full.|
+|We cannot leave as the destination is full.ogg || We cannot leave as the destination is full.|
 ||||
 |----- **No path** -----|||
-|Apologise for delay and inconvenience due to no path.ogg || We are sorry to announce that this train may be delayed. This is due to having no path to the destination. We apologise for this late running, and the inconvenience caused. |
-|The train has no path.ogg || The train has no path. |
-|We cannot continue our journey as the train has no path.ogg || We cannot continue our journey as the train has no path. |
+|Apologise for delay and inconvenience due to no path.ogg || We are sorry to announce that this train may be delayed. This is due to having no path to the destination. We apologise for this late running, and the inconvenience caused.|
+|The train has no path.ogg || The train has no path.|
+|We cannot continue our journey as the train has no path.ogg || We cannot continue our journey as the train has no path.|
 ||||
 |----- **Pleasant journey** -----|||
-|Welcome on board and have a pleasant journey.ogg || We welcome you on board of this train and wish you a pleasant journey. |
-|Welcome on board the Factorio train service.ogg || Welcome on board the Factorio train service. We wish you a pleasant journey. |
-|Have a good trip.ogg || Have a good trip. |
-|Have a nice trip.ogg || Have a nice trip. |
-|Have a pleasant journey.ogg || Have a pleasant journey. |
+|Welcome on board and have a pleasant journey.ogg || We welcome you on board of this train and wish you a pleasant journey.|
+|Welcome on board the Factorio train service.ogg || Welcome on board the Factorio train service. We wish you a pleasant journey.|
+|Have a good trip.ogg || Have a good trip.|
+|Have a nice trip.ogg || Have a nice trip.|
+|Have a pleasant journey.ogg || Have a pleasant journey.|
 ||||
 |----- **Stopping at a red signal** -----|||
-|Apologise for delay and inconvenience due to blocked track in front.ogg || We are sorry to announce that this train may be delayed. This is due to another train being blocked in front of this one. We apologise for this late running, and the inconvenience caused. |
-|Track in front of us is blocked.ogg || The track in front of us is blocked. |
-|We cannot continue our journey as the track in front of us is blocked.ogg || We cannot continue our journey as the track in front of us is blocked. |
-|Track is blocked.ogg || Track is blocked.  |
+|Apologise for delay and inconvenience due to blocked track in front.ogg || We are sorry to announce that this train may be delayed. This is due to another train being blocked in front of this one. We apologise for this late running, and the inconvenience caused.|
+|Track in front of us is blocked.ogg || The track in front of us is blocked.|
+|We cannot continue our journey as the track in front of us is blocked.ogg || We cannot continue our journey as the track in front of us is blocked.|
+|Track is blocked.ogg || Track is blocked.|
 ||||
 |----- **Back on path** -----|||
-|Have a good trip.ogg || Have a good trip. |
-|Have a nice trip.ogg || Have a nice trip. |
-|Have a pleasant journey.ogg || Have a pleasant journey.  |
-|We are back on track.ogg || We are back on track.  |
+|Have a good trip.ogg || Have a good trip.|
+|Have a nice trip.ogg || Have a nice trip.|
+|Have a pleasant journey.ogg || Have a pleasant journey.|
+|We are back on track.ogg || We are back on track.|
 ||||
 |----- **Intermediate** -----|||
-|Please mind the gap.ogg || Please mind the gap between the train and the platform. |
-|Please remember to collect personal belongings.ogg || Please remember to collect all your personal belongings when leaving the train. |
-|You must buy a ticket.ogg || You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.  |
+|Please remember to collect personal belongings.ogg || Please remember to collect all your personal belongings when leaving the train.|
+|You must buy a ticket.ogg || You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.|

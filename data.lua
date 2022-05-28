@@ -25,7 +25,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_coal_loading",
+    name = "stations_en_gb_c_female_coal_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -33,7 +33,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_coal_unloading",
+    name = "stations_en_gb_c_female_coal_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -41,7 +41,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_copper_loading",
+    name = "stations_en_gb_c_female_copper_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Copper loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -49,7 +49,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_copper_unloading",
+    name = "stations_en_gb_c_female_copper_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Copper unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -57,7 +57,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_demand",
+    name = "stations_en_gb_c_female_demand",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Demand.ogg",
     category = "alert",
     volume = 1.0,
@@ -65,7 +65,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_deposit",
+    name = "stations_en_gb_c_female_deposit",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Deposit.ogg",
     category = "alert",
     volume = 1.0,
@@ -73,7 +73,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_depot",
+    name = "stations_en_gb_c_female_depot",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Depot.ogg",
     category = "alert",
     volume = 1.0,
@@ -81,7 +81,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_fuel_station",
+    name = "stations_en_gb_c_female_fuel_station",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Fuel station.ogg",
     category = "alert",
     volume = 1.0,
@@ -89,7 +89,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_iron_loading",
+    name = "stations_en_gb_c_female_iron_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Iron loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -97,7 +97,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_iron_unloading",
+    name = "stations_en_gb_c_female_iron_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Iron unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -105,7 +105,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_loading",
+    name = "stations_en_gb_c_female_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -113,7 +113,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_main_base",
+    name = "stations_en_gb_c_female_main_base",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Main base.ogg",
     category = "alert",
     volume = 1.0,
@@ -121,7 +121,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_oil_loading",
+    name = "stations_en_gb_c_female_oil_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Oil loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -129,7 +129,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_oil_unloading",
+    name = "stations_en_gb_c_female_oil_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Oil unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -137,7 +137,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_outpost",
+    name = "stations_en_gb_c_female_outpost",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Outpost.ogg",
     category = "alert",
     volume = 1.0,
@@ -145,7 +145,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_petrol_station",
+    name = "stations_en_gb_c_female_petrol_station",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Petrol station.ogg",
     category = "alert",
     volume = 1.0,
@@ -153,7 +153,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_refuelling",
+    name = "stations_en_gb_c_female_refuelling",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Refuelling.ogg",
     category = "alert",
     volume = 1.0,
@@ -161,7 +161,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_stone_loading",
+    name = "stations_en_gb_c_female_stone_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Stone loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -169,7 +169,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_stone_unloading",
+    name = "stations_en_gb_c_female_stone_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Stone unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -177,7 +177,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_supply",
+    name = "stations_en_gb_c_female_supply",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Supply.ogg",
     category = "alert",
     volume = 1.0,
@@ -185,7 +185,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_unloading",
+    name = "stations_en_gb_c_female_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -193,7 +193,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_uranium_loading",
+    name = "stations_en_gb_c_female_uranium_loading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg",
     category = "alert",
     volume = 1.0,
@@ -201,7 +201,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_uranium_unloading",
+    name = "stations_en_gb_c_female_uranium_unloading",
     filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg",
     category = "alert",
     volume = 1.0,
@@ -209,23 +209,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_gb_c_female_we_will_arrive_at_our_final_station_shortly",
-    filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_en_gb_c_female_we_will_arrive_at_the_next_station_shortly",
-    filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
-    name = "station_en_GB_C_female_rotating",
+    name = "stations_en_GB_C_female_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal unloading.ogg"},
@@ -250,8 +234,6 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -259,7 +241,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_en_GB_C_female_random",
+    name = "stations_en_GB_C_female_random",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal unloading.ogg"},
@@ -284,8 +266,6 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -293,7 +273,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_rotating",
+    name = "stations_rotating",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal unloading.ogg"},
@@ -318,8 +298,6 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
     },
     category = "alert",
     allow_random_repeat = false,
@@ -327,7 +305,7 @@ data:extend({
   },
   {
     type = "sound",
-    name = "station_random",
+    name = "stations_random",
     variations = {
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Coal unloading.ogg"},
@@ -352,8 +330,312 @@ data:extend({
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Unloading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium loading.ogg"},
       {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/Uranium unloading.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at our final station shortly.ogg"},
-      {filename = "__TrainAnnouncements__/sounds/stations/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_final_en_gb_c_female_we_will_arrive_at_our_final_station_shortly",
+    filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_final_en_GB_C_female_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_final_en_GB_C_female_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_final_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_final_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_next_en_gb_c_female_we_will_arrive_at_the_next_station_shortly",
+    filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_next_en_GB_C_female_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_next_en_GB_C_female_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_next_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_next_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_default_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/final/en-GB-C-female/We will arrive at our final station shortly.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_defaults/next/en-GB-C-female/We will arrive at the next station shortly.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_en_gb_c_female_next_station_is_the_final_station",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_en_gb_c_female_next_stop_is_the_final_stop",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_en_gb_c_female_our_next_stop_is_the_final_stop._please_remember_to_collect_all_your_personal_belongings_when_leaving_the_train._the_next_stop_is",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_en_GB_C_female_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_en_GB_C_female_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_final_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_en_gb_c_female_next_station",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_en_gb_c_female_our_next_stop_is",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_en_gb_c_female_the_next_station_is",
+    filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg",
+    category = "alert",
+    volume = 1.0,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_en_GB_C_female_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_en_GB_C_female_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_next_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = true,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_rotating",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg"},
+    },
+    category = "alert",
+    allow_random_repeat = false,
+    audible_distance_modifier = 1e20
+  },
+  {
+    type = "sound",
+    name = "station_prefix_random",
+    variations = {
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next station is the final station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/final/en-GB-C-female/Our next stop is the final stop. Please remember to collect all your personal belongings when leaving the train. The next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Next station.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/Our next stop is.ogg"},
+      {filename = "__TrainAnnouncements__/sounds/station_prefixes/next/en-GB-C-female/The next station is.ogg"},
     },
     category = "alert",
     allow_random_repeat = true,
@@ -769,14 +1051,6 @@ data:extend({
   },
   {
     type = "sound",
-    name = "intermediate_en_gb_c_female_please_mind_the_gap",
-    filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please mind the gap.ogg",
-    category = "alert",
-    volume = 1.0,
-    audible_distance_modifier = 1e20
-  },
-  {
-    type = "sound",
     name = "intermediate_en_gb_c_female_please_remember_to_collect_personal_belongings",
     filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please remember to collect personal belongings.ogg",
     category = "alert",
@@ -795,7 +1069,6 @@ data:extend({
     type = "sound",
     name = "intermediate_en_GB_C_female_rotating",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please mind the gap.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please remember to collect personal belongings.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/You must buy a ticket.ogg"},
     },
@@ -807,7 +1080,6 @@ data:extend({
     type = "sound",
     name = "intermediate_en_GB_C_female_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please mind the gap.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please remember to collect personal belongings.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/You must buy a ticket.ogg"},
     },
@@ -819,7 +1091,6 @@ data:extend({
     type = "sound",
     name = "intermediate_rotating",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please mind the gap.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please remember to collect personal belongings.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/You must buy a ticket.ogg"},
     },
@@ -831,7 +1102,6 @@ data:extend({
     type = "sound",
     name = "intermediate_random",
     variations = {
-      {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please mind the gap.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/Please remember to collect personal belongings.ogg"},
       {filename = "__TrainAnnouncements__/sounds/intermediate/en-GB-C-female/You must buy a ticket.ogg"},
     },
