@@ -691,6 +691,7 @@ data:extend({
     setting_type = "runtime-global",
     minimum_value = 0.0,
     default_value = 4.0,
+    hidden = true,
     order = "087"
   },
   {
@@ -699,6 +700,7 @@ data:extend({
     setting_type = "runtime-global",
     minimum_value = 0.1,
     default_value = 2.0,
+    hidden = true,
     order = "088"
   },
 })
