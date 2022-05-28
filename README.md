@@ -69,6 +69,16 @@ SOFTWARE.
 
 
 ***
+## Included jingles
+
+|File name||Text for TTS or source|
+|:---|:---|:---|
+|Airport (2 sec).ogg || https://freesound.org/people/Benboncan/sounds/93645/ |
+|Announcement with chord (4.2 sec).ogg || https://freesound.org/people/gollamar/sounds/273232/ |
+|Stockholm S Tunnelbana (2 sec).ogg || https://freesound.org/people/klankbeeld/sounds/587168/|
+
+
+***
 ## Included voices from https://freetts.com for reference
 
 |freetts setting||Name in mod|
@@ -77,93 +87,86 @@ SOFTWARE.
 
 
 ***
-## Included file names and TTS texts for reference
+## Included TTS texts for reference
 
-|File name||Text for TTS or source|
-|:---|:---|:---|
-||||
-|----- **Jingles** -----|||
-|Airport (2 sec).ogg || https://freesound.org/people/Benboncan/sounds/93645/ |
-|Announcement with chord (4.2 sec).ogg || https://freesound.org/people/gollamar/sounds/273232/ |
-|Stockholm S Tunnelbana (2 sec).ogg || https://freesound.org/people/klankbeeld/sounds/587168/|
-||||
-|----- **Station defaults** -----|||
-|We will arrive at the next station shortly.ogg || We will arrive at the next station shortly.|
-|We will arrive at our next stop shortly.ogg || We will arrive at our next stop shortly.|
-||||
-|----- **Station prefixes** -----|||
-|Next station.ogg || Next station? |
-|The next station is.ogg || The next station is? |
-|Our next stop is.ogg || Our next stop is? |
-||||
-|----- **Station suffixes** -----|||
-|Please remember to collect all your personal belongings when leaving the train.ogg || Please remember to collect all your personal belongings when leaving the train. |
-|final/This is the final station.ogg || This is the final station. |
-|final/This is our final stop.ogg || This is our final stop. |
-|final/This is our final stop. Please remember to collect all your personal belongings when leaving the train.ogg || This is our final stop. Please remember to collect all your personal belongings when leaving the train. |
-||||
-|----- **Stations** -----|||
-|Coal loading.ogg || Coal loading|
-|Coal unloading.ogg || Coal unloading|
-|Coal outpost.ogg || Coal outpost|
-|Copper loading.ogg || Copper loading|
-|Copper unloading.ogg || Copper unloading|
-|Copper outpost.ogg || Copper outpost|
-|Demand.ogg || Demand|
-|Deposit.ogg || Deposit|
-|Depot.ogg || Depot|
-|Fuel station.ogg || Fuel station|
-|Iron loading.ogg || Iron loading|
-|Iron unloading.ogg || Iron unloading|
-|Iron outpost.ogg || Iron outpost|
-|Loading.ogg || Loading|
-|Main base.ogg || Main base|
-|Oil loading.ogg || Oil loading|
-|Oil unloading.ogg || Oil unloading|
-|Oil outpost.ogg || Oil outpost|
-|Outpost.ogg || Outpost|
-|Petrol station.ogg || Petrol station|
-|Refuelling.ogg || Refuelling|
-|Research labs.ogg || Research labs|
-|Stone loading.ogg || Stone loading|
-|Stone unloading.ogg || Stone unloading|
-|Stone outpost.ogg || Stone outpost|
-|Supply.ogg || Supply|
-|Train yard.ogg || Train yard|
-|Unloading.ogg || Unloading|
-|Uranium loading.ogg || Uranium loading|
-|Uranium unloading.ogg || Uranium unloading|
-|Uranium outpost.ogg || Uranium outpost|
-||||
-|----- **Destination full** -----|||
-|Apologise for delay and inconvenience due to full destination.ogg || We are sorry to announce that this train may be delayed. This is due to our destination currently being full. We apologise for this late running, and the inconvenience caused.|
-|The destination is full.ogg || The destination is full.|
-|We cannot leave as the destination is full.ogg || We cannot leave as the destination is full.|
-||||
-|----- **No path** -----|||
-|Apologise for delay and inconvenience due to no path.ogg || We are sorry to announce that this train may be delayed. This is due to having no path to the destination. We apologise for this late running, and the inconvenience caused.|
-|The train has no path.ogg || The train has no path.|
-|We cannot continue our journey as the train has no path.ogg || We cannot continue our journey as the train has no path.|
-||||
-|----- **Pleasant journey** -----|||
-|Welcome on board and have a pleasant journey.ogg || We welcome you on board of this train and wish you a pleasant journey.|
-|Welcome on board the Factorio train service.ogg || Welcome on board the Factorio train service. We wish you a pleasant journey.|
-|Have a good trip.ogg || Have a good trip.|
-|Have a nice trip.ogg || Have a nice trip.|
-|Have a pleasant journey.ogg || Have a pleasant journey.|
-||||
-|----- **Stopping at a red signal** -----|||
-|Apologise for delay and inconvenience due to blocked track in front.ogg || We are sorry to announce that this train may be delayed. This is due to another train being blocked in front of this one. We apologise for this late running, and the inconvenience caused.|
-|Track in front of us is blocked.ogg || The track in front of us is blocked.|
-|We cannot continue our journey as the track in front of us is blocked.ogg || We cannot continue our journey as the track in front of us is blocked.|
-|The track is blocked.ogg || The track is blocked.|
-||||
-|----- **Back on path** -----|||
-|Have a good trip.ogg || Have a good trip.|
-|Have a nice trip.ogg || Have a nice trip.|
-|Have a pleasant journey.ogg || Have a pleasant journey.|
-|We are back on track.ogg || We are back on track.|
-||||
-|----- **Intermediate** -----|||
-|Please remember to collect personal belongings.ogg || Please remember to collect all your personal belongings when leaving the train.|
-|You must buy a ticket.ogg || You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.|
+### Back on path
+* Have a good trip.
+* Have a nice trip.
+* Have a pleasant journey.
+* We are back on track.
+
+### Destination full
+* We are sorry to announce that this train may be delayed as our destination is full. We apologise for this late running, and the inconvenience caused.
+* The destination is full.
+* We cannot leave as the destination is full.
+
+### Intermediate
+* Please remember to collect all your personal belongings when leaving the train.
+* You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.
+
+### No path
+* We are sorry to announce that this train may be delayed. This is due to having no path to the destination. We apologise for this late running, and the inconvenience caused.
+* The train has no path.
+* We cannot continue our journey as the train has no path.
+
+### Pleasant journey
+* We welcome you on board of this train and wish you a pleasant journey.
+* Welcome on board the Factorio train service. We wish you a pleasant journey.
+* Have a good trip.
+* Have a nice trip.
+* Have a pleasant journey.
+
+### Station defaults
+* We will arrive at the next station shortly.
+* We will arrive at our next stop shortly.
+
+### Station prefixes
+* Next station?
+* The next station is?
+* Our next stop is?
+
+### Station suffixes
+* Please remember to collect all your personal belongings when leaving the train.
+* This is the final station.
+* This is our final stop.
+* This is our final stop. Please remember to collect all your personal belongings when leaving the train.
+
+### Stations
+* Coal loading
+* Coal unloading
+* Coal outpost
+* Copper loading
+* Copper unloading
+* Copper outpost
+* Demand
+* Deposit
+* Depot
+* Fuel station
+* Iron loading
+* Iron unloading
+* Iron outpost
+* Loading
+* Main base
+* Oil loading
+* Oil unloading
+* Oil outpost
+* Outpost
+* Petrol station
+* Refuelling
+* Research labs
+* Stone loading
+* Stone unloading
+* Stone outpost
+* Supply
+* Train yard
+* Unloading
+* Uranium loading
+* Uranium unloading
+* Uranium outpost
+
+### Stopping at a red signal
+* We are sorry to announce that this train may be delayed due to a red signal. We apologise for this late running, and the inconvenience caused.
+* The track in front of us is blocked.
+* We cannot continue our journey as the track in front of us is blocked.
+* The track is blocked.
+
