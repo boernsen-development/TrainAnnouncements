@@ -38,4 +38,20 @@ update_all_ogg_files()
     done
 }
 
+check_existing_mp3_files()
+{
+    # make for loops iterate over lines delimited by \n
+    local IFS=$'\n'
+    mp3_files=$(find . -type f -iname "*.mp3" | sort)
+    if [ "${mp3_files}" != "" ]
+    then
+        echo ""
+        echo "WARNING: found the following mp3 files..."
+        echo "${mp3_files}"
+        echo ""
+        echo "WARNING: mp3 files found..."
+    fi
+}
+
 update_all_ogg_files
+check_existing_mp3_files
