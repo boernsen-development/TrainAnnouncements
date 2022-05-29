@@ -4,9 +4,9 @@
 * [Description](#description)
 * [CREDITS](#credits)
 * [LICENSE](#license)
-* [Included jingles](#included-jingles)
-* [Included voices from https://freetts.com](#included-voices-from-httpsfreettscom)
-* [Included TTS texts](#included-tts-texts)
+* [Jingles](#jingles)
+* [TTS voices](#tts-voices)
+* [TTS texts](#tts-texts)
 
 
 ## Description
@@ -26,9 +26,12 @@ Announcements are available as text as well as sound and they are in English onl
 
 Additionally, a few jingles are included, which will be played before the announcement if configured. Unfortunately, there is no audio preview possible in the settings, so you will have to try the sounds or play them manually from the sounds folder in the mod's zip file.
 
-If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com . Just extract the mod zip (in Factorio folder/mods), keep the folder, but remove the zip file and then add your sounds as *.ogg files to the corresponding sub-folders (Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the two scripts update_sounds_lengths.sh and script update_data_settings_locale.sh (tested on Ubuntu only). This appends the required sound lengths and makes them available in the corresponding mod settings dropdowns. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating or maintain them in a separate folder and copy/update them after each mod update!
+If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com .
 
 DISCLAIMER: If you use any included script, you do that on your own responsibility. I will not take any responsibility for any damage to or loss of any data caused by the script.
+
+To add your own sounds extract the mod zip file (in Factorio folder/mods), then remove the zip file (keep the folder) and then add your sounds as *.ogg files to the corresponding sub-folders (i.e. Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the two scripts update_sounds_lengths.sh and update_data_settings_locale.sh (tested on Ubuntu only). This appends the required sound lengths and makes them available in the mod settings. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating or maintain them in a separate folder and copy/update them after each mod update!
+
 
 ## CREDITS
 
@@ -73,7 +76,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## Included jingles
+## Jingles
 
 |File name|Source|
 |:---|:---|
@@ -82,11 +85,11 @@ SOFTWARE.
 |Stockholm S Tunnelbana.ogg | https://freesound.org/people/klankbeeld/sounds/587168/|
 
 
-## Included voices from https://freetts.com
+## TTS voices
 
-|Voice setting|Name in mod|
+|Voice source and settings|Name in mod|
 |:---|:---|
-|English (UK) > en-GB-Standard-C|en-GB-C-female|
+| https://freetts.com > English (UK) > en-GB-Standard-C|en-GB-C-female|
 
 
 ## Included TTS texts
