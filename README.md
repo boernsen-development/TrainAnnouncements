@@ -18,7 +18,7 @@ This Factorio mod adds train announcements to the game when sitting in a train. 
 * Destination full
 * No path
 * Stopping at a red signal
-* Back on path (train continues after "No path" or "Stopping at red signal")
+* Back on path (train continues after being interrupted)
 * Pleasant journey (train has been switched to automatic and starts to move)
 * Intermediate (at configurable distances before the next station)
 
@@ -47,12 +47,12 @@ This mod uses the following icons or modified versions from iconfinder.com:
 
 ## LICENSE
 
-All sound and icon files are licensed under Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)
-https://creativecommons.org/licenses/by-nc/3.0/
+All sound and image files are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
 
 Everything else is under the following MIT License
 
-Copyright (c) 2022 boernsen-development <77436741+boernsen-development@users.noreply.github.com>
+Copyright (c) 2022 boernsen-development (<77436741+boernsen-development@users.noreply.github.com>)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -75,7 +75,7 @@ SOFTWARE.
 
 ## Included jingles
 
-|File name|Text for TTS or source|
+|File name|Source|
 |:---|:---|
 |Airport.ogg | https://freesound.org/people/Benboncan/sounds/93645/ |
 |Announcement with chord.ogg | https://freesound.org/people/gollamar/sounds/273232/ |
@@ -84,7 +84,7 @@ SOFTWARE.
 
 ## Included voices from https://freetts.com
 
-|freetts setting|Name in mod|
+|Voice setting|Name in mod|
 |:---|:---|
 |English (UK) > en-GB-Standard-C|en-GB-C-female|
 
