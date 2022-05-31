@@ -53,7 +53,7 @@ This mod uses the following icons or modified versions from iconfinder.com:
 All sound and image files are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
 https://creativecommons.org/licenses/by/4.0/
 
-Everything else is under the following MIT License
+Everything else is under the following MIT License:
 
 Copyright (c) 2022 boernsen-development (<77436741+boernsen-development@users.noreply.github.com>)
 
@@ -92,7 +92,7 @@ SOFTWARE.
 | https://freetts.com > English (UK) > en-GB-Standard-C|en-GB-C-female|
 
 
-## Included TTS texts
+## TTS texts
 
 ### Back on path
 * Have a good trip.
