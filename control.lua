@@ -1,3 +1,4 @@
+-- TODO replace very long TTS texts by shorter ones
 -- TODO update script to add some defaults (only basic/important products for now?)
 -- TODO add contribution description to README.md
 -- TODO add links to github, forum, mod page, etc to README.md and mod page once published
