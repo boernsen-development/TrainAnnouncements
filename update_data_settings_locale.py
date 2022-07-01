@@ -187,7 +187,8 @@ def codename_of(file_path):
 
 def guiname_of(file_path):
     name, duration = name_and_duration_of(file_path)
-    # TODO: replace all possible OS separators by "/"
+    # replace Windows path separators by "/"
+    name = name.replace("\\", "/")
     # remove possible "./" at the beginning
     return name.replace("./", "")
 
