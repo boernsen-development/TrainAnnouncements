@@ -1,5 +1,3 @@
--- TODO replace very long TTS texts by shorter ones
--- TODO update script to add some defaults (only basic/important products for now?)
 -- TODO add contribution description to README.md
 -- TODO add links to github, forum, mod page, etc to README.md and mod page once published
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
@@ -200,13 +198,13 @@ function get_station_sound_with_matching_name_pattern(player, station_name)
         then
             if string.find(station_name, name_pattern, 1, true)
             then
---                 game.print(game.tick .. "found match of " .. name_pattern .. " in " .. station_name)
+                --game.print(game.tick .. "found match of " .. name_pattern .. " in " .. station_name)
                 return util.get_global_mod_setting("train_announcements_station" .. padded_number .. "_announcement_sound")
             else
---                 game.print(game.tick .. "no match of pattern: " .. name_pattern)
+                 --game.print(game.tick .. "no match of pattern: " .. name_pattern)
             end
         else
---             game.print(game.tick .. "name pattern not found at all in settings")
+             --game.print(game.tick .. "no name pattern for: " .. "train_announcements_station" .. padded_number .. "_name_pattern")
         end
     end
     return nil
@@ -271,12 +269,12 @@ function get_announcement_for_player(player)
                     if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
-                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefix_sound")
+                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefixes_sound")
                     else
                         -- else fall back to default without prefix
                         announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_next_station_announcement_sound_default")
                     end
-                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_final_station_suffix_sound")
+                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_final_station_suffixes_sound")
                     announcement["description"] = "final_station"
                 else
                     announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_next_station_jingle_sound_override")
@@ -284,12 +282,12 @@ function get_announcement_for_player(player)
                     if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
-                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefix_sound")
+                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefixes_sound")
                     else
                         -- else fall back to default without prefix
                         announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_next_station_announcement_sound_default")
                     end
-                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_next_station_suffix_sound")
+                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_next_station_suffixes_sound")
                     --announcement["description"] = "next_station"
                 end
                 announcement["station_number"] = station_number
