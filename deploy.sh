@@ -45,3 +45,5 @@ deploy ${SCRIPT_DIR##*/} "${FACTORIO_MOD_DIR}${SCRIPT_DIR##*/}.zip"
 #echo; read -rsn1 -p "Finished. Press any key to continue . . ."; echo
 
 cd $PWD
+
+echo "Finished..."
