@@ -55,3 +55,4 @@ check_existing_mp3_files()
 
 update_all_ogg_files
 check_existing_mp3_files
+echo "Finished..."
