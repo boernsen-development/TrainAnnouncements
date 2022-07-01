@@ -72,6 +72,7 @@ function util.get_global_mod_setting(name)
     then
         return settings.global[name].value
     else
+--        game.print("ERROR: cannot find global mod setting " .. name)
         return nil
     end
 end
