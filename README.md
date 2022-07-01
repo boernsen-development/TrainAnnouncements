@@ -101,7 +101,7 @@ SOFTWARE.
 * We are back on track.
 
 ### Destination full
-* We are sorry to announce that this train may be delayed as our destination is full. We apologise for this late running, and the inconvenience caused.
+* We are sorry to announce that this train may be delayed as our destination is full.
 * The destination is full.
 * We cannot leave as the destination is full.
 
@@ -110,7 +110,7 @@ SOFTWARE.
 * You must buy a ticket before you get on one of our trains. If you do not show a valid ticket when asked, you may be liable to pay a penalty fare.
 
 ### No path
-* We are sorry to announce that this train may be delayed. This is due to having no path to the destination. We apologise for this late running, and the inconvenience caused.
+* We are sorry to announce that this train may be delayed as there is no path to the destination.
 * The train has no path.
 * We cannot continue our journey as the train has no path.
 
@@ -173,7 +173,7 @@ SOFTWARE.
 * Uranium outpost
 
 ### Stopping at a red signal
-* We are sorry to announce that this train may be delayed due to a red signal. We apologise for this late running, and the inconvenience caused.
+* We are sorry to announce that this train may be delayed due to a red signal.
 * The track in front of us is blocked.
 * We cannot continue our journey as the track in front of us is blocked.
 * The track is blocked.

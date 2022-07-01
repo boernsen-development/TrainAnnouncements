@@ -58,7 +58,7 @@ data:extend({
     name = "train_announcements_destination_full_announcement_sound",
     setting_type = "runtime-global",
     default_value = "destination_full_en_gb_c_female_the_destination_is_full__1.61_sec_",
-    allowed_values = {"destination_full_en_gb_c_female_the_destination_is_full__1.61_sec_", "destination_full_en_gb_c_female_we_are_sorry_to_announce_that_this_train_may_be_delayed_as_our_destination_is_full._we_apologise_for_this_late_running__and_the_inconvenienc__9.07_sec_", "destination_full_en_gb_c_female_we_cannot_leave_as_the_destination_is_full__2.74_sec_", "destination_full_en_gb_c_female_rotating", "destination_full_en_gb_c_female_random", "destination_full_rotating", "destination_full_random", "off"},
+    allowed_values = {"destination_full_en_gb_c_female_the_destination_is_full__1.61_sec_", "destination_full_en_gb_c_female_we_are_sorry_to_announce_that_this_train_may_be_delayed_as_our_destination_is_full__5.02_sec_", "destination_full_en_gb_c_female_we_cannot_leave_as_the_destination_is_full__2.74_sec_", "destination_full_en_gb_c_female_rotating", "destination_full_en_gb_c_female_random", "destination_full_rotating", "destination_full_random", "off"},
     order = "008"
   },
   {
@@ -74,7 +74,7 @@ data:extend({
     name = "train_announcements_no_path_announcement_sound",
     setting_type = "runtime-global",
     default_value = "no_path_en_gb_c_female_the_train_has_no_path__1.90_sec_",
-    allowed_values = {"no_path_en_gb_c_female_the_train_has_no_path__1.90_sec_", "no_path_en_gb_c_female_we_are_sorry_to_announce_that_this_train_may_be_delayed._this_is_due_to_having_no_path_to_the_destination._we_apologise_for_this_late_running__and_the_inconvenience_caused__10.32_sec_", "no_path_en_gb_c_female_we_cannot_continue_our_journey_as_the_train_has_no_path__3.70_sec_", "no_path_en_gb_c_female_rotating", "no_path_en_gb_c_female_random", "no_path_rotating", "no_path_random", "off"},
+    allowed_values = {"no_path_en_gb_c_female_the_train_has_no_path__1.90_sec_", "no_path_en_gb_c_female_we_are_sorry_to_announce_that_this_train_may_be_delayed_as_there_is_no_path_to_the_destination__5.69_sec_", "no_path_en_gb_c_female_we_cannot_continue_our_journey_as_the_train_has_no_path__3.70_sec_", "no_path_en_gb_c_female_rotating", "no_path_en_gb_c_female_random", "no_path_rotating", "no_path_random", "off"},
     order = "010"
   },
   {
@@ -106,7 +106,7 @@ data:extend({
     name = "train_announcements_wait_signal_announcement_sound",
     setting_type = "runtime-global",
     default_value = "wait_signal_en_gb_c_female_the_track_is_blocked__1.34_sec_",
-    allowed_values = {"wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked__2.28_sec_", "wait_signal_en_gb_c_female_the_track_is_blocked__1.34_sec_", "wait_signal_en_gb_c_female_we_are_sorry_to_announce_that_this_train_may_be_delayed_due_to_a_red_signal._we_apologise_for_this_late_running__and_the_inconvenience_caused__8.78_sec_", "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked__4.58_sec_", "wait_signal_en_gb_c_female_rotating", "wait_signal_en_gb_c_female_random", "wait_signal_rotating", "wait_signal_random", "off"},
+    allowed_values = {"wait_signal_en_gb_c_female_the_track_in_front_of_us_is_blocked__2.28_sec_", "wait_signal_en_gb_c_female_the_track_is_blocked__1.34_sec_", "wait_signal_en_gb_c_female_we_are_sorry_to_announce_that_this_train_may_be_delayed_due_to_a_red_signal__4.75_sec_", "wait_signal_en_gb_c_female_we_cannot_continue_our_journey_as_the_track_in_front_of_us_is_blocked__4.58_sec_", "wait_signal_en_gb_c_female_rotating", "wait_signal_en_gb_c_female_random", "wait_signal_rotating", "wait_signal_random", "off"},
     order = "014"
   },
   {
