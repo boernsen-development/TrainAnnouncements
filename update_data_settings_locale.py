@@ -373,3 +373,4 @@ write_data_lua(data_lua_path, category_to_sounds_dict)
 edit_settings_lua(settings_lua_path, category_to_sounds_dict, settings_to_category_dict)
 edit_locale_cfg(locale_cfg_path, category_to_sounds_dict, category_to_settings_dict)
 
+print("Finished...")
