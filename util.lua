@@ -182,7 +182,7 @@ function util.corrected_train_stop_name(str)
     then
         return str
     else
-        return string.gsub(string.gsub(str, "=", "/"), "%[", "[img=")
+        return string.gsub(string.gsub(str, "%[(%a+)=", "[img=%1/"), "%[img=img/", "[img=")
     end
 end
 
