@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+# DESCRIPTION:
+# 
+# This script generates a new data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sub-directory sounds.
+# 
+# data.lua: is completely rewritten
+# settings.lua: all lines starting with 'allowed_values = {"<any category folder name>_' are overwritten
+# locale.cfg: all lines below '[string-mod-setting]' are overwritten
+# 
+# Before starting, BACKUPS are automatically created of all the files.
+
 # HOW TO USE:
 # 
 # The general sound file/folder structure is: <MOD_DIR>/sounds/<category>[/<voice>]/soundsfile.ogg
@@ -13,16 +23,7 @@
 #   <jingle setting> -> my_jingle
 #   <station announcement setting> -> my/my_station
 #   <station announcement setting> -> my/my_otherstation
-# 
-# MORE INFO:
-# 
-# This script generates a new data.lua and edits settings.lua and locale/en/locale.cfg according to sound files found in sub-directory sounds.
-# 
-# data.lua: is completely rewritten
-# settings.lua: all lines starting with 'allowed_values = {"<any category folder name>_' are overwritten
-# locale.cfg: all lines below '[string-mod-setting]' are overwritten
-# 
-# Before starting, BACKUPS are automatically created of all the files.
+
 
 import os
 import re
