@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.1
-Date: 2022-04-29
+Version: 0.1.1
+Date: 2022-07-10
   Info:
     - Initial release
   Locale:
@@ -10,5 +10,6 @@ Date: 2022-04-29
     - MIT License for everything else
     - For more details see README.md
   Sounds:
-    - Some basic jingles and generic announcements, 
+    - Some basic jingles and generic announcements
+    - Two voices: UK female, UK male
     - If only playing in single player, more sounds can be added manually using the included script update_data_settings_locale.sh. See script or mod description for details.

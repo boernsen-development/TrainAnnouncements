@@ -59,6 +59,42 @@ def update_all_ogg_files_recursively(dir):
                 update_file_duration_suffix(filepath, duration)
 
 
+def name_and_duration_of(file_path):
+    suffix_split = os.path.splitext(file_path)
+    suffix = suffix_split[1]
+    rest = suffix_split[0]
+    match = re.search("([^(]*)(?: \(((?:\d+)(?:\.\d+)?) sec\))?$", rest)
+    duration = ""
+    path_and_name = ""
+    if match and 1 <= match.lastindex and match.lastindex <= 2:
+        path_and_name = match.group(1)
+        if match.lastindex == 2:
+            duration = match.group(2)
+    else:
+        print("ERROR spitting suffix and duration from: ", file_path)
+    return path_and_name, duration
+
+
+def remove_file_duration_suffix(file_path):
+    path_and_name, duration = name_and_duration_of(file_path)
+    new_file_path = path_and_name + ".ogg"
+    if file_path != new_file_path:
+        print("")
+        print(file_path)
+        print("-->")
+        print(new_file_path)
+        print("")
+        shutil.move(file_path, new_file_path)
+
+
+def remove_sound_lengths_from_all_ogg_file_recursively(script_dir):
+    for path, subdirs, files in os.walk(script_dir):
+        for name in files:
+            if name.endswith(".ogg"):
+                file_path = os.path.join(path, name)
+                remove_file_duration_suffix(file_path)
+
+
 def check_existing_mp3_files(dir):
     mp3_files = [os.path.join(path, filename) for path, subdirs, files in os.walk(dir) for filename in files if filename.endswith(".mp3")]
     if mp3_files:
@@ -69,7 +105,8 @@ def check_existing_mp3_files(dir):
 
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-update_all_ogg_files_recursively(script_dir)
+#update_all_ogg_files_recursively(script_dir)
+remove_sound_lengths_from_all_ogg_file_recursively(script_dir)
 check_existing_mp3_files(script_dir)
 
 print("Finished...")

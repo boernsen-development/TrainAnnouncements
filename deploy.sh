@@ -6,10 +6,10 @@ PWD=$(pwd)
 
 function deploy {
     # deploy new archive
-    zip -FSr $2 $1 --exclude '*.git*' '*.sh*' '*~*' '*default_station_names*' '*backup*'
+    zip -FSr $2 $1 --exclude '*.git*' '*.sh*' '*~*' '*backup*'
     
     # add update scripts to archive
-    zip -u $2 "$1/update_data_settings_locale.sh" "$1/update_sounds_lengths.sh"
+    zip -u $2 "$1/update_data_settings_locale.py" "$1/update_sound_durations_lua.py"
 }
 
 function extract_description_from_readme {

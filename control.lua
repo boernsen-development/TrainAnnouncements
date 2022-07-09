@@ -1,8 +1,13 @@
+-- TODO make voice setting player-wise
+-- TODO rewrite deploy script in python
+-- TODO fix missing sound length for rotating/random
 -- TODO add contribution description to README.md
 -- TODO add links to github, forum, mod page, etc to README.md and mod page once published
 -- TODO allow lua regex expression as patterns (e.g. "regex()")
+-- TODO add little extra time in between announcement parts
 
 local util = require("util")
+local sound_durations = require("sound_durations")
 local station_pattern_count = 30
 
 function print_message_to_player(player, announcement)
@@ -49,7 +54,7 @@ function print_message_to_player(player, announcement)
 end
 
 function play_sound_for_player(player, sound)
---     game.print(game.tick .. "play: " .. sound)
+    --game.print(game.tick .. "play: " .. sound)
     local volume = util.get_players_mod_setting(player, "train_announcements_sound_volume")
     local type = util.get_players_mod_setting(player, "train_announcements_sound_type")
     if player and player.valid and volume and volume > 0 and type then
@@ -65,7 +70,9 @@ function schedule_announcement(player, sound, tick)
         table.insert(global.pending_announcement_sound_for_players, sound)
         table.insert(global.pending_announcement_tick_for_players, tick)
 --         local size_after = #(global.pending_players)
---         game.print(game.tick .. "Scheduled: " .. sound .. " for player " .. player.name .. " on tick " .. tick .. "(before: " .. size_before .. ", after: " .. size_after .. ")")
+        --game.print(game.tick .. "Scheduled: " .. sound .. " for player " .. player.name .. " on tick " .. tick .. "(before: " .. size_before .. ", after: " .. size_after .. ")")
+    else
+        --game.print(game.tick .. "NOT scheduled: " .. sound .. " for player " .. player.name .. " on tick " .. tick)
     end
 end
 
@@ -199,7 +206,7 @@ function get_station_sound_with_matching_name_pattern(player, station_name)
             if string.find(station_name, name_pattern, 1, true)
             then
                 --game.print(game.tick .. "found match of " .. name_pattern .. " in " .. station_name)
-                return util.get_global_mod_setting("train_announcements_station" .. padded_number .. "_announcement_sound")
+                return get_voiced_sound(player, "train_announcements_station" .. padded_number .. "_announcement_sound")
             else
                  --game.print(game.tick .. "no match of pattern: " .. name_pattern)
             end
@@ -210,43 +217,52 @@ function get_station_sound_with_matching_name_pattern(player, station_name)
     return nil
 end
 
+function get_voiced_sound(player, sound_setting)
+    --game.print("sound_setting: " .. sound_setting)
+    voice = util.get_global_mod_setting("train_announcements_voice")
+    sound = util.get_global_mod_setting(sound_setting)
+    voiced_sound = string.gsub(sound, "__voice__", "_" .. voice .. "_")
+    --game.print("voiced_sound: " .. voiced_sound)
+    return voiced_sound
+end
+
 function get_announcement_for_player(player)
     local announcement = nil
     if needs_destination_full_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_destination_full_jingle_sound_override")
-        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_destination_full_announcement_sound")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_destination_full_jingle_sound_override")
+        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_destination_full_announcement_sound")
         announcement["description"] = "destination_full"
     elseif needs_no_path_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_no_path_jingle_sound_override")
-        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_no_path_announcement_sound")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_no_path_jingle_sound_override")
+        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_no_path_announcement_sound")
         announcement["description"] = "no_path"
     elseif needs_pleasant_journey_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_pleasant_journey_jingle_sound_override")
-        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_pleasant_journey_announcement_sound")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_pleasant_journey_jingle_sound_override")
+        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_pleasant_journey_announcement_sound")
         announcement["description"] = "pleasant_journey"
     elseif needs_wait_signal_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_wait_signal_jingle_sound_override")
-        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_wait_signal_announcement_sound")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_wait_signal_jingle_sound_override")
+        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_wait_signal_announcement_sound")
         announcement["description"] = "wait_signal"
     elseif needs_back_on_path_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_back_on_path_jingle_sound_override")
-        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_back_on_path_announcement_sound")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_back_on_path_jingle_sound_override")
+        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_back_on_path_announcement_sound")
         announcement["description"] = "back_on_path"
     elseif needs_intermediate_announcement(player)
     then
         announcement = {}
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_intermediate_jingle_sound_override")
-        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_intermediate_announcement_sound")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_intermediate_jingle_sound_override")
+        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_intermediate_announcement_sound")
         announcement["description"] = "intermediate"
     elseif needs_station_announcement(player)
     then
@@ -264,30 +280,30 @@ function get_announcement_for_player(player)
             then
                 if util.is_approaching_final_station(train)
                 then
-                    announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_final_station_jingle_sound_override")
+                    announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_final_station_jingle_sound_override")
                     announcement["actual_sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
                     if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
-                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefixes_sound")
+                        announcement["prefix_sound"] = get_voiced_sound(player, "train_announcements_next_station_prefixes_sound")
                     else
                         -- else fall back to default without prefix
-                        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_next_station_announcement_sound_default")
+                        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_next_station_announcement_sound_default")
                     end
-                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_final_station_suffixes_sound")
+                    announcement["suffix_sound"] = get_voiced_sound(player, "train_announcements_final_station_suffixes_sound")
                     announcement["description"] = "final_station"
                 else
-                    announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_next_station_jingle_sound_override")
+                    announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_next_station_jingle_sound_override")
                     announcement["actual_sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
                     if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
-                        announcement["prefix_sound"] = util.get_global_mod_setting("train_announcements_next_station_prefixes_sound")
+                        announcement["prefix_sound"] = get_voiced_sound(player, "train_announcements_next_station_prefixes_sound")
                     else
                         -- else fall back to default without prefix
-                        announcement["actual_sound"] = util.get_global_mod_setting("train_announcements_next_station_announcement_sound_default")
+                        announcement["actual_sound"] = get_voiced_sound(player, "train_announcements_next_station_announcement_sound_default")
                     end
-                    announcement["suffix_sound"] = util.get_global_mod_setting("train_announcements_next_station_suffixes_sound")
+                    announcement["suffix_sound"] = get_voiced_sound(player, "train_announcements_next_station_suffixes_sound")
                     --announcement["description"] = "next_station"
                 end
                 announcement["station_number"] = station_number
@@ -299,7 +315,7 @@ function get_announcement_for_player(player)
     -- fall back to default jingle except for value "off"
     if announcement and announcement["jingle_sound"] ~= "off" and ( not announcement["jingle_sound"] or not game.is_valid_sound_path(announcement["jingle_sound"]) )
     then
-        announcement["jingle_sound"] = util.get_global_mod_setting("train_announcements_jingle_sound_default")
+        announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_jingle_sound_default")
     end
 
     return announcement
@@ -328,8 +344,11 @@ function get_length_of_sound_in_seconds(sound_name)
         return 0
     end
     
+    seconds = sound_durations[sound_name]
+    --game.print(sound_name .. " -> " .. tostring(seconds))
+
     -- try to match and seconds from sound_name, e.g. my_sound__1.34_sec_
-    dummy,dummy,seconds=string.find(sound_name, "(%d+[.]?%d*)[_]*sec")
+    --dummy,dummy,seconds=string.find(sound_name, "(%d+[.]?%d*)[_]*sec")
 
     -- fall back to mod setting if number was not valid
     if not seconds and fallback_setting

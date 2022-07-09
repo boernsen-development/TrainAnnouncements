@@ -22,15 +22,15 @@ This Factorio mod adds train announcements to the game when sitting in a train. 
 * Pleasant journey (train has been switched to automatic and starts to move)
 * Intermediate (at configurable distances before the next station)
 
-Announcements are available as text as well as sound and they are in English only for now. Both can be turned off individually if desired. The audio announcements include various generic station names, which have been generated using https://freetts.com. These generic station announcements can be assigned to the actual station names of your game via the mod settings by copy & paste. These settings are savegame-wise and should also be in sync automatically for all players of a multiplayer game. The textual announcements do print the actual station names.
+Announcements are available as text as well as sound and they are in English only for now. Both can be turned off individually if desired. The audio announcements have been generated using https://freetts.com. Various generic station names are included, which can be assigned to the actual station names of your game via the mod settings by copy & paste. These settings are savegame-wise and should also be in sync automatically for all players of a multiplayer game. The textual announcements do print the actual station names.
 
 Additionally, a few jingles are included, which will be played before the announcement if configured. Unfortunately, there is no audio preview possible in the settings, so you will have to try the sounds or play them manually from the sounds folder in the mod's zip file.
 
-If you are on Linux (possibly also MacOS) and play single player / local only, you might add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com .
+If you play single player / locally only, you may add your own announcement sounds, e.g. from a recording, Youtube, freesound.org or any free text-to-speech service such as https://freetts.com .
 
 DISCLAIMER: If you use any included script, you do that on your own responsibility. I will not take any responsibility for any damage to or loss of any data caused by the script.
 
-To add your own sounds extract the mod zip file (in Factorio folder/mods), then remove the zip file (keep the folder) and then add your sounds as *.ogg files to the corresponding sub-folders (i.e. Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the two scripts update_sounds_lengths.sh and update_data_settings_locale.sh (tested on Ubuntu only). This appends the required sound lengths and makes them available in the mod settings. If you delete the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating or maintain them in a separate folder and copy/update them after each mod update!
+To add your own sounds extract the mod zip file (in Factorio folder/mods), remove the zip file (keep the folder) and then add your sounds as *.ogg files to the corresponding sub-folders (i.e. Factorio folder/mods/TrainAnnouncements_x.x.x/sounds/...). After that you will need to run the two scripts update_data_settings_locale.py and update_sound_durations.py (tested on Ubuntu only). This makes them available in the mod settings and stores the sound durations to avoid overlapping sounds. If you delete any of the existing sounds, Factorio might complain about missing default settings, so you might be better off to add your sounds in own sub-folders. BE WARNED that if you added custom sounds and the mod is updated, your sounds will be removed, so make sure to backup them before updating or maintain them in a separate folder and copy/update them after each mod update!
 
 
 ## CREDITS
@@ -38,7 +38,9 @@ To add your own sounds extract the mod zip file (in Factorio folder/mods), then 
 This mod uses the following sounds or modified versions from freesound.org:
 
 "Airport Announcement.wav" by Benboncan ( https://freesound.org/people/Benboncan/sounds/93645/ ) licensed under CC BY 3.0
+
 "Announcement-03.wav" by gollamar ( https://freesound.org/people/gollamar/sounds/273232/ ) licensed under CC BY 3.0
+
 "Stockholm's Tunnelbana jingle.wav" by klankbeeld ( https://freesound.org/people/klankbeeld/sounds/587168/ ) licensed under CC BY 4.0
 
 This mod uses various text-to-speech conversions from https://freetts.com
@@ -90,6 +92,7 @@ SOFTWARE.
 |Voice source and settings|Name in mod|
 |:---|:---|
 | https://freetts.com > English (UK) > en-GB-Standard-C|en-GB-C-female|
+| https://freetts.com > English (UK) > en-GB-Standard-B|en-GB-B-male|
 
 
 ## TTS texts
@@ -144,8 +147,9 @@ SOFTWARE.
 * Copper unloading
 * Copper outpost
 * Demand
-* Deposit
 * Depot
+* Fuel loading
+* Fuel unloading
 * Fuel station
 * Iron loading
 * Iron unloading
