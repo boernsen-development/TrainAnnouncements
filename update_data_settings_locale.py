@@ -256,6 +256,7 @@ def generate_category_to_sounds_dict(sounds_dir):
 
 # write data.lua with all found ogg files and corresponding codenames and guinames
 def write_data_lua(data_lua_path, sounds_dict):
+    print("Writing {} ...".format(data_lua_path))
     data_lua_text = []
     data_lua_text.append("data:extend({")
     
@@ -293,10 +294,12 @@ def write_data_lua(data_lua_path, sounds_dict):
 
 # edit settings.lua by replacing allowed_values lines with codenames
 def edit_settings_lua(settings_lua_path, category_to_sounds_dict, settings_to_category_dict):
+    print("Editing {} ...".format(settings_lua_path))
     settings_lua_file = open(settings_lua_path, "r")
     settings_lua_text = settings_lua_file.read()
     settings_lua_file.close()
 
+    # replace allowed_values entries with new codenames
     name_and_allowedvalues_regex = re.compile("^    name = \"(.*?)\",$\n*(?:^.*$\n){1,5}?^    allowed_values = \{\"(.*?)\"\},$", flags=re.MULTILINE)
     remaining = settings_lua_text
     settings_lua_text = ""
@@ -344,6 +347,7 @@ def edit_settings_lua(settings_lua_path, category_to_sounds_dict, settings_to_ca
 
 # edit locale.cfg by rewriting everything below [string-mod-setting]
 def edit_locale_cfg(locale_cfg_path, category_to_sounds_dict, category_to_settings_dict):
+    print("Editing {} ...".format(locale_cfg_path))
     locale_cfg_file = open(locale_cfg_path, "r")
     locale_cfg_text = locale_cfg_file.readlines()
     locale_cfg_file.close()
