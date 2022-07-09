@@ -322,6 +322,21 @@ def edit_settings_lua(settings_lua_path, category_to_sounds_dict, settings_to_ca
         match = name_and_allowedvalues_regex.search(remaining)
     settings_lua_text += remaining
     
+    # replace order entries with increasing numbers
+    counter = 1
+    order_regex = re.compile("^    order = .*$", flags=re.MULTILINE)
+    remaining = settings_lua_text
+    settings_lua_text = ""
+    while True:
+        match = order_regex.search(remaining)
+        if match is None:
+            break
+        settings_lua_text += remaining[0:match.start(0)]
+        settings_lua_text += "    order = \"{0:03d}\"".format(counter)
+        counter += 1
+        remaining = remaining[match.end(0):]
+    settings_lua_text += remaining
+    
     settings_lua_file = open(settings_lua_path, "w")
     settings_lua_file.write(settings_lua_text)
     settings_lua_file.close()
