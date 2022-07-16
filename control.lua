@@ -221,7 +221,11 @@ function get_voiced_sound(player, sound_setting)
     --game.print("sound_setting: " .. sound_setting)
     voice = util.get_players_mod_setting(player, "train_announcements_voice")
     sound = util.get_global_mod_setting(sound_setting)
-    voiced_sound = string.gsub(sound, "__voice__", "_" .. voice .. "_")
+    voiced_sound = nil
+    if voice and sound
+    then
+        voiced_sound = string.gsub(sound, "__voice__", "_" .. voice .. "_")
+    end
     --game.print("voiced_sound: " .. voiced_sound)
     return voiced_sound
 end
