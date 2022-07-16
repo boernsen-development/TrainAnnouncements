@@ -31,18 +31,18 @@ data:extend({
     order = "004"
   },
   {
+    type = "string-setting",
+    name = "train_announcements_voice",
+    setting_type = "runtime-per-user",
+    default_value = "en_gb_c_female",
+    allowed_values = {"en_gb_b_male", "en_gb_c_female"},
+    order = "005"
+  },
+  {
     type = "bool-setting",
     name = "train_announcements_print_station_number_enabled",
     setting_type = "runtime-global",
     default_value = false,
-    order = "005"
-  },
-  {
-    type = "string-setting",
-    name = "train_announcements_voice",
-    setting_type = "runtime-global",
-    default_value = "en_gb_c_female",
-    allowed_values = {"en_gb_b_male", "en_gb_c_female"},
     order = "006"
   },
   {
