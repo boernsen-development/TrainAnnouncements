@@ -1,11 +1,3 @@
--- TODO make voice setting player-wise
--- TODO rewrite deploy script in python
--- TODO fix missing sound length for rotating/random
--- TODO add contribution description to README.md
--- TODO add links to github, forum, mod page, etc to README.md and mod page once published
--- TODO allow lua regex expression as patterns (e.g. "regex()")
--- TODO add little extra time in between announcement parts
-
 local util = require("util")
 local sound_durations = require("sound_durations")
 local station_pattern_count = 30
