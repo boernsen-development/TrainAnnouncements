@@ -194,7 +194,7 @@ data:extend({
     name = "train_announcements_number_of_rails_before_station",
     setting_type = "runtime-global",
     minimum_value = 1,
-    default_value = 500,
+    default_value = 300,
     order = "025"
   },
   {

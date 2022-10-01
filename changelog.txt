@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2022-10-01
+  Changes:
+    - Decreased default next/final station announcement distance from 500 to 300 (can still be changed in mod settings)
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2022-07-10
   Info:
