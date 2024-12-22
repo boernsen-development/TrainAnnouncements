@@ -55,13 +55,13 @@ function play_sound_for_player(player, sound)
 end
 
 function schedule_announcement(player, sound, tick)
-    if sound and sound ~= "off" and game.is_valid_sound_path(sound)
+    if sound and sound ~= "off" and helpers.is_valid_sound_path(sound)
     then
---         local size_before = #(global.pending_players)
-        table.insert(global.pending_players, player)
-        table.insert(global.pending_announcement_sound_for_players, sound)
-        table.insert(global.pending_announcement_tick_for_players, tick)
---         local size_after = #(global.pending_players)
+--         local size_before = #(storage.pending_players)
+        table.insert(storage.pending_players, player)
+        table.insert(storage.pending_announcement_sound_for_players, sound)
+        table.insert(storage.pending_announcement_tick_for_players, tick)
+--         local size_after = #(storage.pending_players)
         --game.print(game.tick .. "Scheduled: " .. sound .. " for player " .. player.name .. " on tick " .. tick .. "(before: " .. size_before .. ", after: " .. size_after .. ")")
     else
         --game.print(game.tick .. "NOT scheduled: " .. sound .. " for player " .. player.name .. " on tick " .. tick)
@@ -71,14 +71,14 @@ end
 function reset_pending_announcements(player)
     while(true)
     do
-        local player_index = util.index_of(player, global.pending_players)
+        local player_index = util.index_of(player, storage.pending_players)
         if player_index and player_index > 0
         then
-    --         local size_before = #(global.pending_players)
-            table.remove(global.pending_players, player_index)
-            table.remove(global.pending_announcement_sound_for_players, player_index)
-            table.remove(global.pending_announcement_tick_for_players, player_index)
-    --         local size_after = #(global.pending_players)
+    --         local size_before = #(storage.pending_players)
+            table.remove(storage.pending_players, player_index)
+            table.remove(storage.pending_announcement_sound_for_players, player_index)
+            table.remove(storage.pending_announcement_tick_for_players, player_index)
+    --         local size_after = #(storage.pending_players)
     --         game.print(game.tick .. "Reset pending player " .. player.name .. "(before: " .. size_before .. ", after: " .. size_after .. ")")
         else
             break
@@ -87,14 +87,14 @@ function reset_pending_announcements(player)
 end
 
 function get_and_remove_pending_announcement(player)
-    local player_index = util.index_of(player, global.pending_players)
+    local player_index = util.index_of(player, storage.pending_players)
     local announcement_sound = nil
     if player_index and player_index > 0
     then
-        announcement_sound = global.pending_announcement_sound_for_players[player_index]
-        table.remove(global.pending_players, player_index)
-        table.remove(global.pending_announcement_sound_for_players, player_index)
-        table.remove(global.pending_announcement_tick_for_players, player_index)
+        announcement_sound = storage.pending_announcement_sound_for_players[player_index]
+        table.remove(storage.pending_players, player_index)
+        table.remove(storage.pending_announcement_sound_for_players, player_index)
+        table.remove(storage.pending_announcement_tick_for_players, player_index)
 --         game.print(game.tick .. "got and removed: " .. announcement_sound)
     else
 --         game.print(game.tick .. "ERROR: player not found in pending_players")
@@ -103,10 +103,10 @@ function get_and_remove_pending_announcement(player)
 end
 
 function has_pending_announcement_on_tick(player, tick)
-    local player_index = util.index_of(player, global.pending_players)
+    local player_index = util.index_of(player, storage.pending_players)
     if player_index and player_index > 0
     then
-        local announcement_tick = global.pending_announcement_tick_for_players[player_index]
+        local announcement_tick = storage.pending_announcement_tick_for_players[player_index]
         if announcement_tick and announcement_tick == tick
         then
 --             game.print(game.tick .. "Detected pending announcement on this tick")
@@ -115,7 +115,7 @@ function has_pending_announcement_on_tick(player, tick)
 --             game.print(game.tick .. "Pending announcement for player found, but not on this tick")
         end
     else
---         game.print(game.tick .. "ERROR: player " .. player.name .. " not found in pending_players (" .. #(global.pending_players) .. ")")
+--         game.print(game.tick .. "ERROR: player " .. player.name .. " not found in pending_players (" .. #(storage.pending_players) .. ")")
     end
     return false
 end
@@ -127,9 +127,9 @@ function check_and_set_minimum_ticks_between_announcements(player)
         minSecondsBetweenAnnouncements = 0.0
     end
     
-    if global.previous_announcement_tick_for_players[player.name] == nil or game.tick >= global.previous_announcement_tick_for_players[player.name] + util.seconds_to_ticks(minSecondsBetweenAnnouncements)
+    if storage.previous_announcement_tick_for_players[player.name] == nil or game.tick >= storage.previous_announcement_tick_for_players[player.name] + util.seconds_to_ticks(minSecondsBetweenAnnouncements)
     then
-        global.previous_announcement_tick_for_players[player.name] = game.tick
+        storage.previous_announcement_tick_for_players[player.name] = game.tick
         return true
     else
 --         game.print("tick: " .. game.tick .. ", skipping sound as minimum ticks not passed -> probably a duplicate")
@@ -150,9 +150,9 @@ function train_is_on_intermediate_announcement_distance(train, player)
 end
 
 function has_change_of_train_state(player, previous_train_state, current_train_state)
-    return ( current_train_state == defines.train_state.any or global.current_train_state_for_players[player.name] == current_train_state ) and 
-           global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name] and
-           ( previous_train_state == defines.train_state.any or global.previous_train_state_for_players[player.name] == previous_train_state )
+    return ( current_train_state == defines.train_state.any or storage.current_train_state_for_players[player.name] == current_train_state ) and
+           storage.current_train_state_for_players[player.name] ~= storage.previous_train_state_for_players[player.name] and
+           ( previous_train_state == defines.train_state.any or storage.previous_train_state_for_players[player.name] == previous_train_state )
 end
 
 function needs_destination_full_announcement(player)
@@ -278,7 +278,7 @@ function get_announcement_for_player(player)
                 then
                     announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_final_station_jingle_sound_override")
                     announcement["actual_sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
-                    if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
+                    if announcement["actual_sound"] and helpers.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
                         announcement["prefix_sound"] = get_voiced_sound(player, "train_announcements_next_station_prefixes_sound")
@@ -291,7 +291,7 @@ function get_announcement_for_player(player)
                 else
                     announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_next_station_jingle_sound_override")
                     announcement["actual_sound"] = get_station_sound_with_matching_name_pattern(player, station_name)
-                    if announcement["actual_sound"] and game.is_valid_sound_path(announcement["actual_sound"])
+                    if announcement["actual_sound"] and helpers.is_valid_sound_path(announcement["actual_sound"])
                     then
                         -- only add prefix for matching pattern
                         announcement["prefix_sound"] = get_voiced_sound(player, "train_announcements_next_station_prefixes_sound")
@@ -309,7 +309,7 @@ function get_announcement_for_player(player)
     end
 
     -- fall back to default jingle except for value "off"
-    if announcement and announcement["jingle_sound"] ~= "off" and ( not announcement["jingle_sound"] or not game.is_valid_sound_path(announcement["jingle_sound"]) )
+    if announcement and announcement["jingle_sound"] ~= "off" and ( not announcement["jingle_sound"] or not helpers.is_valid_sound_path(announcement["jingle_sound"]) )
     then
         announcement["jingle_sound"] = get_voiced_sound(player, "train_announcements_jingle_sound_default")
     end
@@ -318,24 +318,24 @@ function get_announcement_for_player(player)
 end
 
 function update_train_states_for_player(player)
-    global.previous_train_state_for_players[player.name] = global.current_train_state_for_players[player.name]
+    storage.previous_train_state_for_players[player.name] = storage.current_train_state_for_players[player.name]
     
     local train = util.get_train_for_player(player)
     if train and train.valid
     then
-        global.current_train_state_for_players[player.name] = train.state
+        storage.current_train_state_for_players[player.name] = train.state
     else
-        global.current_train_state_for_players[player.name] = nil
+        storage.current_train_state_for_players[player.name] = nil
     end
     
---      if global.current_train_state_for_players[player.name] ~= global.previous_train_state_for_players[player.name]
+--      if storage.current_train_state_for_players[player.name] ~= storage.previous_train_state_for_players[player.name]
 --      then
---         game.print("State change: " .. util.train_state_to_string(global.previous_train_state_for_players[player.name]) .. " -> " .. util.train_state_to_string(global.current_train_state_for_players[player.name]))
+--         game.print("State change: " .. util.train_state_to_string(storage.previous_train_state_for_players[player.name]) .. " -> " .. util.train_state_to_string(storage.current_train_state_for_players[player.name]))
 --      end
 end
 
 function get_length_of_sound_in_seconds(sound_name)
-    if not sound_name or sound_name == "off" or not game.is_valid_sound_path(sound_name)
+    if not sound_name or sound_name == "off" or not helpers.is_valid_sound_path(sound_name)
     then
         return 0
     end
@@ -429,34 +429,34 @@ script.on_event(defines.events.on_player_left_game, function(event)
 end)
 
 function init_globals()
-    if not global.pending_players
+    if not storage.pending_players
     then
-        global.pending_players = {}
+        storage.pending_players = {}
     end
     
-    if not global.pending_announcement_sound_for_players
+    if not storage.pending_announcement_sound_for_players
     then
-        global.pending_announcement_sound_for_players = {}
+        storage.pending_announcement_sound_for_players = {}
     end
 
-    if not global.pending_announcement_tick_for_players
+    if not storage.pending_announcement_tick_for_players
     then
-        global.pending_announcement_tick_for_players = {}
+        storage.pending_announcement_tick_for_players = {}
     end
     
-    if not global.current_train_state_for_players
+    if not storage.current_train_state_for_players
     then
-        global.current_train_state_for_players = {}
+        storage.current_train_state_for_players = {}
     end
 
-    if not global.previous_train_state_for_players
+    if not storage.previous_train_state_for_players
     then
-        global.previous_train_state_for_players = {}
+        storage.previous_train_state_for_players = {}
     end
     
-    if not global.previous_announcement_tick_for_players
+    if not storage.previous_announcement_tick_for_players
     then
-        global.previous_announcement_tick_for_players = {}
+        storage.previous_announcement_tick_for_players = {}
     end
 end
 
